@@ -9,7 +9,7 @@ using System.ComponentModel.Composition;
 namespace Nyangoro.Core.Host
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// The main application which holds all the basic components
     /// </summary>
     public partial class App : Application
     {
@@ -23,6 +23,7 @@ namespace Nyangoro.Core.Host
         //Plugins
         private Nyangoro.Core.Host.PluginHolder plugins;
 
+
         private void Nyangoro_Startup(object sender, StartupEventArgs e)
         {
                 layoutManager = new Nyangoro.Core.Layout.LayoutManager(controlWindow, presentationWindow);
@@ -32,6 +33,10 @@ namespace Nyangoro.Core.Host
                 layoutManager.BuildLayout();
         }
 
+
+        /*
+         * Initializes the control and the presentation window 
+         */
         public void InitWindows()
         {
             Window winControl = new Nyangoro.Core.Host.ControlWindow();
@@ -41,11 +46,6 @@ namespace Nyangoro.Core.Host
             Window winPres = new Nyangoro.Core.Host.PresentationWindow();
             this.presentationWindow = winPres;
             winPres.Show();
-        }
-
-        public bool Compose()
-        {
-            return true;
         }
 
     }
