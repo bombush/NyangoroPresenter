@@ -12,14 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NyangoroPresenter
+namespace Nyangoro.Core.Host
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ControlWindow : Window
     {
-        public MainWindow()
+        public ControlWindow()
         {
             InitializeComponent();
         }
