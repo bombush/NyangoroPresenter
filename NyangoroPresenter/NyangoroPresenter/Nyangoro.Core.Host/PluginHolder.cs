@@ -6,14 +6,12 @@ using System.ComponentModel.Composition;
 
 namespace Nyangoro.Core.Host
 {
-    public class PluginHolder
+    [Export(typeof(Nyangoro.Interfaces.IPluginHolder))]
+    public class PluginHolder : MEFHolder, Nyangoro.Interfaces.IPluginHolder
     {
+        protected string resourcesPath = "plugins/";
+
         [ImportMany(typeof(Nyangoro.Interfaces.IPlugin))]
-        private IEnumerable<Nyangoro.Interfaces.IPlugin> plugins;
-
-        public PluginHolder()
-        {
-
-        }
+        protected IEnumerable<Nyangoro.Interfaces.IPlugin> members;
     }
 }

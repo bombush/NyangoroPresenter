@@ -23,8 +23,20 @@ namespace Nyangoro.Core.Layout
             this.presentationWindow = presentationWindow;
         }
 
+        public void initLayout()
+        {
+            this.loadScreens();
+            this.displayDefaultScreen();
+            this.displayPlugins();
+        }
+
         public void BuildLayout()
         {
+        }
+
+        public FrameworkElement loadScreens()
+        {
+
         }
     }
 }

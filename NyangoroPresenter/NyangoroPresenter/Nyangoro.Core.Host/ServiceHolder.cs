@@ -6,15 +6,12 @@ using System.ComponentModel.Composition;
 
 namespace Nyangoro.Core.Host
 {
-    class ServiceHolder : MEFHolder
+    [Export(typeof(Nyangoro.Interfaces.IServiceHolder))]
+    public class ServiceHolder : MEFHolder, Nyangoro.Interfaces.IServiceHolder
     {
+        protected string resourcesPath = @"services\";
+
         [ImportMany(typeof(Nyangoro.Interfaces.IService))]
-        private IEnumerable<Nyangoro.Interfaces.IService> services;
-
-        [Export(typeof(Nyangoro.Interfaces.IServiceHolder))]
-        public ServiceHolder()
-        {
-
-        }
+        protected IEnumerable<Nyangoro.Interfaces.IService> members;
     }
 }

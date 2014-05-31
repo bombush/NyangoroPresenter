@@ -8,4 +8,9 @@ namespace Nyangoro.Interfaces
 {
     [InheritedExport(typeof(Nyangoro.Interfaces.IService))]
     public interface IService { }
+
+    [InheritedExport(typeof(Nyangoro.Interfaces.IServiceHolder))]
+    public interface IServiceHolder { 
+        public IService getByType(string type);
+    }
 }
