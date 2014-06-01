@@ -13,28 +13,36 @@ namespace Nyangoro.Core.Host
     /// </summary>
     public partial class App : Application
     {
-        //Layout manager
-        public Nyangoro.Core.Layout.LayoutManager layoutManager { get; private set; }
+        //Managers
+        public Nyangoro.Core.Host.LayoutManager layoutManager { get; private set; }
+        public Nyangoro.Core.Host.PluginManager pluginManager { get; private set; }
+        public Nyangoro.Core.Host.ServiceManager serviceManager { get; private set; }
 
         //Windows
         public Window controlWindow { get; private set; }
         public Window presentationWindow { get; private set; }
 
-        //Plugins
-        public Nyangoro.Core.Host.PluginHolder plugins { get; private set; }
-
-        public IEnumerable<Nyangoro.Interfaces.IService> services { get; private set; }
+        //export services to plugins!
+        [Export] 
+        public Nyangoro.Core.Host.ServiceHolder services { get; private set; }
 
 
         private void Nyangoro_Startup(object sender, StartupEventArgs e)
         {
-                InitWindows();
+                this.InitWindows();
 
-                layoutManager = new Nyangoro.Core.Layout.LayoutManager(controlWindow, presentationWindow);
-                plugins = new Nyangoro.Core.Host.PluginHolder();
-               // services = new Nyangoro.Core.Host.ServiceHolder();
+                PluginHolder plugins = new Nyangoro.Core.Host.PluginHolder();
+                this.services = new Nyangoro.Core.Host.ServiceHolder();
+                plugins.Load();
+                this.services.Load();
 
-                layoutManager.BuildLayout();
+                this.layoutManager = new Nyangoro.Core.Host.LayoutManager(controlWindow, presentationWindow);
+                this.pluginManager = new Nyangoro.Core.Host.PluginManager(plugins);
+                this.serviceManager = new Nyangoro.Core.Host.ServiceManager(this.services); 
+
+                this.layoutManager.InitLayout();
+               // this.layoutManager.DisplayPlugins(plugins);
+               // this.pluginManager.InitPlugins();
         }
 
 

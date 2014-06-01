@@ -9,9 +9,18 @@ namespace Nyangoro.Core.Host
     [Export(typeof(Nyangoro.Interfaces.IPluginHolder))]
     public class PluginHolder : MEFHolder, Nyangoro.Interfaces.IPluginHolder
     {
-        protected string resourcesPath = "plugins/";
 
         [ImportMany(typeof(Nyangoro.Interfaces.IPlugin))]
-        protected IEnumerable<Nyangoro.Interfaces.IPlugin> members;
+        new protected IEnumerable<Nyangoro.Interfaces.IPlugin> members;
+
+        public PluginHolder()
+        {
+           this.resourcesPath = @"plugins\";
+        }
+
+        public Nyangoro.Interfaces.IPlugin getByType(string type)
+        {
+            return base.getByType(type) as Nyangoro.Interfaces.IPlugin;
+        }
     }
 }

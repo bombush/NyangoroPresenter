@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.Composition;
+using System.Windows;
 
 namespace Nyangoro.Interfaces
 {
     [InheritedExport(typeof(Nyangoro.Interfaces.IPlugin))]
     public interface IPlugin {
-        public bool Init();
-        public Grid getPresentationRoot();
-        public Grid getControlRoot();
-        public void Standby();
-        public void Unload();
+        bool Init();
+        FrameworkElement getPresentationRoot();
+        FrameworkElement getControlRoot();
+        void Standby();
+        bool isRunning();
+        bool isDisplayed();
+        void Unload();
+        //screen element name to attach the plugin display root to 
+        string getScreenAnchorPoint();
     }
 
     [InheritedExport(typeof(Nyangoro.Interfaces.IPluginHolder))]
     public interface IPluginHolder {
-        public IPlugin getByType(string type);
+        IPlugin getByType(string type);
     }
 
+    /*
     abstract class Plugin : IPlugin
     {
         //[Import(typeof(Nyangoro.Interfaces.IService))]
@@ -32,5 +38,5 @@ namespace Nyangoro.Interfaces
         //init windows
         //send reference to this to windows
         //PluginControl class
-    }
+    }*/
 }

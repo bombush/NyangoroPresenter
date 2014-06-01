@@ -58,7 +58,8 @@
     </ApplicationDefinition>
     <Compile Include="Nyangoro.Core.Host\MEFHolder.cs" />
     <Compile Include="Nyangoro.Core.Host\PluginHolder.cs" />
-    <Compile Include="Nyangoro.Core.Layout\LayoutManager.cs" />
+    <Compile Include="Nyangoro.Core.Host\ServiceHolder.cs" />
+    <Compile Include="Nyangoro.Core.Host\LayoutManager.cs" />
     <Compile Include="Nyangoro.Core.Host\PresentationWindow.xaml.cs">
       <DependentUpon>PresentationWindow.xaml</DependentUpon>
     </Compile>
@@ -80,6 +81,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Nyangoro.Core.Host\PluginManager.cs" />
+    <Compile Include="Nyangoro.Core.Host\ServiceManager.cs" />
+    <Compile Include="Nyangoro.Core.Layout\Screen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

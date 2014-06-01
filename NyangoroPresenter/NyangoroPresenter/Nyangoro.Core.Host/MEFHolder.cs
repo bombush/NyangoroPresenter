@@ -7,12 +7,12 @@ using System.ComponentModel.Composition.Hosting;
 
 namespace Nyangoro.Core.Host
 {
-    abstract class MEFHolder
+    abstract public class MEFHolder
     {
         protected string resourcesPath = "";
         protected IEnumerable<object> members = null;
 
-        public bool Init()
+        public bool Load()
         {
             this.Compose();
 

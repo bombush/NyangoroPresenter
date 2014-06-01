@@ -11,6 +11,6 @@ namespace Nyangoro.Interfaces
 
     [InheritedExport(typeof(Nyangoro.Interfaces.IServiceHolder))]
     public interface IServiceHolder { 
-        public IService getByType(string type);
+        IService getByType(string type);
     }
 }
