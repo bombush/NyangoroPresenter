@@ -6,13 +6,6 @@ using System.ComponentModel.Composition;
 
 namespace Nyangoro.Core.Host
 {
-    class Line
-    {
-        public double len;
-        public int x;
-        public int y;
-    }
-
     [Export(typeof(Nyangoro.Interfaces.IPluginHolder))]
     public class PluginHolder : MEFHolder, Nyangoro.Interfaces.IPluginHolder
     {
@@ -22,9 +15,6 @@ namespace Nyangoro.Core.Host
 
         public PluginHolder()
         {
-            var linez = new List<Line>();
-            double length = linez.Where(li => li.len > 10).Count();
-
            this.resourcesPath = @"plugins\";
         }
 
