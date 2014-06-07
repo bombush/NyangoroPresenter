@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Nyangoro.Interfaces;
+using System.ComponentModel.Composition;
 
 namespace Nyangoro.Services
 {
-    public class Class1 : IService
+    public class MockService : IService
     {
+        string whoami = "MockService";
     }
 }

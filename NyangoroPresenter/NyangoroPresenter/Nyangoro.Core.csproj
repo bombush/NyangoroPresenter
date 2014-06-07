@@ -56,6 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Nyangoro.Core.Host\Config.cs" />
     <Compile Include="Nyangoro.Core.Host\MEFHolder.cs" />
     <Compile Include="Nyangoro.Core.Host\PluginHolder.cs" />
     <Compile Include="Nyangoro.Core.Host\ServiceHolder.cs" />
@@ -111,10 +112,6 @@
     <ProjectReference Include="..\Nyangoro.Interfaces\Nyangoro.Interfaces.csproj">
       <Project>{FC46B5D2-CF79-4D5B-B98F-5D0F47B42C9A}</Project>
       <Name>Nyangoro.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nyangoro.Services\Nyangoro.Services.csproj">
-      <Project>{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}</Project>
-      <Name>Nyangoro.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

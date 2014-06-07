@@ -64,16 +64,13 @@ namespace Nyangoro.Core.Host
 
         private void RemoveCurrentScreen()
         {
+            this.presentationWindow.Content = null;
         }
 
         public void SwitchToScreen(int screenIndex)
         {
             this.RemoveCurrentScreen();
             this.DisplayScreen(this.screens[screenIndex]);
-        }
-
-        public void DisplayScreen(FrameworkElement screen)
-        {
         }
 
         private void DisplayScreen(Nyangoro.Core.Layout.Screen screen)

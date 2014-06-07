@@ -29,6 +29,7 @@ namespace Nyangoro.Core.Host
 
         private void Nyangoro_Startup(object sender, StartupEventArgs e)
         {
+                Nyangoro.Core.Host.Config.buildConfig();
                 this.InitWindows();
 
                 PluginHolder plugins = new Nyangoro.Core.Host.PluginHolder();

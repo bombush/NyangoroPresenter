@@ -7,10 +7,12 @@ using System.ComponentModel.Composition.Hosting;
 
 namespace Nyangoro.Core.Host
 {
-    abstract public class MEFHolder
+    abstract public class MEFHolder<T>
     {
         protected string resourcesPath = "";
-        protected IEnumerable<object> members = null;
+
+        [ImportMany]
+        protected IEnumerable<T> members = null;
 
         public bool Load()
         {
@@ -21,6 +23,8 @@ namespace Nyangoro.Core.Host
 
         public bool Compose()
         {
+            string fullResourcesPath = String.Concat(Config.Get("working_dir"),this.resourcesPath);
+
             DirectoryCatalog catalog = new DirectoryCatalog(this.resourcesPath, "*.dll");
             CompositionContainer container = new CompositionContainer(catalog);
             container.SatisfyImportsOnce(this);
@@ -28,9 +32,9 @@ namespace Nyangoro.Core.Host
             return true;
         }
 
-        public object getByType(string type)
+        public T getByType(string type)
         {
-            foreach(object member in this.members)
+            foreach(T member in this.members)
             {
                 if (member.GetType() == Type.GetType(type))
                 {
@@ -38,7 +42,7 @@ namespace Nyangoro.Core.Host
                 }
             }
 
-            return null;
+            return default(T);
         }
     }
 }
