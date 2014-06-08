@@ -23,7 +23,7 @@ namespace Nyangoro.Core.Host
 
         public bool Compose()
         {
-            string fullResourcesPath = String.Concat(Config.Get("working_dir"),this.resourcesPath);
+            string fullResourcesPath = this.GetFullResourcesPath(this.resourcesPath);
 
             DirectoryCatalog catalog = new DirectoryCatalog(this.resourcesPath, "*.dll");
             CompositionContainer container = new CompositionContainer(catalog);
@@ -32,7 +32,7 @@ namespace Nyangoro.Core.Host
             return true;
         }
 
-        public T getByType(string type)
+        public T GetByType(string type)
         {
             foreach(T member in this.members)
             {
@@ -43,6 +43,16 @@ namespace Nyangoro.Core.Host
             }
 
             return default(T);
+        }
+
+        /*
+         * Gets full resources path. MEF uses paths relative to the location
+         * of the .exe by default. We need to set an absolute path
+         * in order to be able to use a different working directory for imports.
+         */
+        protected string GetFullResourcesPath(string relativePath)
+        {
+            return String.Concat(Config.Get("working_dir"), relativePath);
         }
     }
 }

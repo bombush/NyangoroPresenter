@@ -38,12 +38,12 @@ namespace Nyangoro.Core.Host
                 this.services.Load();
 
                 this.layoutManager = new Nyangoro.Core.Host.LayoutManager(controlWindow, presentationWindow);
-                this.pluginManager = new Nyangoro.Core.Host.PluginManager(plugins);
-                this.serviceManager = new Nyangoro.Core.Host.ServiceManager(this.services); 
+                this.pluginManager = new Nyangoro.Core.Host.PluginManager(plugins, layoutManager);
+                this.serviceManager = new Nyangoro.Core.Host.ServiceManager(this.services);
 
                 this.layoutManager.InitLayout();
-               // this.layoutManager.DisplayPlugins(plugins);
-               // this.pluginManager.InitPlugins();
+                this.pluginManager.InitPlugins();
+                this.pluginManager.DisplayPlugins();
         }
 
 

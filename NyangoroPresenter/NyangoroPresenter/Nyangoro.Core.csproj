@@ -57,14 +57,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Nyangoro.Core.Host\Config.cs" />
-    <Compile Include="Nyangoro.Core.Host\MEFHolder.cs" />
-    <Compile Include="Nyangoro.Core.Host\PluginHolder.cs" />
-    <Compile Include="Nyangoro.Core.Host\ServiceHolder.cs" />
-    <Compile Include="Nyangoro.Core.Host\LayoutManager.cs" />
-    <Compile Include="Nyangoro.Core.Host\PresentationWindow.xaml.cs">
+    <Compile Include="Nyangoro.Core.Host\holders\MEFHolder.cs" />
+    <Compile Include="Nyangoro.Core.Host\holders\PluginHolder.cs" />
+    <Compile Include="Nyangoro.Core.Host\holders\ServiceHolder.cs" />
+    <Compile Include="Nyangoro.Core.Host\managers\LayoutManager.cs" />
+    <Compile Include="Nyangoro.Core.Host\windows\PresentationWindow.xaml.cs">
       <DependentUpon>PresentationWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Nyangoro.Core.Host\ControlWindow.xaml">
+    <Page Include="Nyangoro.Core.Host\windows\ControlWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -72,19 +72,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Nyangoro.Core.Host\ControlWindow.xaml.cs">
+    <Compile Include="Nyangoro.Core.Host\windows\ControlWindow.xaml.cs">
       <DependentUpon>ControlWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Nyangoro.Core.Host\PresentationWindow.xaml">
+    <Page Include="Nyangoro.Core.Host\windows\PresentationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Nyangoro.Core.Host\PluginManager.cs" />
-    <Compile Include="Nyangoro.Core.Host\ServiceManager.cs" />
-    <Compile Include="Nyangoro.Core.Layout\Screen.cs" />
+    <Compile Include="Nyangoro.Core.Host\managers\PluginManager.cs" />
+    <Compile Include="Nyangoro.Core.Host\managers\ServiceManager.cs" />
+    <Compile Include="Nyangoro.Core.Layout\PluginAnchor.cs" />
+    <Compile Include="Nyangoro.Core.Layout\PresentationScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

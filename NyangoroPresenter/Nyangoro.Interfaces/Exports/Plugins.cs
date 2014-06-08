@@ -10,19 +10,19 @@ namespace Nyangoro.Interfaces
     [InheritedExport(typeof(Nyangoro.Interfaces.IPlugin))]
     public interface IPlugin {
         bool Init();
-        FrameworkElement getPresentationRoot();
-        FrameworkElement getControlRoot();
+        FrameworkElement GetPresentationRoot();
+        FrameworkElement GetControlRoot();
+        void Run();
+        void Display();
         void Standby();
-        bool isRunning();
-        bool isDisplayed();
+        bool IsRunning();
+        bool IsDisplayed();
         void Unload();
-        //screen element name to attach the plugin display root to 
-        string getScreenAnchorPoint();
     }
 
     [InheritedExport(typeof(Nyangoro.Interfaces.IPluginHolder))]
     public interface IPluginHolder {
-        IPlugin getByType(string type);
+        IPlugin GetByType(string type);
     }
 
     /*

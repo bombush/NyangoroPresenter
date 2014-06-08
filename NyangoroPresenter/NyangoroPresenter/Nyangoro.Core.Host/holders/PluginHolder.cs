@@ -14,5 +14,13 @@ namespace Nyangoro.Core.Host
         {
            this.resourcesPath = @"plugins\";
         }
+
+        public void InitAll()
+        {
+            foreach(Nyangoro.Interfaces.IPlugin plugin in this.members)
+            {
+                plugin.Init();
+            }
+        }
     }
 }

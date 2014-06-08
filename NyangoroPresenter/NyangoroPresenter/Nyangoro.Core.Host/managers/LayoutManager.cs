@@ -21,13 +21,15 @@ namespace Nyangoro.Core.Host
 
         private Window controlWindow;
         private Window presentationWindow;
-        private List<Nyangoro.Core.Layout.Screen> screens;
+        private List<Nyangoro.Core.Layout.PresentationScreen> screens;
+        private PluginManager pluginManager;
+        public Nyangoro.Core.Layout.PresentationScreen activeScreen { get; private set; }
         
         public LayoutManager(Window controlWindow, Window presentationWindow)
         {
             this.controlWindow = controlWindow;
             this.presentationWindow = presentationWindow;
-            this.screens = new List<Nyangoro.Core.Layout.Screen>();
+            this.screens = new List<Nyangoro.Core.Layout.PresentationScreen>();
         }
 
         public void InitLayout()
@@ -52,7 +54,7 @@ namespace Nyangoro.Core.Host
             foreach(string file in files){
                 StreamReader sr = new StreamReader(file);
                 FrameworkElement screenRoot = XamlReader.Load(sr.BaseStream) as FrameworkElement;
-                Nyangoro.Core.Layout.Screen screen = new Nyangoro.Core.Layout.Screen(screenRoot);
+                Nyangoro.Core.Layout.PresentationScreen screen = new Nyangoro.Core.Layout.PresentationScreen(screenRoot);
                 this.screens.Add(screen);
             }
         }
@@ -67,15 +69,21 @@ namespace Nyangoro.Core.Host
             this.presentationWindow.Content = null;
         }
 
+        public void DisplayPlugins(PluginHolder plugins)
+        {
+            this.activeScreen.DisplayPlugins(plugins);
+        }
+
         public void SwitchToScreen(int screenIndex)
         {
             this.RemoveCurrentScreen();
             this.DisplayScreen(this.screens[screenIndex]);
         }
 
-        private void DisplayScreen(Nyangoro.Core.Layout.Screen screen)
+        private void DisplayScreen(Nyangoro.Core.Layout.PresentationScreen screen)
         {
             this.presentationWindow.Content = screen.rootElement;
+            this.activeScreen = screen;
         }
     }
 }
