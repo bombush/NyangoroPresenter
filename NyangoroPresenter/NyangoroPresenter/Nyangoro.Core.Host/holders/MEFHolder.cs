@@ -10,6 +10,7 @@ namespace Nyangoro.Core.Host
     abstract public class MEFHolder<T>
     {
         protected string resourcesPath = "";
+        protected string rootNamespace = "";
 
         [ImportMany]
         protected IEnumerable<T> members = null;
@@ -27,6 +28,7 @@ namespace Nyangoro.Core.Host
 
             DirectoryCatalog catalog = new DirectoryCatalog(this.resourcesPath, "*.dll");
             CompositionContainer container = new CompositionContainer(catalog);
+
             container.SatisfyImportsOnce(this);
 
             return true;
@@ -36,7 +38,7 @@ namespace Nyangoro.Core.Host
         {
             foreach(T member in this.members)
             {
-                if (member.GetType() == Type.GetType(type))
+                if (member.GetType().Name == type)
                 {
                     return member;
                 }

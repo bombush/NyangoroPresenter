@@ -22,7 +22,6 @@ namespace Nyangoro.Core.Host
         private Window controlWindow;
         private Window presentationWindow;
         private List<Nyangoro.Core.Layout.PresentationScreen> screens;
-        private PluginManager pluginManager;
         public Nyangoro.Core.Layout.PresentationScreen activeScreen { get; private set; }
         
         public LayoutManager(Window controlWindow, Window presentationWindow)

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Interfaces", "Nyan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Services", "Nyangoro.Services\Nyangoro.Services.csproj", "{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.MediaPlayer", "MediaPlayer\Nyangoro.Plugins.MediaPlayer.csproj", "{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}.Release|x86.ActiveCfg = Release|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

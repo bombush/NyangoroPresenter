@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace Nyangoro.Core.Layout
 {
-    class PresentationScreen
+    public class PresentationScreen
     {
         public DependencyObject rootElement { get; private set; }
 

@@ -13,6 +13,7 @@ namespace Nyangoro.Core.Host
         public PluginHolder()
         {
            this.resourcesPath = @"plugins\";
+           this.rootNamespace = "Nyangoro.Plugins";
         }
 
         public void InitAll()

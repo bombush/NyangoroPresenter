@@ -34,8 +34,8 @@ namespace Nyangoro.Core.Host
 
                 PluginHolder plugins = new Nyangoro.Core.Host.PluginHolder();
                 this.services = new Nyangoro.Core.Host.ServiceHolder();
-                plugins.Load();
                 this.services.Load();
+                plugins.Load();
 
                 this.layoutManager = new Nyangoro.Core.Host.LayoutManager(controlWindow, presentationWindow);
                 this.pluginManager = new Nyangoro.Core.Host.PluginManager(plugins, layoutManager);

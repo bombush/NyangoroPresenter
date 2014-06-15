@@ -9,34 +9,83 @@ namespace Nyangoro.Interfaces
 {
     [InheritedExport(typeof(Nyangoro.Interfaces.IPlugin))]
     public interface IPlugin {
+        DependencyObject GetPresentationRoot();
+        DependencyObject GetControlRoot();
+        bool running { get; set; }
+        bool displayed { get; set; }
+
         bool Init();
-        FrameworkElement GetPresentationRoot();
-        FrameworkElement GetControlRoot();
-        void Run();
         void Display();
+        void Run();
         void Standby();
-        bool IsRunning();
-        bool IsDisplayed();
         void Unload();
     }
+
 
     [InheritedExport(typeof(Nyangoro.Interfaces.IPluginHolder))]
     public interface IPluginHolder {
         IPlugin GetByType(string type);
     }
+}
 
-    /*
-    abstract class Plugin : IPlugin
+namespace Nyangoro.Plugins{
+
+    abstract public class Plugin : Nyangoro.Interfaces.IPlugin
     {
-        //[Import(typeof(Nyangoro.Interfaces.IService))]
-        //private IService services;
+        /*Services to be imported from the core*/
+       // [Import(typeof(Nyangoro.Interfaces.IService))]
+        //protected Nyangoro.Interfaces.IService services;
 
-        Plugin()
+        /*Root element for the presentation control*/
+        public DependencyObject presentationRoot { get; protected set; }
+        /*Root element for the control panel control*/
+        public DependencyObject controlRoot { get; protected set; }
+
+        /*flag whether the plugin is currently running*/
+        public bool running { get; set; }
+        public bool displayed { get; set; }
+
+        /*constructor, duh*/
+        public Plugin()
         {
         }
 
-        //init windows
-        //send reference to this to windows
-        //PluginControl class
-    }*/
+        /*Plugin-specific init procedure*/
+        public bool Init()
+        {
+            return true;
+        }
+
+        /*Plugin-specific run procedure*/
+        public void Run()
+        {
+        }
+
+        /*Plugin-specific display procedure*/
+        public void Display()
+        {
+        }
+
+        /*Plugin-specific standby procedure*/
+        public void Standby()
+        {
+        }
+
+        /*Plugin-specific unload procedure*/
+        public void Unload()
+        {
+        }
+
+        public DependencyObject GetPresentationRoot()
+        {
+            return this.presentationRoot;
+        }
+
+        public DependencyObject GetControlRoot()
+        {
+            return this.controlRoot;
+        }
+
+    }
 }
+

@@ -7,8 +7,13 @@ using System.ComponentModel.Composition;
 
 namespace Nyangoro.Services
 {
-    public class MockService : IService
+    abstract public class MockService : IService
     {
-        string whoami = "MockService";
+
+    }
+
+    public class MockServiceChild : MockService
+    {
+        string whoami = "MockServiceChild";
     }
 }
