@@ -9,11 +9,13 @@ namespace Nyangoro.Core.Host
     {
         private Nyangoro.Core.Host.PluginHolder holder = null;
         private Nyangoro.Core.Host.LayoutManager layoutManager = null;
+        private Nyangoro.Core.Host.ServiceHolder services = null;
 
-        public PluginManager(Nyangoro.Core.Host.PluginHolder holder, Nyangoro.Core.Host.LayoutManager layoutManager)
+        public PluginManager(Nyangoro.Core.Host.PluginHolder holder, Nyangoro.Core.Host.LayoutManager layoutManager, Nyangoro.Core.Host.ServiceHolder services)
         {
             this.holder = holder;
             this.layoutManager = layoutManager;
+            this.services = services;
         }
 
         public void InitPlugins()

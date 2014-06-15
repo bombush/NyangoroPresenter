@@ -22,8 +22,6 @@ namespace Nyangoro.Core.Host
         public Window controlWindow { get; private set; }
         public Window presentationWindow { get; private set; }
 
-        //export services to plugins!
-        [Export] 
         public Nyangoro.Core.Host.ServiceHolder services { get; private set; }
 
 
@@ -32,13 +30,14 @@ namespace Nyangoro.Core.Host
                 Nyangoro.Core.Host.Config.buildConfig();
                 this.InitWindows();
 
-                PluginHolder plugins = new Nyangoro.Core.Host.PluginHolder();
                 this.services = new Nyangoro.Core.Host.ServiceHolder();
                 this.services.Load();
+                PluginHolder plugins = new Nyangoro.Core.Host.PluginHolder();
+                plugins.services = this.services;
                 plugins.Load();
 
                 this.layoutManager = new Nyangoro.Core.Host.LayoutManager(controlWindow, presentationWindow);
-                this.pluginManager = new Nyangoro.Core.Host.PluginManager(plugins, layoutManager);
+                this.pluginManager = new Nyangoro.Core.Host.PluginManager(plugins, layoutManager, this.services);
                 this.serviceManager = new Nyangoro.Core.Host.ServiceManager(this.services);
 
                 this.layoutManager.InitLayout();

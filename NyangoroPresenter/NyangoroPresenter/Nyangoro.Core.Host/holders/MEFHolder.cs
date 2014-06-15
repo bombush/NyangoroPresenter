@@ -10,7 +10,6 @@ namespace Nyangoro.Core.Host
     abstract public class MEFHolder<T>
     {
         protected string resourcesPath = "";
-        protected string rootNamespace = "";
 
         [ImportMany]
         protected IEnumerable<T> members = null;

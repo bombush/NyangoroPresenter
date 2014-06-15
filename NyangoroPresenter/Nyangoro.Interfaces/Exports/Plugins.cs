@@ -11,6 +11,7 @@ namespace Nyangoro.Interfaces
     public interface IPlugin {
         DependencyObject GetPresentationRoot();
         DependencyObject GetControlRoot();
+        void SetHolderReference(Nyangoro.Interfaces.IPluginHolder holder);
         bool running { get; set; }
         bool displayed { get; set; }
 
@@ -33,8 +34,7 @@ namespace Nyangoro.Plugins{
     abstract public class Plugin : Nyangoro.Interfaces.IPlugin
     {
         /*Services to be imported from the core*/
-       // [Import(typeof(Nyangoro.Interfaces.IService))]
-        //protected Nyangoro.Interfaces.IService services;
+        protected Nyangoro.Interfaces.IServiceHolder services;
 
         /*Root element for the presentation control*/
         public DependencyObject presentationRoot { get; protected set; }
@@ -45,7 +45,9 @@ namespace Nyangoro.Plugins{
         public bool running { get; set; }
         public bool displayed { get; set; }
 
-        /*constructor, duh*/
+        protected Nyangoro.Interfaces.IPluginHolder holder;
+
+        /*constructor imports custom import parameter*/
         public Plugin()
         {
         }
@@ -84,6 +86,11 @@ namespace Nyangoro.Plugins{
         public DependencyObject GetControlRoot()
         {
             return this.controlRoot;
+        }
+
+        public void SetHolderReference(Nyangoro.Interfaces.IPluginHolder holder)
+        {
+            this.holder = holder;
         }
 
     }
