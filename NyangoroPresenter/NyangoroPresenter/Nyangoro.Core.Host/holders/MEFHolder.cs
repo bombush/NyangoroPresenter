@@ -12,7 +12,7 @@ namespace Nyangoro.Core.Host
         protected string resourcesPath = "";
 
         [ImportMany]
-        protected IEnumerable<T> members = null;
+        public IEnumerable<T> members{get; protected set;}
 
         public bool Load()
         {

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.Composition;
-using System.Windows;
 using System.IO;
+using System.Windows;
 using System.Windows.Markup;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Nyangoro.Core.Host
 {
@@ -23,6 +25,7 @@ namespace Nyangoro.Core.Host
         private Window presentationWindow;
         private List<Nyangoro.Core.Layout.PresentationScreen> screens;
         public Nyangoro.Core.Layout.PresentationScreen activeScreen { get; private set; }
+        public Nyangoro.Core.Layout.ControlScreen controlScreen { get; private set; }
         
         public LayoutManager(Window controlWindow, Window presentationWindow)
         {
@@ -35,6 +38,7 @@ namespace Nyangoro.Core.Host
         {
             this.LoadScreensAvailable();
             this.DisplayDefaultScreen();
+            this.DisplayControlScreen();
         }
 
         public void BuildLayout()
@@ -71,6 +75,7 @@ namespace Nyangoro.Core.Host
         public void DisplayPlugins(PluginHolder plugins)
         {
             this.activeScreen.DisplayPlugins(plugins);
+            this.DisplayControls(plugins);
         }
 
         public void SwitchToScreen(int screenIndex)
@@ -83,6 +88,22 @@ namespace Nyangoro.Core.Host
         {
             this.presentationWindow.Content = screen.rootElement;
             this.activeScreen = screen;
+        }
+
+        private void DisplayControls(PluginHolder holder)
+        {
+            foreach(Nyangoro.Interfaces.IPlugin plugin in holder.members){
+                this.controlScreen.DisplayPlugin(plugin);
+            }
+        }
+
+        private void DisplayControlScreen()
+        {
+            Panel controlRoot = this.controlWindow.Content as Panel;
+            if (controlRoot == null)
+                throw new Exception("No control root found");
+
+            this.controlScreen = new Layout.ControlScreen(controlRoot);
         }
     }
 }

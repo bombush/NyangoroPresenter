@@ -12,10 +12,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Nyangoro.Plugins.MediaPlayer
+namespace Nyangoro.Plugins.SamplePlugin
 {
 
-    public partial class PresentationRoot : PluginPresentationRoot
+    public partial class PresentationRoot : Nyangoro.Plugins.PluginPresentationRoot
     {
         public PresentationRoot()
         {

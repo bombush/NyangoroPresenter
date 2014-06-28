@@ -17,11 +17,27 @@ namespace Nyangoro.Plugins.MediaPlayer
     /// <summary>
     /// Interaction logic for ControlRoot.xaml
     /// </summary>
-    public partial class ControlRoot : UserControl
+    public partial class ControlRoot : PluginControlRoot
     {
+
         public ControlRoot()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MediaPlayerController controller = (MediaPlayerController)this.controller;
+            controller.HandleButtonClick();
+        }
+
+        public void SetController(MediaPlayerController controller){
+            this.controller = (MediaPlayerController)controller;
+        }
+
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

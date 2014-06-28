@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.Composition;
 using System.Windows;
+using System.Windows.Controls;
 
+/**
+ * Standard plugin lifetime: Init();Display();Run();
+ */
 namespace Nyangoro.Interfaces
 {
     [InheritedExport(typeof(Nyangoro.Interfaces.IPlugin))]
@@ -27,10 +31,11 @@ namespace Nyangoro.Interfaces
     public interface IPluginHolder {
         IPlugin GetByType(string type);
     }
+
 }
 
 namespace Nyangoro.Plugins{
-
+    
     abstract public class Plugin : Nyangoro.Interfaces.IPlugin
     {
         /*Services to be imported from the core*/
@@ -45,6 +50,10 @@ namespace Nyangoro.Plugins{
         public bool running { get; set; }
         public bool displayed { get; set; }
 
+        /*Plugin holder the plugin instance belongs to
+         * Plugin holder should be the only way the plugin can interact
+         * with application core
+         */
         protected Nyangoro.Interfaces.IPluginHolder holder;
 
         /*constructor imports custom import parameter*/
@@ -53,46 +62,78 @@ namespace Nyangoro.Plugins{
         }
 
         /*Plugin-specific init procedure*/
-        public bool Init()
+        public virtual bool Init()
         {
             return true;
         }
 
         /*Plugin-specific run procedure*/
-        public void Run()
+        public virtual void Run()
         {
         }
 
         /*Plugin-specific display procedure*/
-        public void Display()
+        public virtual void Display()
         {
         }
 
         /*Plugin-specific standby procedure*/
-        public void Standby()
+        public virtual void Standby()
         {
         }
 
         /*Plugin-specific unload procedure*/
-        public void Unload()
+        public virtual void Unload()
         {
         }
 
-        public DependencyObject GetPresentationRoot()
+        public virtual DependencyObject GetPresentationRoot()
         {
             return this.presentationRoot;
         }
 
-        public DependencyObject GetControlRoot()
+        public virtual DependencyObject GetControlRoot()
         {
             return this.controlRoot;
         }
 
-        public void SetHolderReference(Nyangoro.Interfaces.IPluginHolder holder)
+        public virtual void SetHolderReference(Nyangoro.Interfaces.IPluginHolder holder)
         {
             this.holder = holder;
         }
 
+    }
+
+    
+    abstract public class PluginController
+    {
+        /**
+         * PROBLEM: when using derived class, fields deriving from PluginControlRoot get downcasted
+         * meaning using new methods in the derived class requires another cast
+         */
+        protected PluginControlRoot controlRoot;
+        protected PluginPresentationRoot presentationRoot;
+        protected Nyangoro.Interfaces.IPlugin pluginCore;
+
+        public PluginController(Nyangoro.Interfaces.IPlugin pluginCore, PluginControlRoot controlRoot, PluginPresentationRoot presentationRoot)
+        {
+            this.pluginCore = pluginCore;
+            this.controlRoot = controlRoot;
+            this.presentationRoot = presentationRoot;
+        }
+    }
+
+    /*
+     * @TODO: make movable using Thumb
+     */
+    public class PluginControlRoot : UserControl
+    {
+        public PluginController controller { get; set; }
+    }
+
+    public class PluginPresentationRoot : UserControl
+    {
+        
     }
 }
 

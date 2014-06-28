@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Nyangoro.Core.Host\managers\PluginManager.cs" />
     <Compile Include="Nyangoro.Core.Host\managers\ServiceManager.cs" />
+    <Compile Include="Nyangoro.Core.Layout\ControlScreen.cs" />
     <Compile Include="Nyangoro.Core.Layout\PluginAnchor.cs" />
     <Compile Include="Nyangoro.Core.Layout\PresentationScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

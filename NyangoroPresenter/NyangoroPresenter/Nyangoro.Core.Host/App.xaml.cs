@@ -43,6 +43,7 @@ namespace Nyangoro.Core.Host
                 this.layoutManager.InitLayout();
                 this.pluginManager.InitPlugins();
                 this.pluginManager.DisplayPlugins();
+                this.pluginManager.RunDisplayed();
         }
 
 
