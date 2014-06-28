@@ -1,5 +1,6 @@
 <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:nyangoroLayout="clr-namespace:Nyangoro.Core.Layout;assembly=NyangoroPresenter">
         <Grid.RowDefinitions>
             <RowDefinition Height="102"></RowDefinition>
             <RowDefinition Height="482*" />
@@ -9,8 +10,10 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <WrapPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center">
+        <nyangoroLayout:PluginAnchor PluginType="MediaPlayer"></nyangoroLayout:PluginAnchor>
+        <nyangoroLayout:PluginAnchor PluginType="SamplePlugin"></nyangoroLayout:PluginAnchor>
         <Viewbox Stretch="Uniform" MaxWidth="1920" MaxHeight="1080" Margin="0,0,0,0" StretchDirection="Both">
-          <TextBlock>Mytext</TextBlock>
+          <TextBlock>Myext</TextBlock>
         </Viewbox>
         <Viewbox Stretch="Uniform"  MaxWidth="1920" MaxHeight="1080" StretchDirection="Both" >
                 <TextBlock Height="300" Name="textBlock1" Text="TextBlock" Background="#FF001900" SnapsToDevicePixels="False" HorizontalAlignment="Right" Width="229">gdggdggdfgggfgdfgdgdg</TextBlock>
