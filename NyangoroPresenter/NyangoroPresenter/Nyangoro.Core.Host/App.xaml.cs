@@ -27,7 +27,7 @@ namespace Nyangoro.Core.Host
 
         private void Nyangoro_Startup(object sender, StartupEventArgs e)
         {
-                Nyangoro.Core.Host.Config.buildConfig();
+                Nyangoro.Core.Host.Config.BuildConfig();
                 this.InitWindows();
 
                 this.services = new Nyangoro.Core.Host.ServiceHolder();

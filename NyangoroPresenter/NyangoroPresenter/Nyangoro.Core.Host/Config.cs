@@ -13,7 +13,7 @@ namespace Nyangoro.Core.Host
 
         //adds config variables to the conf hashtable
         //@TODO use config files later
-        public static void buildConfig()
+        public static void BuildConfig()
         {
             Config.conf = new Hashtable();
 
