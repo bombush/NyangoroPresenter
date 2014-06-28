@@ -107,10 +107,6 @@ namespace Nyangoro.Plugins{
     
     abstract public class PluginController
     {
-        /**
-         * PROBLEM: when using derived class, fields deriving from PluginControlRoot get downcasted
-         * meaning using new methods in the derived class requires another cast
-         */
         protected PluginControlRoot controlRoot;
         protected PluginPresentationRoot presentationRoot;
         protected Nyangoro.Interfaces.IPlugin pluginCore;
@@ -124,10 +120,14 @@ namespace Nyangoro.Plugins{
     }
 
     /*
-     * @TODO: make movable using Thumb
+     * @TODO: make movable using Thumb (Expected Natsu 2025...)
      */
     public class PluginControlRoot : UserControl
     {
+        /**
+        * PROBLEM: when using derived class, fields deriving from PluginControlRoot get downcasted
+        * meaning using new methods in the derived class requires another cast
+        */
         public PluginController controller { get; set; }
     }
 
