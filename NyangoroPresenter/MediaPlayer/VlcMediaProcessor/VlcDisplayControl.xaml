@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="Nyangoro.Plugins.MediaPlayer.VlcDisplayControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vlc="clr-namespace:LibVLC.NET.Presentation;assembly=LibVLC.NET.Presentation"
+             mc:Ignorable="d" d:DesignHeight="245" d:DesignWidth="438">
+    <Viewbox Width="446">
+        <vlc:MediaElement x:Name="MediaElement" Margin="10" />
+    </Viewbox>
+</UserControl>

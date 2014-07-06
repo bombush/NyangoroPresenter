@@ -33,7 +33,7 @@ namespace Nyangoro.Core.Host
             List<Nyangoro.Core.Layout.PluginAnchor> anchors = this.layoutManager.activeScreen.anchors;
             foreach (Nyangoro.Core.Layout.PluginAnchor anchor in anchors)
             {
-                anchor.anchoredPlugin.Run();
+                anchor.RunPlugin();
             }
         }
     }

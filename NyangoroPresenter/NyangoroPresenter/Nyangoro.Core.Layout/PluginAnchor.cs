@@ -29,5 +29,12 @@ namespace Nyangoro.Core.Layout
             this.anchoredPlugin = null;
             this.Content = null;
         }
+
+
+        public void RunPlugin()
+        {
+            if (this.anchoredPlugin != null)
+                this.anchoredPlugin.Run();
+        }
     }
 }

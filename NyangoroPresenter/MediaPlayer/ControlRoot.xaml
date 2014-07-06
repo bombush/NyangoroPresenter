@@ -6,8 +6,16 @@
              xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
              mc:Ignorable="d">
     <Grid>
-       <!-- <TextBlock>MY Control text</TextBlock> 
-        <Button Content="Blablabla" Click="Button_Click" ></Button> -->
-        <ListBox Height="222" HorizontalAlignment="Left" Margin="70,66,0,0" Name="listBox1" VerticalAlignment="Top" Width="120" SelectionChanged="listBox1_SelectionChanged" />
+        <Grid Name="PlaylistGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition Width="125" />
+            </Grid.ColumnDefinitions>
+            <Button Content="Add" Width="60" Height="30" Click="AddToPlaylist_Click" Grid.Column="0"></Button>
+            <Button Content="Play" Width="60" Height="30" Click="Play_Click" Margin="3,53,2,139"></Button>
+            <!-- <TextBlock>MY Control text</TextBlock> 
+            <Button Content="Blablabla" Click="Button_Click" ></Button> -->
+            <ListBox Grid.Column="1" Height="222" HorizontalAlignment="Left" Name="PlaylistBox" VerticalAlignment="Top" Width="120" SelectionChanged="PlaylistBox_SelectionChanged" />
+        </Grid>
     </Grid>
 </nyangoroPlugin:PluginControlRoot>

@@ -50,6 +50,11 @@ namespace Nyangoro.Plugins{
         public bool running { get; set; }
         public bool displayed { get; set; }
 
+        /*Controller handles UI interaction*/
+        protected PluginController controller;
+        //Override with new to return the correct type in your plugin
+        public PluginController Controller { get { return this.controller; } set { this.controller = value; } }
+
         /*Plugin holder the plugin instance belongs to
          * Plugin holder should be the only way the plugin can interact
          * with application core
@@ -111,6 +116,11 @@ namespace Nyangoro.Plugins{
         protected PluginPresentationRoot presentationRoot;
         protected Nyangoro.Interfaces.IPlugin pluginCore;
 
+        //Override with new to return the correct type
+        public PluginControlRoot ControlRoot { get { return this.controlRoot; } set { this.controlRoot = value; } }
+        public PluginPresentationRoot PresentationRoot { get { return this.presentationRoot; } set { this.presentationRoot = value; } }
+        public Nyangoro.Interfaces.IPlugin PluginCore { get { return this.pluginCore; } set { this.pluginCore = value; } }
+
         public PluginController(Nyangoro.Interfaces.IPlugin pluginCore, PluginControlRoot controlRoot, PluginPresentationRoot presentationRoot)
         {
             this.pluginCore = pluginCore;
@@ -124,11 +134,9 @@ namespace Nyangoro.Plugins{
      */
     public class PluginControlRoot : UserControl
     {
-        /**
-        * PROBLEM: when using derived class, fields deriving from PluginControlRoot get downcasted
-        * meaning using new methods in the derived class requires another cast
-        */
-        public PluginController controller { get; set; }
+        protected PluginController controller;
+        //Override with new to use the correct type in your plugin
+        public PluginController Controller { get { return this.controller; } set { this.controller = value; } }
     }
 
     public class PluginPresentationRoot : UserControl

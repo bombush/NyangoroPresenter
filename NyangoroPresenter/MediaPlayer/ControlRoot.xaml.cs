@@ -20,9 +20,22 @@ namespace Nyangoro.Plugins.MediaPlayer
     public partial class ControlRoot : PluginControlRoot
     {
 
+        public MediaPlayerController Controller { 
+            get { return (MediaPlayerController)this.controller; } 
+            private set { this.controller = value; } 
+        }
+
         public ControlRoot()
         {
             InitializeComponent();
+        }
+
+        public ListBox GetPlaylistBox()
+        {
+            Grid rootGrid = (Grid)this.Content;
+            Grid playlistGrid = (Grid)rootGrid.FindName("PlaylistGrid");
+
+            return (ListBox)playlistGrid.FindName("PlaylistBox");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,13 +44,24 @@ namespace Nyangoro.Plugins.MediaPlayer
             controller.HandleButtonClick();
         }
 
-        public void SetController(MediaPlayerController controller){
-            this.controller = (MediaPlayerController)controller;
+        public void SetController(MediaPlayerController controller)
+        {
+            this.Controller = controller;
         }
 
-        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void AddToPlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandleAddToPlaylistClick();
+        }
+
+        private void PlaylistBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandlePlayClick(sender, e);
         }
     }
 }
