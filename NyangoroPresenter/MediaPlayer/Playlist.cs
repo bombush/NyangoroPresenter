@@ -34,17 +34,30 @@ namespace Nyangoro.Plugins.MediaPlayer
             if (this.contents.Count == 0)
                 return;
 
+            if(this.activeItem == null)
+                return;
+
+            this.activeItem.Play();
+        }
+
+        public void PlaySelected()
+        {
+            this.SetSelectedActive();
+            this.Play();
+        }
+
+        protected void SetSelectedActive()
+        {
             PlaylistItem item;
             if (this.box.SelectedItem == null)
                 item = this.contents[0];
             else
                 item = (PlaylistItem)this.box.SelectedItem;
 
-            MediaPlayerController controller = this.pluginCore.Controller;
-  
             this.activeItem = item;
+
+            MediaPlayerController controller = this.pluginCore.Controller;
             this.activeItem.DisplayMedia(controller);
-            this.activeItem.Play();
         }
     }
 }

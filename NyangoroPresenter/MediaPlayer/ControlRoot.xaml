@@ -11,11 +11,12 @@
                 <ColumnDefinition Width="65"></ColumnDefinition>
                 <ColumnDefinition Width="125" />
             </Grid.ColumnDefinitions>
-            <Button Content="Add" Width="60" Height="30" Click="AddToPlaylist_Click" Grid.Column="0"></Button>
-            <Button Content="Play" Width="60" Height="30" Click="Play_Click" Margin="3,53,2,139"></Button>
+            <Button Content="Add" Width="60" Height="30" Click="AddToPlaylist_Click" Margin="6,106,124,86" Grid.ColumnSpan="2"></Button>
+            <Button Content="Play" Width="60" Height="30" Click="Play_Click" Margin="6,34,124,158" Grid.ColumnSpan="2"></Button>
+            <Button Content="Stop" Width="60" Height="30" Click="Stop_Click" Margin="6,70,124,122" Grid.ColumnSpan="2"></Button>
             <!-- <TextBlock>MY Control text</TextBlock> 
             <Button Content="Blablabla" Click="Button_Click" ></Button> -->
-            <ListBox Grid.Column="1" Height="222" HorizontalAlignment="Left" Name="PlaylistBox" VerticalAlignment="Top" Width="120" SelectionChanged="PlaylistBox_SelectionChanged" />
+            <ListBox Grid.Column="1" Height="222" HorizontalAlignment="Left" Name="PlaylistBox" VerticalAlignment="Top" Width="120" SelectionChanged="PlaylistBox_SelectionChanged" MouseDoubleClick="PlaylistBox_MouseDoubleClick"/>
         </Grid>
     </Grid>
 </nyangoroPlugin:PluginControlRoot>

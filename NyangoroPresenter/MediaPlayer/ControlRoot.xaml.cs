@@ -59,9 +59,18 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         }
 
+        private void PlaylistBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            this.Controller.HandlePlaylistMouseDoubleClick();
+        }
+
         private void Play_Click(object sender, RoutedEventArgs e)
         {
             this.Controller.HandlePlayClick(sender, e);
+        }
+
+        private void Stop_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
