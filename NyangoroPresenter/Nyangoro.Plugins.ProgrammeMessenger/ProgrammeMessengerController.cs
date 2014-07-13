@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Nyangoro.Plugins.ProgrammeMessenger
 {
-    class ProgrammeMessengerController : Nyangoro.Plugins.PluginController
+    public class ProgrammeMessengerController : Nyangoro.Plugins.PluginController
     {
+        public ProgrammeMessengerController(ProgrammeMessenger core, ControlRoot controlRoot, PresentationRoot presentationRoot) : base(core, controlRoot, presentationRoot)
+        {
+        }
     }
 }
