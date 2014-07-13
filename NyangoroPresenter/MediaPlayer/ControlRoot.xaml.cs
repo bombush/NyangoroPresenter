@@ -38,12 +38,6 @@ namespace Nyangoro.Plugins.MediaPlayer
             return (ListBox)playlistGrid.FindName("PlaylistBox");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MediaPlayerController controller = (MediaPlayerController)this.controller;
-            controller.HandleButtonClick();
-        }
-
         public void SetController(MediaPlayerController controller)
         {
             this.Controller = controller;

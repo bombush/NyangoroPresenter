@@ -43,15 +43,6 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
         }
 
-        public void HandleButtonClick()
-        {
-            Grid rootGrid = this.PresentationRoot.FindName("RootGrid") as Grid;
-            TextBlock textblock = new TextBlock();
-            textblock.Text = "blablabla";
-            rootGrid.Children.Add(textblock);
-
-        }
-
         public void BindPlaylistToControl()
         {
             ListBox playlistBox = this.GetPlaylistBox();
