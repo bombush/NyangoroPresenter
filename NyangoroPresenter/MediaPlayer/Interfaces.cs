@@ -18,7 +18,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         //neexistuje tady neco jako trida FileType??
         //Gets an array of types the implementing processor is capable of playing
-        string[] GetPlayableTypes();
+        string[] GetPlayableFileTypes();
 
         PlaylistItem GetActiveItem();
         void SetActiveItem(PlaylistItem item);

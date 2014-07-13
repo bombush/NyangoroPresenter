@@ -38,8 +38,20 @@ namespace Nyangoro.Plugins{
     
     abstract public class Plugin : Nyangoro.Interfaces.IPlugin
     {
-        /*Services to be imported from the core*/
-        protected Nyangoro.Interfaces.IServiceHolder services;
+        //@TODO: import services and holder using MEF constructor injection
+
+        /*Plugin holder the plugin instance belongs to
+         * Plugin holder should be the only way the plugin can interact
+         * with application core
+         */
+        protected Nyangoro.Interfaces.IPluginHolder holder;
+
+        /*
+         * Core services holder
+         * Core services are injected into the Plugin on holder Init()
+         */
+        protected Nyangoro.Interfaces.IServiceHolder coreServices;
+
 
         /*Root element for the presentation control*/
         public DependencyObject presentationRoot { get; protected set; }
@@ -54,12 +66,6 @@ namespace Nyangoro.Plugins{
         protected PluginController controller;
         //Override with new to return the correct type in your plugin
         public PluginController Controller { get { return this.controller; } set { this.controller = value; } }
-
-        /*Plugin holder the plugin instance belongs to
-         * Plugin holder should be the only way the plugin can interact
-         * with application core
-         */
-        protected Nyangoro.Interfaces.IPluginHolder holder;
 
         /*constructor imports custom import parameter*/
         public Plugin()
@@ -105,6 +111,11 @@ namespace Nyangoro.Plugins{
         public virtual void SetHolderReference(Nyangoro.Interfaces.IPluginHolder holder)
         {
             this.holder = holder;
+        }
+
+        public virtual void SetServicesReference(Nyangoro.Interfaces.IServiceHolder holder)
+        {
+            this.coreServices = holder;
         }
 
     }

@@ -28,7 +28,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
             foreach(IMediaProcessor processor in processors)
             {
-                if (processor.GetPlayableTypes().Contains(this.extension))
+                if (processor.GetPlayableFileTypes().Contains(this.extension))
                 {
                     this.processor = processor;
                     this.BindProcessorEvents();

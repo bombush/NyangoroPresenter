@@ -10,11 +10,12 @@ namespace Nyangoro.Core.Host
     [Export(typeof(Nyangoro.Interfaces.IPluginHolder))]
     public class PluginHolder : MEFHolder<Nyangoro.Interfaces.IPlugin>, Nyangoro.Interfaces.IPluginHolder
     {
-        public Nyangoro.Core.Host.ServiceHolder services { set; private get; }
+        private Nyangoro.Core.Host.ServiceHolder services { set; get; }
 
-        public PluginHolder()
+        public PluginHolder(Nyangoro.Core.Host.ServiceHolder services) : base()
         {
            this.resourcesPath = @"plugins\";
+           this.services = services;
         }
 
         public Nyangoro.Core.Host.ServiceHolder GetServicesReference()
@@ -27,6 +28,7 @@ namespace Nyangoro.Core.Host
             foreach(Nyangoro.Interfaces.IPlugin plugin in this.members)
             {
                 plugin.SetHolderReference(this);
+                plugin.SetServicesReference(this.services);
                 plugin.Init();
             }
         }

@@ -14,7 +14,7 @@ namespace Nyangoro.Plugins.MediaPlayer
     {
         public event EventHandler EndReached; 
 
-        private string[] playableFiles = { ".avi", ".mp4"}; 
+        private string[] playableFileTypes = { ".avi", ".mp4", ".mkv"}; 
 
         private Nyangoro.Plugins.MediaPlayer.VlcDisplayControl displayRoot;
         private LibVLC.NET.Presentation.MediaElement mediaElement;
@@ -49,9 +49,9 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         //neexistuje tady neco jako trida FileType??
         //Gets an array of types the implementing processor is capable of playing
-        public string[] GetPlayableTypes()
+        public string[] GetPlayableFileTypes()
         {
-            return this.playableFiles;
+            return this.playableFileTypes;
         }
 
         public void Play()
