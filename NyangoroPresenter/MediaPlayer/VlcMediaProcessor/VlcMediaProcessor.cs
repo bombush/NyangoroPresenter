@@ -12,6 +12,8 @@ namespace Nyangoro.Plugins.MediaPlayer
 {
     class VlcMediaProcessor : IMediaProcessor
     {
+        public event EventHandler EndReached; 
+
         private string[] playableFiles = { ".avi", ".mp4"}; 
 
         private Nyangoro.Plugins.MediaPlayer.VlcDisplayControl displayRoot;
@@ -68,3 +70,4 @@ namespace Nyangoro.Plugins.MediaPlayer
         }
     }
 }
+//@TODO ucesat playing and IsPlaying

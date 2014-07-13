@@ -85,7 +85,12 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public void HandlePlayClick(object sender, RoutedEventArgs e)
         {
-            PluginCore.Playlist.PlaySelected();
+            PluginCore.Playlist.Play();
+        }
+
+        public void HandleStopClick(object sender, RoutedEventArgs e)
+        {
+            PluginCore.Playlist.Stop();
         }
 
         private void AddPlaylistItems(string[] filenames)

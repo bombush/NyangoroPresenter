@@ -31,6 +31,7 @@ namespace Nyangoro.Plugins.MediaPlayer
                 if (processor.GetPlayableTypes().Contains(this.extension))
                 {
                     this.processor = processor;
+                    this.BindProcessorEvents();
                 }
             }
         }

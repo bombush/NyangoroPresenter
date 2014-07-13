@@ -11,6 +11,8 @@ namespace Nyangoro.Plugins.MediaPlayer
 {
     public interface IMediaProcessor
     {
+        event EventHandler EndReached;
+
         //Get roots element to append to the plugin root
         FrameworkElement GetRootElement();
 
@@ -20,9 +22,13 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         PlaylistItem GetActiveItem();
         void SetActiveItem(PlaylistItem item);
+       // bool IsPlaying();
 
+        //Start playback
         void Play();
+        //Stop playback and free any unneeded resources
         void Stop();
+        //Pause Playback
         void Pause();
     }
 }

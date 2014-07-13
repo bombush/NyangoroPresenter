@@ -9,6 +9,8 @@ namespace Nyangoro.Plugins.MediaPlayer
 {
     abstract public class PlaylistItem
     {
+        public event EventHandler EndReached;
+
         public string extension { get; protected set; }
         public Uri path { get; protected set;}
         public bool playable { get; set; }
@@ -26,6 +28,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             return this.displayName;
         }
 
+        #region playback
         public virtual void Play()
         {
             if (this.processor == null)
@@ -36,6 +39,19 @@ namespace Nyangoro.Plugins.MediaPlayer
 
             this.processor.Play();
         }
+
+        public virtual void Stop()
+        {
+            this.processor.Stop();
+        }
+
+        public virtual void Pause()
+        {
+            this.processor.Pause();
+        }
+
+        #endregion
+
 
         public virtual void DisplayMedia(MediaPlayerController controller)
         {
@@ -56,6 +72,18 @@ namespace Nyangoro.Plugins.MediaPlayer
                 this.playable = false;
             else
                 this.playable = true;
+        }
+
+        protected void BindProcessorEvents()
+        {
+           if(this.processor != null)
+                this.processor.EndReached += this.processor_EndReached;
+        }
+
+        //bubble up the end reached event
+        public void processor_EndReached(object sender, EventArgs e)
+        {
+            this.EndReached(this, EventArgs.Empty);
         }
     }
 }

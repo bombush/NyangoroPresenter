@@ -71,6 +71,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         private void Stop_Click(object sender, RoutedEventArgs e)
         {
+            this.Controller.HandleStopClick(sender, e);
         }
     }
 }
