@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace Nyangoro.Plugins.MediaPlayer
 {
 
-    public partial class PresentationRoot : PluginPresentationRoot
+    public partial class PresentationRoot : Nyangoro.Plugins.PluginPresentationRoot
     {
         public PresentationRoot()
         {
