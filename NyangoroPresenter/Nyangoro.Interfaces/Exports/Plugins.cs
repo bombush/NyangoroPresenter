@@ -16,6 +16,7 @@ namespace Nyangoro.Interfaces
         DependencyObject GetPresentationRoot();
         DependencyObject GetControlRoot();
         void SetHolderReference(Nyangoro.Interfaces.IPluginHolder holder);
+        void SetServicesReference(Nyangoro.Interfaces.IServiceHolder holder);
         bool running { get; set; }
         bool displayed { get; set; }
 
