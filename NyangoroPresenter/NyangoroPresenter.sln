@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.MediaPlaye
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.SamplePlugin", "Nyangoro.Plugins.SamplePlugin\Nyangoro.Plugins.SamplePlugin.csproj", "{B22C4BFD-4580-4B64-A2FB-DA5DDCF7BCB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.ProgrammeMessenger", "Nyangoro.Plugins.ProgrammeMessenger\Nyangoro.Plugins.ProgrammeMessenger.csproj", "{F70479DA-E1B4-4251-90CA-179A8E34E5FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,16 @@ Global
 		{B22C4BFD-4580-4B64-A2FB-DA5DDCF7BCB2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B22C4BFD-4580-4B64-A2FB-DA5DDCF7BCB2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B22C4BFD-4580-4B64-A2FB-DA5DDCF7BCB2}.Release|x86.ActiveCfg = Release|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F70479DA-E1B4-4251-90CA-179A8E34E5FA}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
