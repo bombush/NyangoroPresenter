@@ -126,10 +126,23 @@ namespace Nyangoro.Plugins.MediaPlayer
          */
         public void PlayNext()
         {
+            bool endReached = false;
             if (this.PlaybackOrder == PLAYBACK_LINEAR)
-                this.SelectNextItem();
+            {
+                if (!this.TrySelectNextItem())
+                    endReached = true;
+            }
             else if (this.PlaybackOrder == PLAYBACK_RANDOM)
-                this.SelectRandomItem();
+            {
+                if (!this.TrySelectRandomItem())
+                    endReached = true;
+            }
+
+            if (endReached)
+            {
+                this.HandlePlaylistEndReached();
+                return;
+            }
 
             this.PlaySelected();
         }
@@ -143,18 +156,46 @@ namespace Nyangoro.Plugins.MediaPlayer
         }
 
 
-        protected void SelectNextItem()
+        protected bool TrySelectNextItem()
         {
-            box.SelectedIndex += 1;
+            int nextIndex = box.SelectedIndex+1;
+            if(nextIndex < this.contents.Count){
+                box.SelectedIndex = nextIndex;
+                return true;
+            } else {
+                return false;
+            }
         }
 
-        protected void SelectRandomItem()
+        protected bool TrySelectRandomItem()
         {
             Random random = new Random();
             int rnr = random.Next(0, this.contents.Count);
             this.box.SelectedIndex = rnr;
+
+            return true;
         }
 
+        protected void HandlePlaylistEndReached()
+        {
+            this.Reset();
+        }
+
+        public void Reset()
+        {
+            this.UnsetActive();
+            this.ResetBox();
+        }
+
+        protected void UnsetActive()
+        {
+            this.activeItem = null;
+        }
+
+        protected void ResetBox()
+        {
+            this.box.UnselectAll();
+        }
     }
 }
 //@TODO Handle stopping on Play next item
