@@ -13,7 +13,7 @@ namespace Nyangoro.Plugins.MediaPlayer
     {
         //IMPORTANT!!!
         //STRIBRO: Properties are fine but not writing the Capital letter when accessing from the instance can screw stuff up pretty badly 
-        public MediaPlayerController Controller { get { return (MediaPlayerController)this.controller; } set { this.controller = value; } }
+        new public MediaPlayerController Controller { get { return (MediaPlayerController)this.controller; } set { this.controller = value; } }
 
         public Nyangoro.Plugins.MediaPlayer.ControlRoot ControlRoot { get { return (ControlRoot)this.controlRoot; } set { this.controlRoot = value; } }
 

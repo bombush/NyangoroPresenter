@@ -7,7 +7,7 @@ namespace Nyangoro.Plugins.SamplePlugin
 {
     public class SamplePlugin : Nyangoro.Plugins.Plugin
     {
-        SamplePluginController controller;
+        new SamplePluginController controller;
 
         public SamplePlugin()
         {

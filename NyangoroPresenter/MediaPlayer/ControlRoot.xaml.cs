@@ -20,7 +20,7 @@ namespace Nyangoro.Plugins.MediaPlayer
     public partial class ControlRoot : PluginControlRoot
     {
 
-        public MediaPlayerController Controller { 
+        new public MediaPlayerController Controller { 
             get { return (MediaPlayerController)this.controller; } 
             private set { this.controller = value; } 
         }

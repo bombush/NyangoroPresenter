@@ -19,19 +19,19 @@ namespace Nyangoro.Plugins.MediaPlayer
 {
     public class MediaPlayerController : PluginController
     {
-        protected Nyangoro.Plugins.MediaPlayer.ControlRoot ControlRoot
+        new protected Nyangoro.Plugins.MediaPlayer.ControlRoot ControlRoot
         { 
             get { return (Nyangoro.Plugins.MediaPlayer.ControlRoot)this.controlRoot; }
             set { this.controlRoot = value; }
         }
 
-        protected Nyangoro.Plugins.MediaPlayer.PresentationRoot PresentationRoot
+        new protected Nyangoro.Plugins.MediaPlayer.PresentationRoot PresentationRoot
         {
             get { return (Nyangoro.Plugins.MediaPlayer.PresentationRoot)this.presentationRoot; }
             set { this.presentationRoot = value; }
         }
 
-        protected Nyangoro.Plugins.MediaPlayer.MediaPlayer PluginCore {
+        new protected Nyangoro.Plugins.MediaPlayer.MediaPlayer PluginCore {
             get { return (Nyangoro.Plugins.MediaPlayer.MediaPlayer)this.pluginCore; }
             set { this.pluginCore = value; } 
         }
