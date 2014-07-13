@@ -5,8 +5,9 @@
                                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                  xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
                                  mc:Ignorable="d" 
-                                 d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+                                 d:DesignHeight="256" d:DesignWidth="769">
+    <Grid Width="761" Height="244">
+        <TextBox Margin="36,12,42,126"></TextBox>
+        <Button Content="Show message" Margin="74,167,520,38"></Button>
     </Grid>
 </nyangoroPlugin:PluginControlRoot>

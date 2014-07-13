@@ -19,5 +19,11 @@ namespace Nyangoro.Plugins.ProgrammeMessenger
         new public ProgrammeMessengerController Controller { get { return (ProgrammeMessengerController)this.controller; } set { this.controller = value; } }
 
         public Nyangoro.Plugins.ProgrammeMessenger.ControlRoot ControlRoot { get { return (ControlRoot)this.controlRoot; } set { this.controlRoot = value; } }
+
+        public ProgrammeMessenger()
+        {
+            this.presentationRoot = new PresentationRoot();
+            this.controlRoot = new ControlRoot();
+        }
     }
 }
