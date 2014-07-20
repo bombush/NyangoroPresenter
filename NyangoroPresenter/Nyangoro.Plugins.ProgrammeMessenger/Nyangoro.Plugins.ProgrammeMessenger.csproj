@@ -52,6 +52,14 @@
     </Compile>
     <Compile Include="ProgrammeMessenger.cs" />
     <Compile Include="ProgrammeMessengerController.cs" />
+    <Compile Include="Programme\PresentationProgramme.xaml.cs">
+      <DependentUpon>PresentationProgramme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programme\Programme.cs" />
+    <Compile Include="Programme\ProgrammeAnimationTimelineFactory.cs" />
+    <Compile Include="Programme\ProgrammeController.cs" />
+    <Compile Include="Programme\ProgrammeEvent.cs" />
+    <Compile Include="Programme\ProgrammeIOCondroid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +74,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PresentationRoot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Programme\PresentationProgramme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,7 +6,39 @@
                                          xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
                                          mc:Ignorable="d" 
                                          d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+    <Grid Background="Red" Height="100" Width="300">
+        <Rectangle Width="50" Height="50" Fill="Blue" Name="Rectangle">
+            <Rectangle.Triggers>
+
+                <!-- Animates the rectangle's opacity. -->
+                <EventTrigger RoutedEvent="Rectangle.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation AutoReverse="true" RepeatBehavior="Forever"
+            Storyboard.TargetName="Rectangle" 
+            Storyboard.TargetProperty="Width"
+            From="50" To="300" Duration="0:0:1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Rectangle.Triggers>
+        </Rectangle>
+        <Rectangle Name="Rectangle2" Height="50" Width="50" Fill="Green">
+            <Rectangle.Triggers>
+
+                <!-- Animates the rectangle's opacity. -->
+                <EventTrigger RoutedEvent="Rectangle.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation AutoReverse="True" RepeatBehavior="Forever"
+            Storyboard.TargetName="Rectangle2" 
+            Storyboard.TargetProperty="Height"
+            From="50" To="100" Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Rectangle.Triggers>
+        </Rectangle>
     </Grid>
+    
 </nyangoroPlugin:PluginPresentationRoot>

@@ -24,6 +24,28 @@ namespace Nyangoro.Plugins.ProgrammeMessenger
         {
             this.presentationRoot = new PresentationRoot();
             this.controlRoot = new ControlRoot();
+            this.Controller = new ProgrammeMessengerController(this, this.ControlRoot, (PresentationRoot)this.presentationRoot);
+        }
+
+        public override bool Init()
+        {
+            base.Init();
+
+            return true;
+        }
+
+        public override void Display()
+        {
+            base.Display();
+
+            this.Controller.Init();
+        }
+
+        public override void Run()
+        {
+            base.Run();
+
+            this.Controller.Run();
         }
     }
 }

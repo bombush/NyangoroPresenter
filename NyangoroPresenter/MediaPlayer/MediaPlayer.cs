@@ -21,6 +21,12 @@ namespace Nyangoro.Plugins.MediaPlayer
         //IMediaProcessor activeProcessor;
         public Playlist Playlist { get; private set; }
 
+        //Contains a list of custom file types for playlist items
+        public static struct CustomFileTypes
+        {
+            public static readonly string ImageBatch = "ImageBatch";
+        }
+
         public MediaPlayer()
         {
             this.presentationRoot = new PresentationRoot();
