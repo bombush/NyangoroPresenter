@@ -46,6 +46,9 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             Random rnd = new Random();
             int[] selectedNumbers = new int[number];
 
+            if (this.events.Count <= number)
+                return this.events;
+
             for (int i = 0; i < number; i++)
             {
                 int random;

@@ -25,12 +25,15 @@ namespace Nyangoro.Interfaces
         void Run();
         void Standby();
         void Unload();
+
+        string GetName();
     }
 
 
     [InheritedExport(typeof(Nyangoro.Interfaces.IPluginHolder))]
     public interface IPluginHolder {
         IPlugin GetByType(string type);
+        string GetPluginDir(IPlugin plugin);
     }
 
 }
@@ -68,14 +71,20 @@ namespace Nyangoro.Plugins{
         //Override with new to return the correct type in your plugin
         public PluginController Controller { get { return this.controller; } set { this.controller = value; } }
 
+        protected string Name { get; set; }
+        public string Dir { get; protected set; }
+
+        //SERVICES REFERENCES, DIRS etc. move to Constructor
         /*constructor imports custom import parameter*/
         public Plugin()
         {
+            this.SetName();
         }
 
         /*Plugin-specific init procedure*/
         public virtual bool Init()
         {
+            this.SetDir();
             return true;
         }
 
@@ -119,6 +128,21 @@ namespace Nyangoro.Plugins{
             this.coreServices = holder;
         }
 
+        public string GetName()
+        {
+            return this.Name;
+        }
+
+        protected virtual void SetName()
+        {
+            //implement with the correct name of the plugin
+        }
+
+        //set the dir. Override if no dirname needed
+        protected virtual void SetDir()
+        {
+            this.Dir = this.holder.GetPluginDir(this);
+        }
     }
 
     

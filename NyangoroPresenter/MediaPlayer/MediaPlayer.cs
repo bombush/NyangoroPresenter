@@ -22,12 +22,12 @@ namespace Nyangoro.Plugins.MediaPlayer
         public Playlist Playlist { get; private set; }
 
         //Contains a list of custom file types for playlist items
-        public static struct CustomFileTypes
+        public struct CustomFileTypes
         {
             public static readonly string ImageBatch = "ImageBatch";
         }
 
-        public MediaPlayer()
+        public MediaPlayer() : base()
         {
             this.presentationRoot = new PresentationRoot();
             this.controlRoot = new ControlRoot();
@@ -57,6 +57,12 @@ namespace Nyangoro.Plugins.MediaPlayer
         private void LoadProcessors()
         {
             this.processors.Add(new VlcMediaProcessor());
+            this.processors.Add(new SlideshowMediaProcessor());
+        }
+
+        protected override void SetName()
+        {
+          this.Name = "mediaplayer";
         }
     }
 }

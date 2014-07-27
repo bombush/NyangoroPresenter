@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.box = box;
             this.contents = new ObservableCollection<PlaylistItem>();
             this.pluginCore = pluginCore;
+
+            this.contents.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(this.HandleContentsChanged);
         }
         #endregion
 
@@ -195,6 +198,10 @@ namespace Nyangoro.Plugins.MediaPlayer
         protected void ResetBox()
         {
             this.box.UnselectAll();
+        }
+
+        protected void HandleContentsChanged(Object sender,	NotifyCollectionChangedEventArgs e)
+        {
         }
     }
 }

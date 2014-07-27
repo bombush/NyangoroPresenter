@@ -93,6 +93,12 @@ namespace Nyangoro.Plugins.MediaPlayer
             }
         }
 
+        public void AddImageBatchClick()
+        {
+            PlaylistItemImageBatch item = new PlaylistItemImageBatch(this.PluginCore.processors, this.PluginCore);
+            this.PluginCore.Playlist.contents.Add(item);
+        }
+
         public void DisplayMedia(FrameworkElement mediaRoot)
         {
             this.PresentationRoot.Content = mediaRoot;

@@ -68,6 +68,11 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.mediaElement.Pause();
         }
+
+        public TimeSpan CalculateItemLength(PlaylistItem item)
+        {
+            return new TimeSpan();
+        }
     }
 }
 //@TODO ucesat playing and IsPlaying

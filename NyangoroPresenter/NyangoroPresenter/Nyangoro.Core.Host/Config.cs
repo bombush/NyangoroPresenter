@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Nyangoro.Core.Host
 {
+    //@TODO: make into service and put ALL config in here
     static class Config
     {
         private static Hashtable conf;
@@ -18,6 +19,7 @@ namespace Nyangoro.Core.Host
             Config.conf = new Hashtable();
 
             Config.conf["working_dir"] = Directory.GetCurrentDirectory();
+            Config.conf["plugins_root"] = Config.conf["working_dir"]+"\\plugins\\";
         }
 
         public static string Get(string key)
@@ -26,6 +28,12 @@ namespace Nyangoro.Core.Host
                 return (string)Config.conf[key];
             else
                 return "";
+        }
+
+        public static string GetPluginDir(string pluginName)
+        {
+            string pluginDir = Config.conf["plugins_root"] + "\\" + pluginName + "\\";
+            return pluginDir;
         }
     }
 }

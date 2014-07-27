@@ -20,7 +20,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger
 
         public Nyangoro.Plugins.ProgrammeMessenger.ControlRoot ControlRoot { get { return (ControlRoot)this.controlRoot; } set { this.controlRoot = value; } }
 
-        public ProgrammeMessenger()
+        public ProgrammeMessenger() : base()
         {
             this.presentationRoot = new PresentationRoot();
             this.controlRoot = new ControlRoot();
@@ -46,6 +46,16 @@ namespace Nyangoro.Plugins.ProgrammeMessenger
             base.Run();
 
             this.Controller.Run();
+        }
+
+        protected override void SetName()
+        {
+          this.Name = "programmemessenger";
+        }
+
+        protected override void SetDir()
+        {
+            this.Dir = null;
         }
     }
 }

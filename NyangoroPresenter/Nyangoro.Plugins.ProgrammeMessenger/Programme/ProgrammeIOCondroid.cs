@@ -41,7 +41,10 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                 {
                     //move to CDATA section
                     reader.Read();
-                    temp.title = reader.Value;
+                    if (reader.NodeType == XmlNodeType.CDATA)
+                        temp.title = reader.Value;
+                    else
+                        throw new Exception("Invalid Condroid title node content");
                 }
 
                 if (reader.Name == "start-time" && reader.NodeType == XmlNodeType.Element)
@@ -49,7 +52,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                     temp.start = reader.ReadElementContentAsDateTime();
                 }
 
-                if (reader.Name == "location")
+                if (reader.Name == "location" && reader.NodeType == XmlNodeType.Element)
                 {
                     temp.location = reader.ReadInnerXml();
                 }

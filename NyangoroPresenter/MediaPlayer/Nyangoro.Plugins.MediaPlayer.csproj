@@ -62,10 +62,17 @@
     <Compile Include="Playlist.cs" />
     <Compile Include="PlaylistItem.cs" />
     <Compile Include="PlaylistItemFile.cs" />
+    <Compile Include="PlaylistItemImageBatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PresentationRoot.xaml.cs">
       <DependentUpon>PresentationRoot.xaml</DependentUpon>
     </Compile>
+    <None Include="SelfRefreshingList.cs" />
+    <Compile Include="SlideshowMediaProcessor\AnimationFactory.cs" />
+    <Compile Include="SlideshowMediaProcessor\SlideshowDisplayControl.xaml.cs">
+      <DependentUpon>SlideshowDisplayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SlideshowMediaProcessor\SlideshowMediaProcessor.cs" />
     <Compile Include="VlcMediaProcessor\VlcDisplayControl.xaml.cs">
       <DependentUpon>VlcDisplayControl.xaml</DependentUpon>
     </Compile>
@@ -83,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PresentationRoot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SlideshowMediaProcessor\SlideshowDisplayControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -67,5 +67,10 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.Controller.HandleStopClick(sender, e);
         }
+
+        private void AddImageBatch_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.AddImageBatchClick();
+        }
     }
 }

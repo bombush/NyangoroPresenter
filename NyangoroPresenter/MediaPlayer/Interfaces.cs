@@ -30,5 +30,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         void Stop();
         //Pause Playback
         void Pause();
+
+       // TimeSpan CalculateItemLength(PlaylistItem item);
     }
 }

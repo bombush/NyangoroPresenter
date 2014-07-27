@@ -19,6 +19,20 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public IMediaProcessor processor {get; protected set;}
 
+        /* Length handling postponed until after Natsu
+        protected TimeSpan length;
+        public TimeSpan Length
+        { 
+            get
+            {
+              if(this.length == null)
+                 this.CalculateLength();
+
+              return this.length;
+            }
+            protected set;
+        }*/
+
         public PlaylistItem(List<IMediaProcessor> processors)
         {
         }
@@ -85,5 +99,12 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.EndReached(this, EventArgs.Empty);
         }
+
+        /* Postponed until after Natsu
+        protected virtual void CalculateLength()
+        {
+            this.length = this.processor.CalculateItemLength(this);
+        }
+         * */
     }
 }

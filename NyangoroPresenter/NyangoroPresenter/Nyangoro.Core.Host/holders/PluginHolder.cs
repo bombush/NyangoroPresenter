@@ -32,5 +32,10 @@ namespace Nyangoro.Core.Host
                 plugin.Init();
             }
         }
+
+        public string GetPluginDir(Nyangoro.Interfaces.IPlugin plugin)
+        {
+            return Nyangoro.Core.Host.Config.GetPluginDir(plugin.GetName());
+        }
     }
 }
