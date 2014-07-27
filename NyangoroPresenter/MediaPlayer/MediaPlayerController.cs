@@ -71,6 +71,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public void HandlePlaylistMouseDoubleClick()
         {
+            PluginCore.Playlist.StopActive();
             PluginCore.Playlist.PlaySelected();
         }
 

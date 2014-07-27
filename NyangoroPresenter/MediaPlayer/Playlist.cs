@@ -69,10 +69,8 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public void Stop()
         {
+            this.StopActive();
             this.Stopped = true;
-            this.activeItem.Stop();
-            this.activeItem.EndReached -= new EventHandler(activeItem_EndReached);
-            this.activeItem = null;
         }
 
         public void Pause()
@@ -98,6 +96,16 @@ namespace Nyangoro.Plugins.MediaPlayer
 
 
         #region Playlist management logic
+
+        public void StopActive()
+        {
+            if (this.activeItem == null)
+                return;
+            
+            this.activeItem.Stop();
+            this.activeItem.EndReached -= new EventHandler(activeItem_EndReached);
+            this.activeItem = null;
+        }
 
         protected void ActivateSelected()
         {
