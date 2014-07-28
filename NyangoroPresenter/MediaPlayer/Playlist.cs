@@ -80,6 +80,9 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void ActivateItem(PlaylistItem item)
         {
+            if (item == null)
+                throw new Exception("Playlist item to activate is null");
+
             this.activeItem = item;
             this.PresentActive(this.pluginCore.Controller);
         }
@@ -102,8 +105,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             if (this.activeItem == null)
                 return;
             
-            this.activeItem.Stop();
             this.activeItem.EndReached -= new EventHandler(activeItem_EndReached);
+            this.activeItem.Stop();
             this.activeItem = null;
         }
 
@@ -162,6 +165,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         //if playlist processing is not stopped, continue with the next item in the playlist
         public void activeItem_EndReached(object sender, EventArgs e)
         {
+            this.activeItem.EndReached -= new EventHandler(activeItem_EndReached);
             if(!this.Stopped)
                 this.PlayNext();
         }

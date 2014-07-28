@@ -174,30 +174,40 @@ namespace Nyangoro.Plugins.MediaPlayer
         protected void FadeOutImage()
         {
             DoubleAnimation animation = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-            //WTF thread????? |Use Dispatcher?
             this.imageDisplay.BeginAnimation(FrameworkElement.OpacityProperty, animation);
         }
 
         protected void PrepareMedia()
         {
-            this.activeAudio = this.playlistItem.PopNextActiveSong();
-            if (activeImage != null)
+            Uri audio = this.playlistItem.PopNextActiveSong();
+            if (audio != null)
             {
-                this.mediaPlayer.Source = this.activeAudio;
-                this.mediaPlayer.Volume = 0;
+                this.ReadyAudio(audio);
             }
 
-            this.imageDisplay.Opacity = 0;
+            this.ReadyImage(this.playlistItem.PopNextActiveImage());
+        }
 
-            this.activeImage = this.playlistItem.PopNextActiveImage();
+        protected void ReadyImage(Uri image)
+        {
+            this.imageDisplay.Opacity = 0;
+            this.activeImage = image;
             this.imageDisplay.Source = new BitmapImage(this.activeImage);
+        }
+
+        protected void ReadyAudio(Uri audio)
+        {
+            this.mediaPlayer.Source = audio;
+            this.mediaPlayer.Volume = 0;
         }
 
         //Stop playback and free any unneeded resources
         public void Stop()
         {
-            this.mediaPlayer.Stop();
-            this.imageDisplay.Source = null;
+            this.StopImage();
+            this.StopAudio();
+            this.imageTimer.Elapsed -= this.imageTimer_Elapsed;
+            this.imageTimer = null;
         }
 
         //
@@ -217,22 +227,27 @@ namespace Nyangoro.Plugins.MediaPlayer
         #region events
 
         //EVENTS
+        // better thread handling
         protected void imageTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.ImageTimerElapsed(); }), new object[0]);
+        }
+
+        protected void ImageTimerElapsed()
         {
             this.StopImage();
 
             Uri nextImage = this.playlistItem.PopNextActiveImage();
 
-            if(nextImage == null)
+            if (nextImage == null)
             {
                 this.OnImageBatchEndReached();
             }
             else
             {
-                this.activeImage = nextImage;
+                this.ReadyImage(nextImage);
                 this.FadeInPlayImage();
             }
-
         }
 
         protected void OnImageBatchEndReached()
@@ -248,7 +263,9 @@ namespace Nyangoro.Plugins.MediaPlayer
         protected void finalVolumeFadeOut_Completed(object sender, EventArgs e)
         {
             //fire EndReached event
-            this.EndReached(this, null);
+            //prepsat tak, aby se vyuzival synchronizing object na timeru a ne tenhle bordel s dispatcherem
+            this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.Stop(); }), new object[0]);
+            this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.EndReached(this, null); }), new object[0]);
         }
 
         protected void mediaPlayer_EndReached(object sender, RoutedEventArgs e)
