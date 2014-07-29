@@ -97,6 +97,11 @@ namespace Nyangoro.Plugins.MediaPlayer
             return item;
         }
 
+        public bool IsImageWaiting()
+        {
+            return (this.activeImageBatch.Count > 0);
+        }
+
         public void SetRandomBatchImages()
         {
             if (PlaylistItemImageBatch.GlobalImagesToPlay.Count == 0)
