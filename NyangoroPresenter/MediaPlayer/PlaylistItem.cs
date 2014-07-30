@@ -51,6 +51,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             if (this.processor.GetActiveItem() != this)
                 this.processor.SetActiveItem(this);
 
+            this.BindProcessorEvents();
+
             this.processor.Play();
         }
 

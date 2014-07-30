@@ -16,6 +16,8 @@ namespace Nyangoro.Plugins.MediaPlayer
     //@TODO: napsat konec prehravani nejak rozumneji
     public class SlideshowMediaProcessor : IMediaProcessor
     {
+        public event EventHandler EndReached;
+
         //conf const
         protected const int FadeInSeconds = 2;
 
@@ -58,8 +60,6 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.mediaPlayer.EndReached += this.mediaPlayer_EndReached;
         }
 
-        public event EventHandler EndReached;
-
         //Get roots element to append to the plugin root
         public FrameworkElement GetRootElement()
         {
@@ -101,6 +101,8 @@ namespace Nyangoro.Plugins.MediaPlayer
                 Uri song = this.playlistItem.PopNextActiveSong();
                 if (song != null)
                     this.FadeInPlayAudio(song);
+                else
+                    this.audioEndReached = true;
             }
             else
             {
@@ -150,16 +152,33 @@ namespace Nyangoro.Plugins.MediaPlayer
          * animace (nastup a odchod). Zkombinovat s PrepareAudio
          * DUVOD: pamatovat si posloupnost PrepareAudio();FadeInPlayAudio(); je trochu oser
          * jo, a naucit se UML
-         */
+         *//*
         protected void FadeInPlayAudio()
         {
             this.mediaPlayer.Play();
             this.FadeInAudio();
+        }*/
+
+            /*
+        protected void StopAudio()
+        {
+            this.FadeOutStopAudio();
+        }*/
+
+        protected void StopAudio(AnimationTimeline stopAnimation, Action stopCallback)
+        {
+            stopAnimation.Completed += (object sender, EventArgs e) => this.CleanupStopAudio(stopCallback);
+            this.mediaPlayer.BeginAnimation(LibVLC.NET.Presentation.MediaElement.VolumeProperty, stopAnimation);
+        }
+
+        protected void StopAudio(Action stopCallback)
+        {
+            this.CleanupStopAudio(stopCallback);
         }
 
         protected void StopAudio()
         {
-            this.FadeOutStopAudio();
+            this.CleanupStopAudio();
         }
 
         /*
@@ -198,6 +217,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         // stopCallback is called after image has been cleaned up completely 
         //
         //@TODO: still not as clever as initially thought because opacity is hardcoded - doesn't allow more complex animations = SUX
+        // taky je naprd, ze metoda s nazvem "StopImage" vlastne ten image doopravdy nezastavi, ale jenom nastavi animaci a callback
         protected void StopImage(AnimationTimeline stopAnimation, Action stopCallback )
         {
             stopAnimation.Completed += (object sender, EventArgs e) => this.CleanupStopImage(stopCallback);
@@ -211,7 +231,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void StopImage()
         {
-            this.imageTimer.Stop();
+            this.CleanupStopImage();
         }
 
         protected void CleanupStopImage(Action callback)
@@ -228,6 +248,20 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.activeImage = null;
         }
 
+
+        protected void CleanupStopAudio(Action callback)
+        {
+            this.mediaPlayer.Stop();
+            this.activeAudio = null;
+
+            callback();
+        }
+
+        protected void CleanupStopAudio()
+        {
+            this.mediaPlayer.Stop();
+            this.activeAudio = null;
+        }
         #endregion
 
         /*
@@ -242,7 +276,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
 
         }*/
-
+        /*
         protected void PrepareMedia()
         {
             this.audioEndReached = false;
@@ -259,11 +293,11 @@ namespace Nyangoro.Plugins.MediaPlayer
             }
 
             this.ReadyImage(this.playlistItem.PopNextActiveImage());*/
-        }
+        /*}*/
 
         protected void ReadyImage(Uri image)
         {
-            this.imageDisplay.Opacity = 0;
+           // this.imageDisplay.Opacity = 0;
             this.activeImage = image;
             this.imageDisplay.Source = new BitmapImage(this.activeImage);
         }
@@ -321,12 +355,14 @@ namespace Nyangoro.Plugins.MediaPlayer
                 Uri nextImage = this.playlistItem.PopNextActiveImage();
                 DoubleAnimation fadeOut = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
 
-                this.StopImage(fadeOut, () => this.PlayImage(nextImage));
+                DoubleAnimation fadeIn = AnimationFactory.CreateFadeIn(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
+                this.StopImage(fadeOut, () => this.PlayImage(nextImage, fadeIn));
             }
         }
 
         protected void PlayImage(Uri image, AnimationTimeline animation)
         {
+            this.imageEndReached = false;
             this.ReadyImage(image);
             this.imageTimer.Start();
             this.imageDisplay.BeginAnimation(Image.OpacityProperty, animation);
@@ -334,7 +370,17 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void PlayAudio(Uri audio, AnimationTimeline animation)
         {
+            this.audioEndReached = false;
             this.ReadyAudio(audio);
+            this.mediaPlayer.Play();
+            this.mediaPlayer.BeginAnimation(LibVLC.NET.Presentation.MediaElement.VolumeProperty, animation);
+        }
+
+        protected void PlayAudio(Uri audio)
+        {
+            this.audioEndReached = false;
+            this.ReadyAudio(audio);
+            this.mediaPlayer.Volume = 1;
             this.mediaPlayer.Play();
         }
 
@@ -348,30 +394,59 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void OnImageBatchEndReached()
         {
-            this.FadeOutStopAudio(SlideshowMediaProcessor.FlagEndReached);
+            this.imageEndReached = true;
+            this.OnEndReached();
         }
 
+        protected void OnAudioBatchEndReached()
+        {
+            this.audioEndReached = true;
+            this.OnEndReached();
+        }
+
+        protected void OnEndReached()
+        {
+            if (this.imageEndReached && this.audioEndReached)
+                this.EndReached(this, new EventArgs());
+        }
+
+        /*
         protected void animationVolumeFadeOut_Completed(object sender, EventArgs e)
         {
             this.mediaPlayer.Stop();
         }
-
+        
         protected void finalVolumeFadeOut_Completed(object sender, EventArgs e)
         {
             //fire EndReached event
             //prepsat tak, aby se vyuzival synchronizing object na timeru a ne tenhle bordel s dispatcherem
             this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.Stop(); }), new object[0]);
             this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.EndReached(this, null); }), new object[0]);
-        }
+        }*/
 
         protected void mediaPlayer_EndReached(object sender, RoutedEventArgs e)
         {
+            //using lambda cuz lambdas are so much fun - almost like jQuery
+            if (!this.playlistItem.IsSongWaiting())
+            {
+                // much lambda! such callback! wow!
+                //DoubleAnimation fadeOut = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
+               // this.StopImage(fadeOut, () => this.OnImageBatchEndReached());
+                //this.TransitionVideoFadeOut(() => this.OnImageBatchEndReached());
+                this.StopAudio(()=>this.OnAudioBatchEndReached());
+            }
+            else
+            {
+                Uri nextSong = this.playlistItem.PopNextActiveSong();
+                this.StopAudio(() => this.PlayAudio(nextSong));
+            }
+            /*
             Uri nextSong = this.playlistItem.PopNextActiveSong(); 
             if(nextSong != null)
             {
                 this.ReadyAudio(nextSong);
                 this.FadeInPlayAudio();
-            }
+            }*/
         }
 
         #endregion

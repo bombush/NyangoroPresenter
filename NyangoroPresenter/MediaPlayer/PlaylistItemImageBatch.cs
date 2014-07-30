@@ -46,7 +46,7 @@ namespace Nyangoro.Plugins.MediaPlayer
                 if (processor.GetPlayableFileTypes().Contains(MediaPlayer.CustomFileTypes.ImageBatch))
                 {
                     this.processor = processor;
-                    this.BindProcessorEvents();
+                   // this.BindProcessorEvents();
                 }
             }
         }
@@ -100,6 +100,11 @@ namespace Nyangoro.Plugins.MediaPlayer
         public bool IsImageWaiting()
         {
             return (this.activeImageBatch.Count > 0);
+        }
+
+        public bool IsSongWaiting()
+        {
+            return (this.activeAudioBatch.Count > 0);
         }
 
         public void SetRandomBatchImages()
