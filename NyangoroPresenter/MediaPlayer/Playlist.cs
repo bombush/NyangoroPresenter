@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Xml;
 
 
 namespace Nyangoro.Plugins.MediaPlayer
@@ -63,7 +64,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             if (this.activeItem == null)
                 this.AutoActivate();
 
-            this.activeItem.EndReached += new EventHandler(activeItem_EndReached);
+            EventHandler handler = new EventHandler(this.activeItem_EndReached);
+            this.activeItem.EndReached += handler;
             this.activeItem.Play();
         }
 
@@ -215,9 +217,16 @@ namespace Nyangoro.Plugins.MediaPlayer
         protected void HandleContentsChanged(Object sender,	NotifyCollectionChangedEventArgs e)
         {
         }
+
+        protected void SavePlaylist()
+        {
+        }
+
+        protected void LoadPlaylist()
+        {
+        }
     }
 }
-//@TODO Handle stopping on Play next item
 //@TODO Randomization
 //@TODO Removing already played items
 //@TODO Playlist Save/Load

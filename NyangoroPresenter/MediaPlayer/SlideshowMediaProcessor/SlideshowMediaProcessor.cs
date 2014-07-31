@@ -87,6 +87,9 @@ namespace Nyangoro.Plugins.MediaPlayer
         //Start playback
         public void Play()
         {
+            this.audioEndReached = false;
+            this.imageEndReached = false;
+
             if(this.playlistItem == null)
                 throw new Exception("Trying to play an empty playlist item");
 
@@ -347,7 +350,10 @@ namespace Nyangoro.Plugins.MediaPlayer
             {
                 // much lambda! such callback! wow!
                 DoubleAnimation fadeOut = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-                this.StopImage(fadeOut, () => this.OnImageBatchEndReached());
+                DoubleAnimation fadeOutAudio = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
+
+                this.StopAudio(fadeOut, () => this.OnAudioBatchEndReached());
+                this.StopImage(fadeOutAudio, () => this.OnImageBatchEndReached());
                 //this.TransitionVideoFadeOut(() => this.OnImageBatchEndReached());
             }
             else

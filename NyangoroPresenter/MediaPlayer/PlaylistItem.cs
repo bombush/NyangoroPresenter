@@ -58,6 +58,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public virtual void Stop()
         {
+            this.UnbindProcessorEvents();
             this.processor.Stop();
         }
 
@@ -96,10 +97,18 @@ namespace Nyangoro.Plugins.MediaPlayer
                 this.processor.EndReached += this.processor_EndReached;
         }
 
+        protected void UnbindProcessorEvents()
+        {
+            if (this.processor != null)
+                this.processor.EndReached -= this.processor_EndReached;
+        }
+
         //bubble up the end reached event
         public void processor_EndReached(object sender, EventArgs e)
         {
-            this.EndReached(this, EventArgs.Empty);
+            this.UnbindProcessorEvents();
+            if(this.EndReached != null)
+                this.EndReached(this, EventArgs.Empty);
         }
 
         /* Postponed until after Natsu

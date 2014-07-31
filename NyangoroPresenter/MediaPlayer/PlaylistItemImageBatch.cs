@@ -8,11 +8,13 @@ namespace Nyangoro.Plugins.MediaPlayer
 {
     class PlaylistItemImageBatch : PlaylistItem
     {
+
         // tyhle listy prepsat jako tridu, ktera se o predavani, mazani a reset
         // bude starat sama (SelfRefreshingList)
         static List<Uri> GlobalImagesToPlay;
         static List<Uri> GlobalAudioToPlay;
         static string[] ImageTypes = { ".jpg", ".png", ".jpeg", ".gif", ".bmp"};
+        static string[] AudioTypes = { ".wma", ".mp3", ".flac", ".wav"};
 
         public List<Uri> activeImageBatch {get; protected set;}
         public List<Uri> activeAudioBatch { get; protected set; }
@@ -23,6 +25,9 @@ namespace Nyangoro.Plugins.MediaPlayer
         protected const int ImagesInBatch = 4;
         protected const int SongsInBatch = 1;
         public const int ImageDisplaySec = 4;
+
+        public const int TypeImage = 1;
+        public const int TypeAudio = 2;
 
         public PlaylistItemImageBatch(List<IMediaProcessor> processors, Nyangoro.Plugins.MediaPlayer.MediaPlayer pluginCore) : base(processors)
         {
@@ -110,7 +115,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         public void SetRandomBatchImages()
         {
             if (PlaylistItemImageBatch.GlobalImagesToPlay.Count == 0)
-                PlaylistItemImageBatch.AutoFillUriList(this.imageDir);
+                PlaylistItemImageBatch.AutoFillUriList(this.imageDir, PlaylistItemImageBatch.TypeImage);
 
             this.activeImageBatch = this.PopRandomBatchFromList(PlaylistItemImageBatch.ImagesInBatch, PlaylistItemImageBatch.GlobalImagesToPlay);
         }
@@ -118,21 +123,25 @@ namespace Nyangoro.Plugins.MediaPlayer
         public void SetRandomBatchAudio()
         {
             if (PlaylistItemImageBatch.GlobalAudioToPlay.Count == 0)
-                PlaylistItemImageBatch.AutoFillUriList(this.audioDir);
+                PlaylistItemImageBatch.AutoFillUriList(this.audioDir, PlaylistItemImageBatch.TypeAudio);
 
             this.activeAudioBatch = this.PopRandomBatchFromList(PlaylistItemImageBatch.SongsInBatch, PlaylistItemImageBatch.GlobalAudioToPlay);
         }
 
-        protected static void AutoFillUriList(string dir)
+        protected static void AutoFillUriList(string dir, int type)
         {
             string[] filePaths = Directory.GetFiles(dir);
             foreach (string path in filePaths)
             {
-                if (PlaylistItemImageBatch.ImageTypes.Contains(Path.GetExtension(path)))
+                if (type == PlaylistItemImageBatch.TypeImage && PlaylistItemImageBatch.ImageTypes.Contains(Path.GetExtension(path)))
                 {
                     PlaylistItemImageBatch.GlobalImagesToPlay.Add(new Uri(path));
+                } 
+                else if(type == PlaylistItemImageBatch.TypeAudio && PlaylistItemImageBatch.AudioTypes.Contains(Path.GetExtension(path))) 
+                {
+                    PlaylistItemImageBatch.GlobalAudioToPlay.Add(new Uri(path));
                 }
-            }
+           }
         }
 
         protected List<Uri> PopRandomBatchFromList(int count, List<Uri> list)
