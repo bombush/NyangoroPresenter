@@ -61,7 +61,7 @@
     <Compile Include="MediaPlayerController.cs" />
     <Compile Include="Playlist.cs" />
     <Compile Include="PlaylistItem.cs" />
-    <None Include="PlaylistItemFile.cs" />
+    <Compile Include="PlaylistItemFile.cs" />
     <Compile Include="PlaylistItemImageBatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PresentationRoot.xaml.cs">

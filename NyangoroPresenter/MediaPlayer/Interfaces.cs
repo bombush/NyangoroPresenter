@@ -16,13 +16,11 @@ namespace Nyangoro.Plugins.MediaPlayer
         //Get roots element to append to the plugin root
         FrameworkElement GetRootElement();
 
-        //neexistuje tady neco jako trida FileType??
         //Gets an array of types the implementing processor is capable of playing
         string[] GetPlayableFileTypes();
 
         PlaylistItem GetActiveItem();
         void SetActiveItem(PlaylistItem item);
-       // bool IsPlaying();
 
         //Start playback
         void Play();
@@ -31,6 +29,8 @@ namespace Nyangoro.Plugins.MediaPlayer
         //Pause Playback
         void Pause();
 
+        //TO BE IMPLEMENTED
+       // bool IsPlaying();
        // TimeSpan CalculateItemLength(PlaylistItem item);
     }
 }

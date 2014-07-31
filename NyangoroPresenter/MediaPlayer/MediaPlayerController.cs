@@ -89,8 +89,8 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             foreach(string s in filenames)
             {
-                //PlaylistItemFile item = new PlaylistItemFile(this.PluginCore.processors, s);
-                //this.PluginCore.Playlist.contents.Add(item);
+                PlaylistItemFile item = new PlaylistItemFile(this.PluginCore.processors, s);
+                this.PluginCore.Playlist.contents.Add(item);
             }
         }
 

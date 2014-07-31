@@ -10,7 +10,7 @@ namespace Nyangoro.Core.Layout
     {
         /* 
          * XAML attribute 
-         * Type of the plugin to be anchored
+         * Type of plugin to be anchored
          */
         public string PluginType { get; set; }
 

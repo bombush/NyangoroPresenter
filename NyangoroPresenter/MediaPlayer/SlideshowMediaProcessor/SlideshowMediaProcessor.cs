@@ -21,36 +21,37 @@ namespace Nyangoro.Plugins.MediaPlayer
         //conf const
         protected const int FadeInSeconds = 2;
 
-        //end reached flag
+        //flag constant
         protected const int FlagEndReached = 1;
 
+        //flags
         protected bool imageEndReached = false;
         protected bool audioEndReached = false;
+        bool paused = false;
 
+        //display root
         private Nyangoro.Plugins.MediaPlayer.SlideshowDisplayControl displayRoot;
+    
+        //media elements
         private Image imageDisplay;
+        //REFACTOR: this should be shared between Slideshow and Vlc Processors
+        LibVLC.NET.Presentation.MediaElement mediaPlayer;
+
+        //active media
+        Uri activeImage;
+        Uri activeAudio;
+        PlaylistItemImageBatch playlistItem;
+
 
         private string[] playableFileTypes = { MediaPlayer.CustomFileTypes.ImageBatch };
 
-        //this should be shared between Slideshow and Vlc Processors
-        LibVLC.NET.Presentation.MediaElement mediaPlayer;
-
-        PlaylistItemImageBatch playlistItem;
-
-        //private string imageDir;
-        //private string audioDir;
-
-        Uri activeImage;
-        Uri activeAudio;
-
-        //TimeSpan currentTimeTotal;
-        //TimeSpan currentTimeActiveImage;
-        //TimeSpan targetTimeActiveImage;
-
+        //timer for timing image events
         System.Timers.Timer imageTimer;
 
-        bool paused = false;
 
+        /// <summary>
+        /// CONSTRUCTOR
+        /// </summary>
         public SlideshowMediaProcessor()
         {
             this.displayRoot = new SlideshowDisplayControl();
@@ -59,6 +60,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.mediaPlayer = new LibVLC.NET.Presentation.MediaElement();
             this.mediaPlayer.EndReached += this.mediaPlayer_EndReached;
         }
+
+        #region IMediaProcessor implementations
 
         //Get roots element to append to the plugin root
         public FrameworkElement GetRootElement()
@@ -95,11 +98,18 @@ namespace Nyangoro.Plugins.MediaPlayer
 
             if (!this.paused)
             {
-                // this.PrepareMedia();
                 this.InitTimer();
 
+                //try playing an image. If no image found, fire EndReached and return
                 Uri image = this.playlistItem.PopNextActiveImage();
-                this.FadeInPlayImage(image);
+                if (image != null)
+                    this.FadeInPlayImage(image);
+                else
+                {
+                    this.Stop();
+                    this.EndReached(this, EventArgs.Empty);
+                    return;
+                }
 
                 Uri song = this.playlistItem.PopNextActiveSong();
                 if (song != null)
@@ -113,29 +123,72 @@ namespace Nyangoro.Plugins.MediaPlayer
             }            
         }
 
-        protected void FadeInImage()
+        //Stop playback and free any unneeded resources
+        public void Stop()
         {
-            DoubleAnimation animation = AnimationFactory.CreateFadeIn(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-            this.imageDisplay.BeginAnimation(FrameworkElement.OpacityProperty, animation);
+            this.StopImage();
+            this.StopAudio();
+            this.imageTimer.Dispose();
         }
 
-
-        /*
-        protected void ThreadedAudioFadeInLoop()
+        //
+        //@TODO implement pausing
+        public void Pause()
         {
-            for(;;)
-            {
-                if(this.mediaPlayer.Volume >= 1){
-                    this.mediaPlayer.Volume = 1;
-                    break;
-                }
+            this.mediaPlayer.Pause();
+        }
 
-                //WIP here
-                this.mediaPlayer.Dispatcher.BeginInvoke();
-                this.mediaPlayer.Volume += 0.1;
-                Thread.Sleep(100);
-            }
-        }*/
+        #endregion
+
+        #region init methods
+
+        protected void ReadyImage(Uri image)
+        {
+           // this.imageDisplay.Opacity = 0;
+            this.activeImage = image;
+            this.imageDisplay.Source = new BitmapImage(this.activeImage);
+        }
+
+        protected void ReadyAudio(Uri audio)
+        {
+            this.mediaPlayer.Source = audio;
+            this.mediaPlayer.Volume = 0;
+        }
+
+        protected void InitTimer()
+        {
+            this.imageTimer = new System.Timers.Timer(PlaylistItemImageBatch.ImageDisplaySec*1000);
+            this.imageTimer.AutoReset = false;
+            this.imageTimer.Elapsed += this.imageTimer_Elapsed;
+        }
+
+        #endregion
+
+        #region media play methods
+
+        protected void PlayImage(Uri image, AnimationTimeline animation)
+        {
+            this.imageEndReached = false;
+            this.ReadyImage(image);
+            this.imageTimer.Start();
+            this.imageDisplay.BeginAnimation(Image.OpacityProperty, animation);
+        }
+
+        protected void PlayAudio(Uri audio, AnimationTimeline animation)
+        {
+            this.audioEndReached = false;
+            this.ReadyAudio(audio);
+            this.mediaPlayer.Play();
+            this.mediaPlayer.BeginAnimation(LibVLC.NET.Presentation.MediaElement.VolumeProperty, animation);
+        }
+
+        protected void PlayAudio(Uri audio)
+        {
+            this.audioEndReached = false;
+            this.ReadyAudio(audio);
+            this.mediaPlayer.Volume = 1;
+            this.mediaPlayer.Play();
+        }
 
         //REFACTOR: pro kazdy obrazek nova instance timeru
         protected void FadeInPlayImage(Uri image)
@@ -150,23 +203,9 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.PlayAudio(audio, fadeIn);
         }
 
-        /*
-         * REFACTOR: obecna metoda PlayAnimated, do ktere se poslou jako parametry
-         * animace (nastup a odchod). Zkombinovat s PrepareAudio
-         * DUVOD: pamatovat si posloupnost PrepareAudio();FadeInPlayAudio(); je trochu oser
-         * jo, a naucit se UML
-         *//*
-        protected void FadeInPlayAudio()
-        {
-            this.mediaPlayer.Play();
-            this.FadeInAudio();
-        }*/
+        #endregion
 
-            /*
-        protected void StopAudio()
-        {
-            this.FadeOutStopAudio();
-        }*/
+        #region stop audio methods
 
         protected void StopAudio(AnimationTimeline stopAnimation, Action stopCallback)
         {
@@ -184,37 +223,21 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.CleanupStopAudio();
         }
 
-        /*
-        protected void FadeInAudio()
+        protected void CleanupStopAudio(Action callback)
         {
-            DoubleAnimation animationVolumeFadeIn = AnimationFactory.CreateFadeIn(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-            
-            this.mediaPlayer.BeginAnimation(LibVLC.NET.Presentation.MediaElement.VolumeProperty, animationVolumeFadeIn);
-        }*/
+            this.mediaPlayer.Stop();
+            this.activeAudio = null;
 
-        /*
-        protected void FadeOutStopAudio()
-        {
-            DoubleAnimation animationVolumeFadeOut = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-            animationVolumeFadeOut.Completed += this.animationVolumeFadeOut_Completed;
-
-            this.mediaPlayer.BeginAnimation(LibVLC.NET.Presentation.MediaElement.VolumeProperty, animationVolumeFadeOut);
-        }*/
-
-        /*
-        protected void FadeOutStopAudio(int flag)
-        {
-            if(flag == SlideshowMediaProcessor.FlagEndReached)
-            {
-                DoubleAnimation finalVolumeFadeOut = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-                finalVolumeFadeOut.Completed += this.finalVolumeFadeOut_Completed;
-
-                this.mediaPlayer.BeginAnimation(LibVLC.NET.Presentation.MediaElement.VolumeProperty, finalVolumeFadeOut);
-            } 
-            else
-                this.FadeOutStopAudio();
+            callback();
         }
-        */
+
+        protected void CleanupStopAudio()
+        {
+            this.mediaPlayer.Stop();
+            this.activeAudio = null;
+        }
+        #endregion
+
         #region stop image methods
 
         // stopCallback is called after image has been cleaned up completely 
@@ -251,110 +274,20 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.activeImage = null;
         }
 
-
-        protected void CleanupStopAudio(Action callback)
-        {
-            this.mediaPlayer.Stop();
-            this.activeAudio = null;
-
-            callback();
-        }
-
-        protected void CleanupStopAudio()
-        {
-            this.mediaPlayer.Stop();
-            this.activeAudio = null;
-        }
         #endregion
 
-        /*
-        protected void FadeOutImage()
-        {
-            DoubleAnimation animation = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-            this.imageDisplay.BeginAnimation(FrameworkElement.OpacityProperty, animation);
-        }*/
-
-        /*
-        protected void FadeOutStopImage()
-        {
-
-        }*/
-        /*
-        protected void PrepareMedia()
-        {
-            this.audioEndReached = false;
-            this.imageEndReached = false;
-            /*
-            Uri audio = this.playlistItem.PopNextActiveSong();
-            if (audio != null)
-            {
-                this.ReadyAudio(audio);
-            }
-            else
-            {
-                this.audioEndReached = true;
-            }
-
-            this.ReadyImage(this.playlistItem.PopNextActiveImage());*/
-        /*}*/
-
-        protected void ReadyImage(Uri image)
-        {
-           // this.imageDisplay.Opacity = 0;
-            this.activeImage = image;
-            this.imageDisplay.Source = new BitmapImage(this.activeImage);
-        }
-
-        protected void ReadyAudio(Uri audio)
-        {
-            this.mediaPlayer.Source = audio;
-            this.mediaPlayer.Volume = 0;
-        }
-
-        //Stop playback and free any unneeded resources
-        public void Stop()
-        {
-            this.StopImage();
-            this.StopAudio();
-            this.imageTimer.Dispose();
-        }
-
-        //
-        //@TODO implement pausing
-        public void Pause()
-        {
-            this.mediaPlayer.Pause();
-        }
-
-        protected void InitTimer()
-        {
-            this.imageTimer = new System.Timers.Timer(PlaylistItemImageBatch.ImageDisplaySec*1000);
-            this.imageTimer.AutoReset = false;
-            this.imageTimer.Elapsed += this.imageTimer_Elapsed;
-        }
-
-
-        #region events
-
-        //EVENTS
-        // better thread handling
-        protected void imageTimer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.ImageTimerElapsed(); }), new object[0]);
-        }
+        #region events invokers and handlers
 
         protected void ImageTimerElapsed()
         {
-            //using lambda cuz lambdas are so much fun - almost like jQuery
             if (!this.playlistItem.IsImageWaiting())
             {
-                // much lambda! such callback! wow!
-                DoubleAnimation fadeOut = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
+                DoubleAnimation fadeOutImage = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
                 DoubleAnimation fadeOutAudio = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
 
-                this.StopAudio(fadeOut, () => this.OnAudioBatchEndReached());
+                //stop media with animation and callback
+                this.StopAudio(fadeOutImage, () => this.OnAudioBatchEndReached());
                 this.StopImage(fadeOutAudio, () => this.OnImageBatchEndReached());
-                //this.TransitionVideoFadeOut(() => this.OnImageBatchEndReached());
             }
             else
             {
@@ -364,38 +297,6 @@ namespace Nyangoro.Plugins.MediaPlayer
                 DoubleAnimation fadeIn = AnimationFactory.CreateFadeIn(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
                 this.StopImage(fadeOut, () => this.PlayImage(nextImage, fadeIn));
             }
-        }
-
-        protected void PlayImage(Uri image, AnimationTimeline animation)
-        {
-            this.imageEndReached = false;
-            this.ReadyImage(image);
-            this.imageTimer.Start();
-            this.imageDisplay.BeginAnimation(Image.OpacityProperty, animation);
-        }
-
-        protected void PlayAudio(Uri audio, AnimationTimeline animation)
-        {
-            this.audioEndReached = false;
-            this.ReadyAudio(audio);
-            this.mediaPlayer.Play();
-            this.mediaPlayer.BeginAnimation(LibVLC.NET.Presentation.MediaElement.VolumeProperty, animation);
-        }
-
-        protected void PlayAudio(Uri audio)
-        {
-            this.audioEndReached = false;
-            this.ReadyAudio(audio);
-            this.mediaPlayer.Volume = 1;
-            this.mediaPlayer.Play();
-        }
-
-        protected void TransitionVideoFadeOut(Action callback)
-        {
-            DoubleAnimation animation = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-            //much jQuery.on()! wow! C# is so dynamic!
-            animation.Completed += new EventHandler((object sender, EventArgs e) => callback());
-            this.imageDisplay.BeginAnimation(FrameworkElement.OpacityProperty, animation);
         }
 
         protected void OnImageBatchEndReached()
@@ -416,29 +317,17 @@ namespace Nyangoro.Plugins.MediaPlayer
                 this.EndReached(this, new EventArgs());
         }
 
-        /*
-        protected void animationVolumeFadeOut_Completed(object sender, EventArgs e)
+
+        protected void imageTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            this.mediaPlayer.Stop();
+            this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.ImageTimerElapsed(); }), new object[0]);
         }
-        
-        protected void finalVolumeFadeOut_Completed(object sender, EventArgs e)
-        {
-            //fire EndReached event
-            //prepsat tak, aby se vyuzival synchronizing object na timeru a ne tenhle bordel s dispatcherem
-            this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.Stop(); }), new object[0]);
-            this.imageDisplay.Dispatcher.Invoke(new Action(delegate() { this.EndReached(this, null); }), new object[0]);
-        }*/
+
 
         protected void mediaPlayer_EndReached(object sender, RoutedEventArgs e)
         {
-            //using lambda cuz lambdas are so much fun - almost like jQuery
             if (!this.playlistItem.IsSongWaiting())
             {
-                // much lambda! such callback! wow!
-                //DoubleAnimation fadeOut = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
-               // this.StopImage(fadeOut, () => this.OnImageBatchEndReached());
-                //this.TransitionVideoFadeOut(() => this.OnImageBatchEndReached());
                 this.StopAudio(()=>this.OnAudioBatchEndReached());
             }
             else
@@ -446,13 +335,6 @@ namespace Nyangoro.Plugins.MediaPlayer
                 Uri nextSong = this.playlistItem.PopNextActiveSong();
                 this.StopAudio(() => this.PlayAudio(nextSong));
             }
-            /*
-            Uri nextSong = this.playlistItem.PopNextActiveSong(); 
-            if(nextSong != null)
-            {
-                this.ReadyAudio(nextSong);
-                this.FadeInPlayAudio();
-            }*/
         }
 
         #endregion

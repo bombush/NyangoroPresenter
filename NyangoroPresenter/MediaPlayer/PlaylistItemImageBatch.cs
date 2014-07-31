@@ -51,7 +51,6 @@ namespace Nyangoro.Plugins.MediaPlayer
                 if (processor.GetPlayableFileTypes().Contains(MediaPlayer.CustomFileTypes.ImageBatch))
                 {
                     this.processor = processor;
-                   // this.BindProcessorEvents();
                 }
             }
         }

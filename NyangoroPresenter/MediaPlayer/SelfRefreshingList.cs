@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+//unused unfinished class. To be scrapped later?
+/*
 namespace Nyangoro.Plugins.MediaPlayer
 {
     class SelfRefreshingList<T>
@@ -24,4 +26,4 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         }
     }
-}
+}*/
