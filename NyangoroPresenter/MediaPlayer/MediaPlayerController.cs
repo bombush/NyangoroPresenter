@@ -107,8 +107,8 @@ namespace Nyangoro.Plugins.MediaPlayer
         }
 
 
-        #region Playlist IO - very stupid
-        //REFACTOR: This should be moved to playlist ASAP
+        #region Playlist IO - very stupid SHOULD NOT BE IN THE CONTROLLER.
+        //REFACTOR: This should be moved to playlist ASAP. Just let playlist handle creating Items and stuff by itself (maybe)
 
         protected void SavePlaylist()
         {
