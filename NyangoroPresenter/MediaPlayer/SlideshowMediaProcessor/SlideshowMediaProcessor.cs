@@ -39,7 +39,6 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         //active media
         Uri activeImage;
-        Uri activeAudio;
         PlaylistItemImageBatch playlistItem;
 
 

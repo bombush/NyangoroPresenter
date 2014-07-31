@@ -20,6 +20,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         public IMediaProcessor processor {get; protected set;}
 
         /* Length handling postponed until after Natsu
+         * 
         protected TimeSpan length;
         public TimeSpan Length
         { 
