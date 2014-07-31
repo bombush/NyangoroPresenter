@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         //playback order types
         public const int PLAYBACK_LINEAR = 0;
         public const int PLAYBACK_RANDOM = 1;
+        public const string PLAYLIST_FILENAME = "playlist.nya";
 
         protected int playbackOrder = PLAYBACK_LINEAR;
         public int PlaybackOrder
@@ -215,14 +217,6 @@ namespace Nyangoro.Plugins.MediaPlayer
         }
 
         protected void HandleContentsChanged(Object sender,	NotifyCollectionChangedEventArgs e)
-        {
-        }
-
-        protected void SavePlaylist()
-        {
-        }
-
-        protected void LoadPlaylist()
         {
         }
     }

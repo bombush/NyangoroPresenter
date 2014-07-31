@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -104,5 +105,86 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.PresentationRoot.Content = mediaRoot;
         }
+
+
+        #region Playlist IO - very stupid
+        //REFACTOR: This should be moved to playlist ASAP
+
+        protected void SavePlaylist()
+        {
+            string playlistString = this.PlaylistToString();
+
+            //make this into a service, generally handling IO in a safe and corruption-prone way
+            this.WritePlaylistFile(playlistString);
+        }
+
+        protected string PlaylistToString()
+        {
+            string playlistString = "";
+            foreach (PlaylistItem item in this.PluginCore.Playlist.contents)
+            {
+                string path = item.path.AbsolutePath;
+                playlistString += path + System.Environment.NewLine;
+            }
+
+            return playlistString;
+        }
+
+        protected void PlaylistFromString(string playlistString)
+        {
+            StringReader sr = new StringReader(playlistString);
+
+            string path = "";
+            while ((path = sr.ReadLine()) != null)
+            {
+                if (!String.IsNullOrWhiteSpace(path))
+                {
+                    PlaylistItemFile item = new PlaylistItemFile(this.PluginCore.processors, path);
+                    //REFACTOR: why the hell do I need to contents.Add() instead of directly? Stupid and unintuitive
+                    this.PluginCore.Playlist.contents.Add(item);
+                }
+            }
+        }
+
+        protected void WritePlaylistFile(string playlistString)
+        {
+            try
+            {
+                string filepath = this.PluginCore.Dir + Playlist.PLAYLIST_FILENAME;
+                FileStream fs = new FileStream(filepath, FileMode.Create);
+                StreamWriter sw = new StreamWriter(fs);
+                sw.Write(playlistString);
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        protected void LoadPlaylist()
+        {
+            string playlistString = this.ReadPlaylistFile();
+            this.PlaylistFromString(playlistString);
+        }
+
+        protected string ReadPlaylistFile()
+        {
+            string fileString = "";
+            try
+            {
+                string filepath = this.PluginCore.Dir + Playlist.PLAYLIST_FILENAME;
+                FileStream fs = new FileStream(filepath, FileMode.Open);
+                StreamReader sr = new StreamReader(fs);
+
+                fileString = sr.ReadToEnd();
+            }
+            catch
+            {
+                return "";
+            }
+
+            return fileString;
+        }
+        #endregion
     }
 }
