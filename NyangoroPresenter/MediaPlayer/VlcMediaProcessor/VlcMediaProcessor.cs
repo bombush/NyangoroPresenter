@@ -25,6 +25,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.displayRoot = new Nyangoro.Plugins.MediaPlayer.VlcDisplayControl();
             Viewbox viewbox = (Viewbox)this.displayRoot.Content;
             this.mediaElement = (LibVLC.NET.Presentation.MediaElement)viewbox.Child;
+
+            this.mediaElement.EndReached +=new RoutedEventHandler(this.mediaElement_EndReached);
         }
 
         //Get roots element to append to the plugin root
@@ -72,6 +74,11 @@ namespace Nyangoro.Plugins.MediaPlayer
         public TimeSpan CalculateItemLength(PlaylistItem item)
         {
             return new TimeSpan();
+        }
+
+        protected void mediaElement_EndReached(object sender, RoutedEventArgs e)
+        {
+            this.EndReached(this, EventArgs.Empty);
         }
     }
 }

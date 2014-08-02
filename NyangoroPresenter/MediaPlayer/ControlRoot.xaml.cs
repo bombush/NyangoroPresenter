@@ -77,5 +77,10 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.Controller.HandleLoadPlaylistClick();
         }
+
+        private void ShufflePlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandleShufflePlaylistClick();
+        }
     }
 }

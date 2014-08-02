@@ -98,6 +98,12 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.LoadPlaylist();
         }
 
+        public void HandleShufflePlaylistClick()
+        {
+            Playlist.ShuffleList<PlaylistItem>(this.PluginCore.Playlist.contents);
+            //this.PluginCore.Playlist.Shuffle();
+        }
+
         private void AddPlaylistItems(string[] filenames)
         {
             foreach(string s in filenames)
@@ -107,6 +113,11 @@ namespace Nyangoro.Plugins.MediaPlayer
             }
 
             this.SavePlaylist();
+        }
+
+        private void RemoveSelectedFromPlaylist()
+        {
+            this.PluginCore.Playlist.RemoveSelected();
         }
 
         //REFACTOR: SavePlaylist called on many places, make ONE access method for Add and Remove. Prevent saving and loading a playlist at the same time
@@ -186,15 +197,19 @@ namespace Nyangoro.Plugins.MediaPlayer
             Dictionary<string, string> temp = null;
             do
             {
-                if(xml.Name == "Item" && xml.IsStartElement()){
+                if(xml.Name == "Item" && xml.IsStartElement())
+                {
+                   temp = new Dictionary<string, string>();
+                }
+
+                if (xml.Name == "Item" && !xml.IsStartElement())
+                {
                     if (temp != null)
                     {
                         PlaylistItem item = this.CreatePlaylistItemInstance(temp);
-                        if(item != null)
+                        if (item != null)
                             this.PluginCore.Playlist.contents.Add(item);
                     }
-
-                    temp = new Dictionary<string, string>();
                 }
 
                 if (xml.Name == "Type" && xml.IsStartElement())

@@ -165,6 +165,19 @@ namespace Nyangoro.Plugins.MediaPlayer
 
             this.PlaySelected();
         }
+
+        public void RemoveIndex(int index)
+        {
+            this.contents.RemoveAt(index);
+        }
+
+        //Removed the selected item from playlist but keeps playing
+        public void RemoveSelected()
+        {
+            int index = this.box.SelectedIndex;
+            if(index != -1)
+                this.RemoveIndex(index);
+        }
         #endregion
 
         //if playlist processing is not stopped, continue with the next item in the playlist
@@ -173,6 +186,23 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.activeItem.EndReached -= new EventHandler(activeItem_EndReached);
             if(!this.Stopped)
                 this.PlayNext();
+        }
+
+        public static void ShuffleList<T>(IList<T> list)
+        {
+            int n = list.Count;
+            Random random = new Random();
+
+            while (n > 1)
+            {
+                n--;
+
+                int index = random.Next(n+1);
+                T item = list[n];
+                T randomItem = list[index];
+                list[index] = item;
+                list[n] = randomItem;
+            }
         }
 
 

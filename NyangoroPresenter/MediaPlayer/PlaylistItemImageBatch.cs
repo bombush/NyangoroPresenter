@@ -116,6 +116,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             if (PlaylistItemImageBatch.GlobalImagesToPlay.Count == 0)
                 PlaylistItemImageBatch.AutoFillUriList(this.imageDir, PlaylistItemImageBatch.TypeImage);
 
+            Playlist.ShuffleList<Uri>(PlaylistItemImageBatch.GlobalImagesToPlay);
+
             this.activeImageBatch = this.PopRandomBatchFromList(PlaylistItemImageBatch.ImagesInBatch, PlaylistItemImageBatch.GlobalImagesToPlay);
         }
 
