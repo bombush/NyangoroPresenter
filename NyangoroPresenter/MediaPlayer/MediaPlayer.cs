@@ -45,7 +45,6 @@ namespace Nyangoro.Plugins.MediaPlayer
 
             this.LoadProcessors();
             this.Controller.BindPlaylistToControl();
-            this.Controller.BindPlaylistIO();
 
             return true;
         }

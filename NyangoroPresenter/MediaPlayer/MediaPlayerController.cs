@@ -52,11 +52,6 @@ namespace Nyangoro.Plugins.MediaPlayer
             playlistBox.ItemsSource = this.PluginCore.Playlist.contents;
         }
 
-        public void BindPlaylistIO()
-        {
-          //  this.PluginCore.Playlist.contents.CollectionChanged += new NotifyCollectionChangedEventHandler(this.Playlist_CollectionChanged);
-        }
-
         public ListBox GetPlaylistBox()
         {
             Grid controlContent = (Grid)this.ControlRoot.Content;
@@ -177,7 +172,6 @@ namespace Nyangoro.Plugins.MediaPlayer
                 xml.WriteEndElement();
                 xml.WriteEndDocument();
                 xml.Close();
-                //FileStream fs = new FileStream(filepath, FileMode.Create);
             }
             catch(Exception e)
             {
@@ -249,80 +243,5 @@ namespace Nyangoro.Plugins.MediaPlayer
             }
         }
         #endregion
-
-        /*
-        protected string PlaylistToString()
-        {
-            string playlistString = "";
-            foreach (PlaylistItem item in this.PluginCore.Playlist.contents)
-            {
-                string path = item.path.AbsolutePath;
-                playlistString += path + System.Environment.NewLine;
-            }
-
-            return playlistString;
-        }
-
-        protected void PlaylistFromString(string playlistString)
-        {
-            StringReader sr = new StringReader(playlistString);
-
-            string path = "";
-            while ((path = sr.ReadLine()) != null)
-            {
-                if (!String.IsNullOrWhiteSpace(path))
-                {
-                    PlaylistItemFile item = new PlaylistItemFile(this.PluginCore.processors, path);
-                    //REFACTOR: why the hell do I need to contents.Add() instead of directly? Stupid and unintuitive
-                    this.PluginCore.Playlist.contents.Add(item);
-                }
-            }
-        }
-
-        /*
-        protected void WritePlaylistFile(string playlistString)
-        {
-            try
-            {
-                string filepath = this.PluginCore.Dir + Playlist.PLAYLIST_FILENAME;
-                FileStream fs = new FileStream(filepath, FileMode.Create);
-                StreamWriter sw = new StreamWriter(fs);
-                sw.Write(playlistString);
-            }
-            catch
-            {
-                return;
-            }
-        }*/
-        /*
-        protected void LoadPlaylist()
-        {
-            string playlistString = this.ReadPlaylistFile();
-            this.PlaylistFromString(playlistString);
-        }
-
-        protected string ReadPlaylistFile()
-        {
-            string fileString = "";
-            try
-            {
-                string filepath = this.PluginCore.Dir + Playlist.PLAYLIST_FILENAME;
-                FileStream fs = new FileStream(filepath, FileMode.Open);
-                StreamReader sr = new StreamReader(fs);
-
-                fileString = sr.ReadToEnd();
-            }
-            catch
-            {
-                return "";
-            }
-
-            return fileString;
-        }
-    
-        protected void Playlist_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            this.SavePlaylist();
-        }*/
     }
 }
