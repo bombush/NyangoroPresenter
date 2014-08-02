@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 using Microsoft.Win32;
 using Nyangoro.Plugins;
 using Nyangoro.Interfaces;
@@ -50,6 +52,11 @@ namespace Nyangoro.Plugins.MediaPlayer
             playlistBox.ItemsSource = this.PluginCore.Playlist.contents;
         }
 
+        public void BindPlaylistIO()
+        {
+          //  this.PluginCore.Playlist.contents.CollectionChanged += new NotifyCollectionChangedEventHandler(this.Playlist_CollectionChanged);
+        }
+
         public ListBox GetPlaylistBox()
         {
             Grid controlContent = (Grid)this.ControlRoot.Content;
@@ -86,6 +93,11 @@ namespace Nyangoro.Plugins.MediaPlayer
             PluginCore.Playlist.Stop();
         }
 
+        public void HandleLoadPlaylistClick()
+        {
+            this.LoadPlaylist();
+        }
+
         private void AddPlaylistItems(string[] filenames)
         {
             foreach(string s in filenames)
@@ -93,12 +105,16 @@ namespace Nyangoro.Plugins.MediaPlayer
                 PlaylistItemFile item = new PlaylistItemFile(this.PluginCore.processors, s);
                 this.PluginCore.Playlist.contents.Add(item);
             }
+
+            this.SavePlaylist();
         }
 
+        //REFACTOR: SavePlaylist called on many places, make ONE access method for Add and Remove. Prevent saving and loading a playlist at the same time
         public void AddImageBatchClick()
         {
             PlaylistItemImageBatch item = new PlaylistItemImageBatch(this.PluginCore.processors, this.PluginCore);
             this.PluginCore.Playlist.contents.Add(item);
+            this.SavePlaylist();
         }
 
         public void DisplayMedia(FrameworkElement mediaRoot)
@@ -112,12 +128,115 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void SavePlaylist()
         {
-            string playlistString = this.PlaylistToString();
-
-            //make this into a service, generally handling IO in a safe and corruption-prone way
-            this.WritePlaylistFile(playlistString);
+            this.PlaylistExportXml();
         }
 
+        protected void LoadPlaylist()
+        {
+            this.PlaylistFromXml(this.PluginCore.Dir + Playlist.PLAYLIST_FILENAME);
+        }
+
+        //REFACTOR: make sure the XML is not corrupt!!!!
+        protected void PlaylistExportXml()
+        {
+            try
+            {
+                string filepath = this.PluginCore.Dir + Playlist.PLAYLIST_FILENAME;
+                XmlTextWriter xml = new XmlTextWriter(filepath, Encoding.UTF8);
+                xml.Formatting = Formatting.Indented;
+
+                xml.WriteStartDocument();
+                xml.WriteStartElement("Playlist");
+                foreach (PlaylistItem item in this.PluginCore.Playlist.contents)
+                {
+                    xml.WriteStartElement("Item");
+
+                    xml.WriteStartElement("Type");
+                    xml.WriteString(item.GetType().ToString());
+                    xml.WriteEndElement();
+
+                    xml.WriteStartElement("Uri");
+                    if(item.path != null)
+                        xml.WriteCData(item.path.ToString());
+                    else
+                        xml.WriteCData(String.Empty);
+                    xml.WriteEndElement();
+
+                    xml.WriteEndElement();
+                }
+                xml.WriteEndElement();
+                xml.WriteEndDocument();
+                xml.Close();
+                //FileStream fs = new FileStream(filepath, FileMode.Create);
+            }
+            catch(Exception e)
+            {
+                Exception ex = e;
+                return;
+            }
+        }
+
+        protected void PlaylistFromXml(string path)
+        {
+            this.PluginCore.Playlist.contents.Clear();
+
+            FileStream fs = new FileStream(path, FileMode.Open);
+            XmlTextReader xml = new XmlTextReader(fs);
+
+            Dictionary<string, string> temp = null;
+            do
+            {
+                if(xml.Name == "Item" && xml.IsStartElement()){
+                    if (temp != null)
+                    {
+                        PlaylistItem item = this.CreatePlaylistItemInstance(temp);
+                        if(item != null)
+                            this.PluginCore.Playlist.contents.Add(item);
+                    }
+
+                    temp = new Dictionary<string, string>();
+                }
+
+                if (xml.Name == "Type" && xml.IsStartElement())
+                {
+                    string itemType = xml.ReadInnerXml();
+                    temp["Type"] = itemType;
+                }
+
+                if (xml.Name == "Uri" && xml.IsStartElement())
+                {
+                    xml.Read();
+                    if (xml.NodeType == XmlNodeType.CDATA)
+                    {
+                        temp["Uri"] = xml.Value;
+                    }
+                    else
+                    {
+                        throw new Exception("Uri in invalid format");
+                    }
+                }
+            }
+            while (xml.Read());
+
+            xml.Close();
+        }
+
+        protected PlaylistItem CreatePlaylistItemInstance(Dictionary<string, string> info)
+        {
+            switch(info["Type"]){
+                case "Nyangoro.Plugins.MediaPlayer.PlaylistItemFile":
+                    return new PlaylistItemFile(this.PluginCore.processors, info["Uri"]);
+                    //break;
+                case "Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch":
+                    return new PlaylistItemImageBatch(this.PluginCore.processors, this.PluginCore);
+                    //break;
+                default:
+                    return null;
+            }
+        }
+        #endregion
+
+        /*
         protected string PlaylistToString()
         {
             string playlistString = "";
@@ -146,6 +265,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             }
         }
 
+        /*
         protected void WritePlaylistFile(string playlistString)
         {
             try
@@ -159,8 +279,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             {
                 return;
             }
-        }
-
+        }*/
+        /*
         protected void LoadPlaylist()
         {
             string playlistString = this.ReadPlaylistFile();
@@ -185,6 +305,10 @@ namespace Nyangoro.Plugins.MediaPlayer
 
             return fileString;
         }
-        #endregion
+    
+        protected void Playlist_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            this.SavePlaylist();
+        }*/
     }
 }

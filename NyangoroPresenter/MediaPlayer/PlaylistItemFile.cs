@@ -8,6 +8,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 {
     class PlaylistItemFile : PlaylistItem
     {
+        //vyresit kdyz ukazuju na neexuiswtujici soubor
         public PlaylistItemFile(List<IMediaProcessor> processors, string filepath) : base(processors)
         {
             this.path = new Uri(filepath);

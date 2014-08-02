@@ -32,7 +32,7 @@ namespace Nyangoro.Core.Host
 
         public static string GetPluginDir(string pluginName)
         {
-            string pluginDir = Config.conf["plugins_root"] + "\\" + pluginName + "\\";
+            string pluginDir = Config.conf["plugins_root"] + pluginName + "\\";
             return pluginDir;
         }
     }
