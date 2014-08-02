@@ -101,7 +101,6 @@ namespace Nyangoro.Plugins.MediaPlayer
         public void HandleShufflePlaylistClick()
         {
             Playlist.ShuffleList<PlaylistItem>(this.PluginCore.Playlist.contents);
-            //this.PluginCore.Playlist.Shuffle();
         }
 
         private void AddPlaylistItems(string[] filenames)
