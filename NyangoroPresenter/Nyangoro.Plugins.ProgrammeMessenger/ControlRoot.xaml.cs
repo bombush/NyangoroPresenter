@@ -19,9 +19,30 @@ namespace Nyangoro.Plugins.ProgrammeMessenger
     /// </summary>
     public partial class ControlRoot : Nyangoro.Plugins.PluginControlRoot
     {
+        new public ProgrammeMessengerController Controller
+        {
+            get { return (ProgrammeMessengerController)this.controller; }
+            private set { this.controller = value; }
+        }
+
         public ControlRoot()
         {
             InitializeComponent();
+        }
+
+        public void SetController(ProgrammeMessengerController controller)
+        {
+            this.Controller = controller;
+        }
+
+        private void ProgrammeMessengerToggleMessage_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandleProgrammerMessengerToggleMessageClick(sender, e);
+        }
+
+        private void ProgrammeMessengerUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandleProgrammeMessengerUpdateClick();
         }
     }
 }

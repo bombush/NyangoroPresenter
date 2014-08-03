@@ -115,9 +115,15 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
         {
             return this.eventsShowing.Count;
         }
-   
-        protected void ShowText()
+
+        public void Hide()
         {
+            this.RootControl.Opacity = 0;
+        }
+
+        public void Show()
+        {
+            this.RootControl.Opacity = 1;
         }
     }
 }

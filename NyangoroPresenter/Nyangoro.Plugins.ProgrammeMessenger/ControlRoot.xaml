@@ -7,7 +7,8 @@
                                  mc:Ignorable="d" 
                                  d:DesignHeight="256" d:DesignWidth="769">
     <Grid Width="761" Height="244">
-        <TextBox Margin="36,12,42,126"></TextBox>
-        <Button Content="Show message" Margin="74,167,520,38"></Button>
+        <TextBox Name="ProgrammeMessengerMessageTextBox" Margin="36,12,42,126"></TextBox>
+        <ToggleButton Content="Show message" Name="ProgrammeMessengerToggleMessage" Margin="76,145,518,60" Click="ProgrammeMessengerToggleMessage_Click"></ToggleButton>
+        <Button Content="Update" Name="ProgrammeMessengerUpdate" Margin="284,145,350,60" Click="ProgrammeMessengerUpdate_Click"></Button>
     </Grid>
 </nyangoroPlugin:PluginControlRoot>

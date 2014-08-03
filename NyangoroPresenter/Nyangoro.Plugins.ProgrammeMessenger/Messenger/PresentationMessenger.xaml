@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="Nyangoro.Plugins.ProgrammeMessenger.Messenger.PresentationMessenger"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <TextBlock Name="TextDisplay" Text="{Binding Message}" Margin="121,197,21,43" FontSize="40" />  
+    </Grid>
+</UserControl>

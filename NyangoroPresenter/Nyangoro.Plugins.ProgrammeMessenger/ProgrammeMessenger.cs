@@ -25,6 +25,8 @@ namespace Nyangoro.Plugins.ProgrammeMessenger
             this.presentationRoot = new PresentationRoot();
             this.controlRoot = new ControlRoot();
             this.Controller = new ProgrammeMessengerController(this, this.ControlRoot, (PresentationRoot)this.presentationRoot);
+
+            this.ControlRoot.SetController(this.Controller);
         }
 
         public override bool Init()

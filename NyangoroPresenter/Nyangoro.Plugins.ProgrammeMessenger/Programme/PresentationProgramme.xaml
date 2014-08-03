@@ -10,7 +10,7 @@
             <RowDefinition Height="54*" />
             <RowDefinition Height="246*" />
         </Grid.RowDefinitions>
-        <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,29,0,0" Name="titleBlock" Text="TextBlock" VerticalAlignment="Top" Width="202" Grid.Row="0" />
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,29,0,0" Name="titleBlock" Text="Dále v hlavním sále" VerticalAlignment="Top" Width="202" Grid.Row="0" />
         <Grid Grid.Row="1" Name="programmeGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="45*" />

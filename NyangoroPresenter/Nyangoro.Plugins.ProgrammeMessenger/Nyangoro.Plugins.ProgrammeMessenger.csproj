@@ -35,6 +35,8 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +48,10 @@
   <ItemGroup>
     <Compile Include="ControlRoot.xaml.cs">
       <DependentUpon>ControlRoot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Messenger\MessengerController.cs" />
+    <Compile Include="Messenger\PresentationMessenger.xaml.cs">
+      <DependentUpon>PresentationMessenger.xaml</DependentUpon>
     </Compile>
     <Compile Include="PresentationRoot.xaml.cs">
       <DependentUpon>PresentationRoot.xaml</DependentUpon>
@@ -73,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Messenger\PresentationMessenger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PresentationRoot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,6 +92,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
