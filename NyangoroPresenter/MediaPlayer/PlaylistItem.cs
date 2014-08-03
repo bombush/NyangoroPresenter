@@ -47,7 +47,10 @@ namespace Nyangoro.Plugins.MediaPlayer
         public virtual void Play()
         {
             if (this.processor == null)
+            {
+                this.EndReached(this, EventArgs.Empty);
                 return;
+            }
 
             if (this.processor.GetActiveItem() != this)
                 this.processor.SetActiveItem(this);
