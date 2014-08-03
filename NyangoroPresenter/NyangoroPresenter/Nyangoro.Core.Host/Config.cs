@@ -20,6 +20,7 @@ namespace Nyangoro.Core.Host
 
             Config.conf["working_dir"] = Directory.GetCurrentDirectory();
             Config.conf["plugins_root"] = Config.conf["working_dir"]+"\\plugins\\";
+            Config.conf["exception_log"] = Config.conf["working_dir"] + "\\exception.log";
         }
 
         public static string Get(string key)
