@@ -5,7 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vlc="clr-namespace:LibVLC.NET.Presentation;assembly=LibVLC.NET.Presentation"
              mc:Ignorable="d" d:DesignHeight="245" d:DesignWidth="438">
-    <Viewbox Width="446">
-        <vlc:MediaElement x:Name="MediaElement" Margin="10" />
-    </Viewbox>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="216*" />
+            <RowDefinition Height="29*" />
+        </Grid.RowDefinitions>
+        <Viewbox Name="VlcViewbox" Width="446" Margin="0,0,-8,0" Grid.Row="0">
+            <vlc:MediaElement x:Name="MediaElement" Margin="10" />
+        </Viewbox>
+        <TextBlock Name="VlcTextBlock" Grid.Row="1"></TextBlock>
+    </Grid>
 </UserControl>

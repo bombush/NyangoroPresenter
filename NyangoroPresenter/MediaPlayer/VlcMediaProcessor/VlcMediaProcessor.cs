@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -19,12 +20,15 @@ namespace Nyangoro.Plugins.MediaPlayer
         private Nyangoro.Plugins.MediaPlayer.VlcDisplayControl displayRoot;
         private LibVLC.NET.Presentation.MediaElement mediaElement;
         private PlaylistItem activeItem;
+        private TextBlock textDisplay;
 
         public VlcMediaProcessor()
         {
             this.displayRoot = new Nyangoro.Plugins.MediaPlayer.VlcDisplayControl();
-            Viewbox viewbox = (Viewbox)this.displayRoot.Content;
+            Viewbox viewbox = (Viewbox)this.displayRoot.FindName("VlcViewbox");
             this.mediaElement = (LibVLC.NET.Presentation.MediaElement)viewbox.Child;
+
+            this.textDisplay = (TextBlock)this.displayRoot.FindName("VlcTextBlock");
 
             this.mediaElement.EndReached +=new RoutedEventHandler(this.mediaElement_EndReached);
         }
@@ -58,11 +62,13 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public void Play()
         {
+            this.textDisplay.Text = Path.GetFileNameWithoutExtension(this.activeItem.path.LocalPath);
             this.mediaElement.Play();
         }
 
         public void Stop()
         {
+            this.textDisplay.Text = null;
             this.mediaElement.Stop();
         }
 
