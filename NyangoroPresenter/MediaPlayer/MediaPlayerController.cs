@@ -139,7 +139,14 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void LoadPlaylist()
         {
-            this.PlaylistFromXml(this.PluginCore.Dir + Playlist.PLAYLIST_FILENAME);
+            try
+            {
+                this.PlaylistFromXml(this.PluginCore.Dir + Playlist.PLAYLIST_FILENAME);
+            }
+            catch
+            {
+                return;
+            }
         }
 
         //REFACTOR: make sure the XML is not corrupt!!!!
@@ -185,8 +192,18 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.PluginCore.Playlist.contents.Clear();
 
-            FileStream fs = new FileStream(path, FileMode.Open);
-            XmlTextReader xml = new XmlTextReader(fs);
+            FileStream fs;
+            XmlTextReader xml;
+
+            try
+            {
+                fs = new FileStream(path, FileMode.Open);
+                xml = new XmlTextReader(fs);
+            }
+            catch
+            {
+                return;
+            }
 
             Dictionary<string, string> temp = null;
             do
