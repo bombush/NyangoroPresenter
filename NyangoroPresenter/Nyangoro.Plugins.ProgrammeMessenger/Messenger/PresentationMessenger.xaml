@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <TextBlock Name="TextDisplay" Text="{Binding Message}" Margin="121,197,21,43" FontSize="40" />  
+    <Grid Width="400">
+        <TextBlock Name="TextDisplay" Text="{Binding Message}" FontSize="40" TextWrapping="Wrap" />  
     </Grid>
 </UserControl>

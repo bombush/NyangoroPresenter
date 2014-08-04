@@ -5,10 +5,15 @@
                                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                  xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
                                  mc:Ignorable="d" 
-                                 d:DesignHeight="256" d:DesignWidth="769">
-    <Grid Width="761" Height="244">
-        <TextBox Name="ProgrammeMessengerMessageTextBox" Margin="36,12,42,126"></TextBox>
-        <ToggleButton Content="Show message" Name="ProgrammeMessengerToggleMessage" Margin="76,145,518,60" Click="ProgrammeMessengerToggleMessage_Click"></ToggleButton>
-        <Button Content="Update" Name="ProgrammeMessengerUpdate" Margin="284,145,350,60" Click="ProgrammeMessengerUpdate_Click"></Button>
+                                 d:DesignHeight="300" d:DesignWidth="769">
+    <Grid Width="761" Height="242" Background="BlanchedAlmond" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36*" />
+            <RowDefinition Height="206*" />
+        </Grid.RowDefinitions>
+        <TextBox Name="ProgrammeMessengerMessageTextBox" Margin="36,10,42,92" Grid.Row="1"></TextBox>
+        <ToggleButton Content="Show message" Name="ProgrammeMessengerToggleMessage" Margin="76,132,518,34" Click="ProgrammeMessengerToggleMessage_Click" Grid.Row="1"></ToggleButton>
+        <Button Content="Update" Name="ProgrammeMessengerUpdate" Margin="284,132,350,0" Click="ProgrammeMessengerUpdate_Click" Grid.Row="1" Height="40" VerticalAlignment="Top"></Button>
+        <Label Content="Programme display" Height="36" Margin="284,0,280,0" Name="label1" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Center"/>
     </Grid>
 </nyangoroPlugin:PluginControlRoot>

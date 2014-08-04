@@ -4,20 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
-             mc:Ignorable="d">
-    <Grid>
+             mc:Ignorable="d" d:DesignWidth="854" Background="AliceBlue">
+    <Grid Height="451" Width="790">
         <Grid Name="PlaylistGrid">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="65"></ColumnDefinition>
-                <ColumnDefinition Width="125" />
+                <ColumnDefinition Width="123"></ColumnDefinition>
+                <ColumnDefinition Width="641" />
+                <ColumnDefinition Width="227*" />
             </Grid.ColumnDefinitions>
-            <Button Content="Add" Width="60" Height="30" Click="AddToPlaylist_Click" Margin="6,106,124,86" Grid.ColumnSpan="2"></Button>
-            <Button Content="Play" Width="60" Height="30" Click="Play_Click" Margin="6,34,124,158" Grid.ColumnSpan="2"></Button>
-            <Button Content="Stop" Width="60" Height="30" Click="Stop_Click" Margin="6,70,124,122" Grid.ColumnSpan="2"></Button>
-            <Button Content="Load Playlist" Width="60" Height="30" Click="LoadPlaylist_Click" Margin="0,245,5,15"></Button>
-            <Button Content="Shuffle" Width="60" Height="30" Click="ShufflePlaylist_Click" Margin="5,209,0,51"></Button>
-            <Button Content="Add Image Batch" Width="60" Height="30" Click="AddImageBatch_Click" Margin="5,176,0,84"></Button>
-            <ListBox Grid.Column="1" Height="222" HorizontalAlignment="Left" Name="PlaylistBox" VerticalAlignment="Top" Width="120" SelectionChanged="PlaylistBox_SelectionChanged" MouseDoubleClick="PlaylistBox_MouseDoubleClick"/>
+            <Button Content="Add Video" Height="30" Click="AddToPlaylist_Click" Margin="0,166,0,255"></Button>
+            <Button Content="Play" Height="30" Click="Play_Click" Margin="24,28,17,393"></Button>
+            <Button Content="Stop" Height="30" Click="Stop_Click" Margin="24,64,17,357"></Button>
+            <Button Content="Load Playlist" Height="30" Click="LoadPlaylist_Click" Margin="0,261,0,160"></Button>
+            <Button Content="Shuffle" Height="30" Click="ShufflePlaylist_Click" Margin="0,297,0,124"></Button>
+            <Button Content="Add Image Batch" Height="30" Click="AddImageBatch_Click" Margin="0,202,0,219"></Button>
+            <ListBox Grid.Column="1" Height="400" HorizontalAlignment="Left" Name="PlaylistBox" VerticalAlignment="Top" Width="596" SelectionChanged="PlaylistBox_SelectionChanged" MouseDoubleClick="PlaylistBox_MouseDoubleClick" Margin="22,36,0,0" />
+            <Label Content="Playlist" Grid.Column="1" Height="38" HorizontalAlignment="Left" Margin="282,0,0,0" Name="label1" VerticalAlignment="Top" Width="78" FontSize="20"/>
         </Grid>
     </Grid>
 </nyangoroPlugin:PluginControlRoot>
