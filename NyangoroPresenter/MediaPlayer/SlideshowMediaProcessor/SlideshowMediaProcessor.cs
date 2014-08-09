@@ -286,8 +286,8 @@ namespace Nyangoro.Plugins.MediaPlayer
                 DoubleAnimation fadeOutAudio = AnimationFactory.CreateFadeOut(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
 
                 //stop media with animation and callback
-                this.StopAudio(fadeOutImage, () => this.OnAudioBatchEndReached());
-                this.StopImage(fadeOutAudio, () => this.OnImageBatchEndReached());
+                this.StopAudio(fadeOutAudio, () => this.OnAudioBatchEndReached());
+                this.StopImage(fadeOutImage, () => this.OnImageBatchEndReached());
             }
             else
             {
