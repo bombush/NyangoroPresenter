@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Controls;
@@ -21,6 +22,14 @@ namespace Nyangoro.Core.Layout
         {
             this.anchoredPlugin = plugin;
             this.Content = anchoredPlugin.GetPresentationRoot();
+            
+        #if DEBUG
+            if (this.Content == null)
+                Debug.Write(" FAIL! No PresentationRoot found" + Environment.NewLine);
+            else
+                Debug.Write(" OK. PresentationRoot found" + Environment.NewLine);
+        #endif
+
             anchoredPlugin.Display();
         }
 

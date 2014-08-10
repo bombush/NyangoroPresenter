@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -25,9 +26,13 @@ namespace Nyangoro.Core.Layout
         {
             foreach (PluginAnchor anchor in this.anchors)
             {
+                Debug.Write("Processing anchor with bound type: "+anchor.PluginType + Environment.NewLine);
+
                 Nyangoro.Interfaces.IPlugin plugin = plugins.GetByType(anchor.PluginType);
                 if (plugin != null)
                 {
+                    Debug.Write("Plugin " + anchor.PluginType + " found. Anchoring..." + Environment.NewLine);
+
                     anchor.AnchorPlugin(plugin);
                 }
             }
