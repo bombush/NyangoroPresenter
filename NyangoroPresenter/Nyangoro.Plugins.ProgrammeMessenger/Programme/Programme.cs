@@ -7,7 +7,12 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
 {
     class Programme
     {
+        //all events in programme
         List<ProgrammeEvent> allEvents;
+
+        // the active pool from which events are selected to display
+        // is refreshed/filtered when fetching a new batch to conform to
+        // whatever requirements are there for displaying programme
         List<ProgrammeEvent> activePool;
 
         public Programme()
