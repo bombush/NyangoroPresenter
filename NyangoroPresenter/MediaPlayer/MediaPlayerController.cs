@@ -300,5 +300,16 @@ namespace Nyangoro.Plugins.MediaPlayer
             Thread thr = new Thread(new ThreadStart(this.SavePlaylist));
             thr.Start();
         }
+
+        public void HandleClearPlaylistClick()
+        {
+            this.PluginCore.Playlist.contents.Clear();
+        }
+
+        public void HandleRemoveSelectedClick()
+        {
+            this.PluginCore.Playlist.RemoveSelected();
+            this.SavePlaylist();
+        }
     }
 }

@@ -82,5 +82,15 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.Controller.HandleShufflePlaylistClick();
         }
+
+        private void ClearPlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandleClearPlaylistClick();
+        }
+
+        private void RemoveSelected_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandleRemoveSelectedClick();
+        }
     }
 }

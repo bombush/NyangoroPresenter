@@ -8,18 +8,20 @@
     <Grid Height="451" Width="790">
         <Grid Name="PlaylistGrid">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="123"></ColumnDefinition>
-                <ColumnDefinition Width="641" />
+                <ColumnDefinition Width="131"></ColumnDefinition>
+                <ColumnDefinition Width="633" />
                 <ColumnDefinition Width="227*" />
             </Grid.ColumnDefinitions>
-            <Button Content="Add Video" Height="30" Click="AddToPlaylist_Click" Margin="0,166,0,255"></Button>
-            <Button Content="Play" Height="30" Click="Play_Click" Margin="24,28,17,393"></Button>
-            <Button Content="Stop" Height="30" Click="Stop_Click" Margin="24,64,17,357"></Button>
-            <Button Content="Load Playlist" Height="30" Click="LoadPlaylist_Click" Margin="0,261,0,160"></Button>
-            <Button Content="Shuffle" Height="30" Click="ShufflePlaylist_Click" Margin="0,297,0,124"></Button>
-            <Button Content="Add Image Batch" Height="30" Click="AddImageBatch_Click" Margin="0,202,0,219"></Button>
+            <Button Content="Add Video" Height="30" Click="AddToPlaylist_Click" Margin="8,175,633,246" Grid.ColumnSpan="2"></Button>
+            <Button Content="Play" Height="30" Click="Play_Click" Margin="23,35,18,386"></Button>
+            <Button Content="Stop" Height="30" Click="Stop_Click" Margin="23,71,18,350"></Button>
+            <Button Content="Load Playlist" Height="30" Click="LoadPlaylist_Click" Margin="8,306,633,115" Grid.ColumnSpan="2"></Button>
+            <Button Content="Shuffle" Height="30" Click="ShufflePlaylist_Click" Margin="8,377,633,44" Grid.ColumnSpan="2"></Button>
+            <Button Content="Add Image Batch" Height="30" Click="AddImageBatch_Click" Margin="8,211,633,210" Grid.ColumnSpan="2"></Button>
             <ListBox Grid.Column="1" Height="400" HorizontalAlignment="Left" Name="PlaylistBox" VerticalAlignment="Top" Width="596" SelectionChanged="PlaylistBox_SelectionChanged" MouseDoubleClick="PlaylistBox_MouseDoubleClick" Margin="22,36,0,0" />
             <Label Content="Playlist" Grid.Column="1" Height="38" HorizontalAlignment="Left" Margin="282,0,0,0" Name="label1" VerticalAlignment="Top" Width="78" FontSize="20"/>
+            <Button Content="Clear Playlist" Height="29" HorizontalAlignment="Left" Margin="8,342,0,0" Name="ClearPlaylist" VerticalAlignment="Top" Width="123" Click="ClearPlaylist_Click" Grid.ColumnSpan="2" />
+            <Button Content="Remove Selected" Height="30" HorizontalAlignment="Left" Margin="8,247,0,0" Name="button1" VerticalAlignment="Top" Width="123" Click="RemoveSelected_Click" Grid.ColumnSpan="2" />
         </Grid>
     </Grid>
 </nyangoroPlugin:PluginControlRoot>

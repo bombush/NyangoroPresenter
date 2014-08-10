@@ -57,7 +57,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                 {
                   random = rnd.Next(0, (this.events.Count - 1));
                 }
-                while(selectedNumbers.Contains(random));
+                while (selectedNumbers.Contains(random));
 
                 programmeEvents.Add(this.events.ElementAt(random));
             }
