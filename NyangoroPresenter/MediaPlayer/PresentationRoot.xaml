@@ -6,6 +6,7 @@
              xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Background="Blue">
-    <Grid Name="RootGrid">
-    </Grid>
+    <Viewbox>
+        
+    </Viewbox>
 </nyangoroPlugin:PluginPresentationRoot>

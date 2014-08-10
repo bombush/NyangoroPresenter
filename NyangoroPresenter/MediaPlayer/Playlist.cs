@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,8 @@ namespace Nyangoro.Plugins.MediaPlayer
      */
     public class Playlist
     {
+        public event EventHandler ItemActivated;
+
         #region fields and properties
 
         //playback order types
@@ -34,6 +37,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public ObservableCollection<PlaylistItem> contents { get; private set; }
         public PlaylistItem activeItem { get; private set; }
+        public int activeIndex { get; private set; }
 
         private ListBox box;
         private MediaPlayer pluginCore;
@@ -49,6 +53,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.box = box;
             this.contents = new ObservableCollection<PlaylistItem>();
             this.pluginCore = pluginCore;
+            this.activeIndex = -1;
 
             this.contents.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(this.HandleContentsChanged);
         }
@@ -83,12 +88,16 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.activeItem.Pause();
         }
 
-        protected void ActivateItem(PlaylistItem item)
+        protected void ActivateItem(PlaylistItem item, int index)
         {
             if (item == null)
                 throw new Exception("Playlist item to activate is null");
 
             this.activeItem = item;
+            this.activeIndex = index;
+
+            this.ItemActivated(this, EventArgs.Empty);
+
             this.PresentActive(this.pluginCore.Controller);
         }
         #endregion
@@ -112,7 +121,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             
             this.activeItem.EndReached -= new EventHandler(activeItem_EndReached);
             this.activeItem.Stop();
-            this.activeItem = null;
+            this.UnsetActive();
         }
 
         protected void ActivateSelected()
@@ -121,9 +130,11 @@ namespace Nyangoro.Plugins.MediaPlayer
             if (this.box.SelectedItem == null)
                 throw new Exception("No item selected to set active");
 
-            item = (PlaylistItem)this.box.SelectedItem;
+            //item = (PlaylistItem)this.box.SelectedItem;
+            int index = this.box.SelectedIndex;
+            item = (PlaylistItem)this.box.Items[index];
 
-            this.ActivateItem(item);
+            this.ActivateItem(item, index);
         }
 
         protected void AutoActivate()
@@ -237,9 +248,21 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.ResetBox();
         }
 
+        //nejak ujednotit zpusob pristupu ke clenum playlistu
+        public void SetActive(int index)
+        {
+            if(this.contents.Count > index){
+                this.activeIndex = index;
+                this.box.SelectedIndex = index;
+                this.ActivateSelected();
+                //this.activeItem = this.contents.ElementAt(index);
+            }
+        }
+
         protected void UnsetActive()
         {
             this.activeItem = null;
+            this.activeIndex = -1;
         }
 
         protected void ResetBox()

@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -44,12 +45,18 @@ namespace Nyangoro.Plugins.MediaPlayer
          */
         public MediaPlayerController(MediaPlayer core, ControlRoot controlRoot, PresentationRoot presentationRoot) : base(core, controlRoot, presentationRoot)
         {
+
         }
 
         public void BindPlaylistToControl()
         {
             ListBox playlistBox = this.GetPlaylistBox();
             playlistBox.ItemsSource = this.PluginCore.Playlist.contents;
+        }
+
+        public void BindPlaylistEvents()
+        {
+            this.PluginCore.Playlist.ItemActivated += new EventHandler(this.Playlist_ItemActivated);
         }
 
         public ListBox GetPlaylistBox()
@@ -125,7 +132,9 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public void DisplayMedia(FrameworkElement mediaRoot)
         {
-            this.PresentationRoot.Content = mediaRoot;
+            Viewbox viewbox  = (Viewbox)this.PresentationRoot.Content;
+            viewbox.Child = mediaRoot;
+           // viewbox.Content = mediaRoot;
         }
 
 
@@ -160,6 +169,11 @@ namespace Nyangoro.Plugins.MediaPlayer
 
                 xml.WriteStartDocument();
                 xml.WriteStartElement("Playlist");
+
+                xml.WriteStartElement("LastActive");
+                xml.WriteValue(this.PluginCore.Playlist.activeIndex);
+                xml.WriteEndElement();
+
                 foreach (PlaylistItem item in this.PluginCore.Playlist.contents)
                 {
                     xml.WriteStartElement("Item");
@@ -205,9 +219,25 @@ namespace Nyangoro.Plugins.MediaPlayer
                 return;
             }
 
+            // After all items are loaded to the playlist, an item at lastActiveIndex+1 will
+            // be set as active.
+            int lastActiveIndex = -1;
+
             Dictionary<string, string> temp = null;
             do
             {
+                if (xml.Name == "LastActive" && xml.IsStartElement())
+                {
+                    try
+                    {
+                        lastActiveIndex = Int32.Parse(xml.ReadInnerXml());
+                    }
+                    catch (FormatException e)
+                    {
+                        lastActiveIndex = -1;
+                    }
+                }
+
                 if(xml.Name == "Item" && xml.IsStartElement())
                 {
                    temp = new Dictionary<string, string>();
@@ -245,6 +275,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             while (xml.Read());
 
             xml.Close();
+
+            this.PluginCore.Playlist.SetActive(lastActiveIndex + 1);
         }
 
         protected PlaylistItem CreatePlaylistItemInstance(Dictionary<string, string> info)
@@ -261,5 +293,12 @@ namespace Nyangoro.Plugins.MediaPlayer
             }
         }
         #endregion
+
+        protected void Playlist_ItemActivated(object sender, EventArgs e)
+        {
+            //save playlist in a new thread
+            Thread thr = new Thread(new ThreadStart(this.SavePlaylist));
+            thr.Start();
+        }
     }
 }

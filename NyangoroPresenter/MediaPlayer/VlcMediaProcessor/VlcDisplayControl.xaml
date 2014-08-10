@@ -10,9 +10,7 @@
             <RowDefinition Height="700*" />
             <RowDefinition Height="100*" />
         </Grid.RowDefinitions>
-        <Viewbox Name="VlcViewbox" Grid.Row="0" HorizontalAlignment="Stretch" >
-            <vlc:MediaElement x:Name="MediaElement" />
-        </Viewbox>
+            <vlc:MediaElement Grid.Row="0" x:Name="MediaElement" />
         <TextBlock Name="VlcTextBlock" Grid.Row="1" FontSize="72" HorizontalAlignment="Center"></TextBlock>
     </Grid>
 </UserControl>

@@ -25,8 +25,9 @@ namespace Nyangoro.Plugins.MediaPlayer
         public VlcMediaProcessor()
         {
             this.displayRoot = new Nyangoro.Plugins.MediaPlayer.VlcDisplayControl();
-            Viewbox viewbox = (Viewbox)this.displayRoot.FindName("VlcViewbox");
-            this.mediaElement = (LibVLC.NET.Presentation.MediaElement)viewbox.Child;
+           // Viewbox viewbox = (Viewbox)this.displayRoot.FindName("VlcViewbox");
+           // this.mediaElement = (LibVLC.NET.Presentation.MediaElement)viewbox.Child;
+            this.mediaElement = (LibVLC.NET.Presentation.MediaElement)this.displayRoot.FindName("MediaElement");
 
             this.textDisplay = (TextBlock)this.displayRoot.FindName("VlcTextBlock");
 
