@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media.Animation;
 
 namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
@@ -11,8 +12,18 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
     //@TODO: some animation helper to concentrate all animation-related stuff on one place.
     //       Possibly make an application-wide service?
 
+    static class Ext
+    {
+         public static string Truncate(this string value, int maxChars)
+        {
+            return value.Length <= maxChars ? value : value.Substring(0, maxChars) + " ..";
+        }
+    }
+
     class ProgrammeController
     {
+        const int EventTitleLength = 10;
+
         Programme programme;
         List<ProgrammeEvent> eventsShowing;
         List<TextBlock> programmeBlocks;
@@ -73,11 +84,48 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             {
                 TextBlock txtBlock = this.programmeBlocks.ElementAt(i);
                 ProgrammeEvent prgEvent = this.eventsShowing.ElementAt(i);
-                txtBlock.Text = prgEvent.GetText();
+
+                txtBlock.Inlines.Clear();
+
+                List<Run> runs = this.MakeEventTextRuns(prgEvent);
+
+                foreach (Run run in runs)
+                {
+                    txtBlock.Inlines.Add(run);
+                }
+                
+                //txtBlock.Text = prgEvent.GetText();
             }
 
             this.AnimateEvents();
         }
+
+        protected List<Run> MakeEventTextRuns(ProgrammeEvent prgEvent)
+        {
+            List<Run> runs = new List<Run>();
+
+            //time
+            Run timeRun = new Run(prgEvent.start.ToString("HH:mm"));
+            timeRun.FontWeight = FontWeights.Bold;
+            runs.Add(timeRun);
+
+            //location
+            Run locRun = new Run(prgEvent.location);
+            runs.Add(locRun);
+
+            //title
+            Run titleRun = new Run(prgEvent.title.Truncate(ProgrammeController.EventTitleLength));
+            titleRun.FontWeight = FontWeights.Bold;
+            runs.Add(titleRun);
+
+            //author
+            Run authorRun = new Run("("+prgEvent.author+")");
+            runs.Add(authorRun);
+
+            return runs;
+        }
+
+ 
 
         protected List<ProgrammeEvent> GetNextToShow()
         {

@@ -21,7 +21,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
         {
             System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("cs-CZ");
            // return culture.DateTimeFormat.GetDayName(this.start.DayOfWeek) + "  " + this.start.ToString("HH:mm");
-            return this.start.ToString("HH:mm") + "   " + this.location + "     " + this.title;
+            return "<Bold>" + this.start.ToString("HH:mm") + "</Bold>     " + this.location + "      <Bold>" + this.title + "</Bold>    (" + this.author+")";
         }
     }
 }

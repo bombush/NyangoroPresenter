@@ -45,8 +45,8 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             foreach (ProgrammeEvent evt in this.allEvents)
             {
                 #if DEBUG
-                //tady by to chtelo sjednotit filtry
-                if(evt.start.Hour >= DateTime.Now.Hour)
+                //tady by to chtelo sjednotit filtry, aby to vsechno prochazelo jednotnym filterm s jednotnymi podminkami
+                //if(evt.start.Hour >= DateTime.Now.Hour)
                     this.activePool.Add(evt);
                 #else
                 if (evt.start.Day == DateTime.Now.Day)
@@ -101,6 +101,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
         }
 
         //filter out events that are not applicable for displaying
+        // implement using a new Thread (jus'for fun)
         protected void CleanActivePool()
         {
             List<ProgrammeEvent> temp = new List<ProgrammeEvent>();
@@ -119,8 +120,8 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
         protected bool IsEventApplicableForDisplay(ProgrammeEvent evt)
         {
             #if DEBUG
-            if (evt.start.Hour < DateTime.Now.Hour)
-                return false;
+            /*if (evt.start.Hour < DateTime.Now.Hour)
+                return false;*/
                 return true;
             #else
                 if (evt.start < DateTime.Now)
