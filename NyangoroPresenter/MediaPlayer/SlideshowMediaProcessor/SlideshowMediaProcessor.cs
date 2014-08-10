@@ -170,7 +170,18 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.imageEndReached = false;
             this.ReadyImage(image);
-            this.imageTimer.Start();
+
+            // If the timer has already been disposed for example as part of the Stop
+            // routine, do nothing and return
+            try
+            {
+                this.imageTimer.Start();
+            }
+            catch (ObjectDisposedException e)
+            {
+                return;
+            }
+
             this.imageDisplay.BeginAnimation(Image.OpacityProperty, animation);
         }
 
@@ -296,6 +307,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
                 DoubleAnimation fadeIn = AnimationFactory.CreateFadeIn(TimeSpan.FromSeconds(SlideshowMediaProcessor.FadeInSeconds));
                 this.StopImage(fadeOut, () => this.PlayImage(nextImage, fadeIn));
+
             }
         }
 
