@@ -82,6 +82,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
         protected List<ProgrammeEvent> GetNextToShow()
         {
             List<ProgrammeEvent> events = this.programme.GetNextBatchRandom(this.programmeBlocks.Count);
+            this.SortEventsByStart(ref events);
             return events;
         }
 
@@ -124,6 +125,11 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
         public void Show()
         {
             this.RootControl.Opacity = 1;
+        }
+
+        protected void SortEventsByStart(ref List<ProgrammeEvent> events)
+        {
+            events = events.OrderBy(i => i.start).ToList();
         }
     }
 }

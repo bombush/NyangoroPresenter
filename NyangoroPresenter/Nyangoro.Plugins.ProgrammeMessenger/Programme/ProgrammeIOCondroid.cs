@@ -56,6 +56,16 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                 {
                     temp.location = reader.ReadInnerXml();
                 }
+
+                if (reader.Name == "author" && reader.NodeType == XmlNodeType.Element)
+                {
+                    //move to CDATA section
+                    reader.Read();
+                    if (reader.NodeType == XmlNodeType.CDATA)
+                        temp.author = reader.Value;
+                    else
+                        throw new Exception("Invalid Condroid author node content");
+                }
             }
 
             programmeEvents.Add(temp);
