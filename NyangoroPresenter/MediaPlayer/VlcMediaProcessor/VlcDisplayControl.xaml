@@ -6,11 +6,7 @@
              xmlns:vlc="clr-namespace:LibVLC.NET.Presentation;assembly=LibVLC.NET.Presentation"
              mc:Ignorable="d" d:DesignHeight="245" d:DesignWidth="438">
     <Grid Background="Green" VerticalAlignment="Stretch">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="700*" />
-            <RowDefinition Height="100*" />
-        </Grid.RowDefinitions>
-            <vlc:MediaElement Grid.Row="0" x:Name="MediaElement" />
-        <TextBlock Name="VlcTextBlock" Grid.Row="1" FontSize="72" HorizontalAlignment="Center"></TextBlock>
+        <vlc:MediaElement x:Name="MediaElement"/>
+        <TextBlock Name="VlcTextBlock" FontSize="40" Background="Blue" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"></TextBlock>
     </Grid>
 </UserControl>

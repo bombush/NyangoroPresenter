@@ -7,14 +7,22 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
 {
     class Programme
     {
-        List<ProgrammeEvent> events;
+        List<ProgrammeEvent> allEvents;
+        List<ProgrammeEvent> activePool;
 
         public Programme()
         {
-            this.events = new List<ProgrammeEvent>();
+            this.allEvents = new List<ProgrammeEvent>();
+            this.activePool = new List<ProgrammeEvent>();
         }
 
-        public void LoadFromXml()
+        public void Load()
+        {
+            this.LoadFromXml();
+            this.InitActivePool();
+        }
+
+        protected void LoadFromXml()
         {
             if(!this.TryLoadFromNyangoroXml())
                 this.TryLoadFromCondroidXml();
@@ -25,12 +33,29 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             return false;
         }
 
+        //Adds all today's events to the active pool
+        // Or later we can use some arbitrary filters using lambda expressions.. sweet
+        protected void InitActivePool()
+        {
+            foreach (ProgrammeEvent evt in this.allEvents)
+            {
+                #if DEBUG
+                //tady by to chtelo sjednotit filtry
+                if(evt.start.Hour >= DateTime.Now.Hour)
+                    this.activePool.Add(evt);
+                #else
+                if (evt.start.Day == DateTime.Now.Day)
+                    this.activePool.Add(evt);
+                #endif
+            }
+        }
+
         protected bool TryLoadFromCondroidXml()
         {
             ProgrammeIOCondroid condroidIO = new ProgrammeIOCondroid();
             try
             {
-                this.events = condroidIO.GetMainStageUpcomingEvents();
+                this.allEvents = condroidIO.GetMainStageUpcomingEvents();
             }
             catch
             {
@@ -45,9 +70,14 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             List<ProgrammeEvent> programmeEvents = new List<ProgrammeEvent>();
             Random rnd = new Random();
             int[] selectedNumbers = new int[number];
+            //init array. 0 is a valid index in a List
+            for (int i = 0; i < selectedNumbers.Length; i++)
+                selectedNumbers[i] = -1;
 
-            if (this.events.Count <= number)
-                return this.events;
+            this.CleanActivePool();
+
+            if (this.activePool.Count <= number)
+                return this.activePool;
 
             for (int i = 0; i < number; i++)
             {
@@ -55,14 +85,47 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
 
                 do
                 {
-                  random = rnd.Next(0, (this.events.Count - 1));
+                  random = rnd.Next(0, (this.activePool.Count - 1));
                 }
                 while (selectedNumbers.Contains(random));
 
-                programmeEvents.Add(this.events.ElementAt(random));
+                programmeEvents.Add(this.activePool.ElementAt(random));
             }
 
             return programmeEvents;
+        }
+
+        //filter out events that are not applicable for displaying
+        protected void CleanActivePool()
+        {
+            List<ProgrammeEvent> temp = new List<ProgrammeEvent>();
+
+            foreach (ProgrammeEvent evt in this.activePool)
+            {                
+                if (this.IsEventApplicableForDisplay(evt))
+                {
+                    temp.Add(evt);
+                }
+            }
+
+            this.activePool = temp;
+        }
+
+        protected bool IsEventApplicableForDisplay(ProgrammeEvent evt)
+        {
+            #if DEBUG
+            if (evt.start.Hour < DateTime.Now.Hour)
+                return false;
+                return true;
+            #else
+                if (evt.start < DateTime.Now)
+                    return false;
+
+                if (evt.start.Day != DateTime.Now.Day)
+                    return false;
+
+                return true;
+            #endif
         }
     }
 }

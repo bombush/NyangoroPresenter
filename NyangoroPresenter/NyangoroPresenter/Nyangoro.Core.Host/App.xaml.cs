@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Forms;
 using System.ComponentModel.Composition;
+using System.Windows.Controls.Primitives;
 
 namespace Nyangoro.Core.Host
 {
     /// <summary>
     /// The main application which holds all the basic components
     /// </summary>
-    public partial class App : Application
+    public partial class App : System.Windows.Application
     {
         //Managers
         public Nyangoro.Core.Host.LayoutManager layoutManager { get; private set; }
@@ -20,7 +23,7 @@ namespace Nyangoro.Core.Host
         public Nyangoro.Core.Host.ServiceManager serviceManager { get; private set; }
 
         //Windows
-        public Window controlWindow { get; private set; }
+        public ControlWindow controlWindow { get; private set; }
         public Window presentationWindow { get; private set; }
 
         public Nyangoro.Core.Host.ServiceHolder services { get; private set; }
@@ -59,9 +62,12 @@ namespace Nyangoro.Core.Host
          */
         public void InitWindows()
         {
-            Window winControl = new Nyangoro.Core.Host.ControlWindow();
-            this.controlWindow = winControl;
-            winControl.Show();
+            this.controlWindow = new Nyangoro.Core.Host.ControlWindow();
+            this.controlWindow.PresentationModeToggle += new ControlWindow.PresentationModeToggleEventHandler(this.controlWindow_PresentationModeToggle);
+            //when closing take presentation window with you
+            this.controlWindow.Closing += (sender, e) => this.presentationWindow.Close();
+
+            controlWindow.Show();
 
             Window winPres = new Nyangoro.Core.Host.PresentationWindow();
             this.presentationWindow = winPres;
@@ -93,15 +99,66 @@ namespace Nyangoro.Core.Host
             }
             catch
             {
-                MessageBox.Show("Failed to log exception, press CTRL+C to copy: " + Environment.NewLine + msgText);
+                System.Windows.MessageBox.Show("Failed to log exception, press CTRL+C to copy: " + Environment.NewLine + msgText);
                 Environment.Exit(Environment.ExitCode);
             }
 
             string boxText = "PRESS CTRL+C TO COPY (or look into the '" + Config.Get("exception_log") + "' file):" + Environment.NewLine + Environment.NewLine;
             boxText += msgText;
-            MessageBox.Show(boxText);
+            System.Windows.MessageBox.Show(boxText);
 
             Environment.Exit(Environment.ExitCode);
         }
+
+
+        #region big event handlers... REFACTORRRR
+        private void controlWindow_PresentationModeToggle(object sender, ControlWindow.PresentationModeToggleEventArgs e)
+        {
+            if (!Screen.AllScreens.Any(sc => !sc.Primary))
+            {
+                System.Windows.MessageBox.Show("No secondary monitor selected cannot toggle presentation mode");
+                e.toggle.IsChecked = false;
+            }
+
+            if ((bool)e.toggle.IsChecked == true)
+                this.StartPresentationMode();
+            else
+                this.StopPresentationMode();
+        }
+
+        private void StartPresentationMode()
+        {
+            this.FillSecondaryMonitor(this.presentationWindow);
+        }
+
+        private void StopPresentationMode()
+        {
+            this.ToPrimaryMonitor(this.presentationWindow);
+        }
+
+        private void FillSecondaryMonitor(Window window)
+        {
+            if (Screen.AllScreens.Any(sc => !sc.Primary))
+            {
+                Screen screen = Screen.AllScreens.First(sc => !sc.Primary);
+                window.Left = screen.WorkingArea.Left;
+                window.Top = screen.WorkingArea.Top;
+                window.Width = screen.WorkingArea.Width;
+                window.Height = screen.WorkingArea.Height;
+            }
+        }
+
+        private void ToPrimaryMonitor(Window window)
+        {
+            if (Screen.AllScreens.Any(sc => sc.Primary))
+            {
+                Screen screen = Screen.AllScreens.First(sc => sc.Primary);
+                window.Left = screen.WorkingArea.Left;
+                window.Top = screen.WorkingArea.Top;
+            }
+        }
+
+        #endregion
+
     }
 }

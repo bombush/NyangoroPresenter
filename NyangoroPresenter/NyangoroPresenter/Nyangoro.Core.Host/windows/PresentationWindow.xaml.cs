@@ -19,8 +19,18 @@ namespace Nyangoro.Core.Host
     public partial class PresentationWindow : Window
     {
         public PresentationWindow()
-        {
+        {                      
             InitializeComponent();
+
+            #if DEBUG
+                this.AllowsTransparency = false;
+                this.WindowStyle=WindowStyle.SingleBorderWindow;
+            #endif
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

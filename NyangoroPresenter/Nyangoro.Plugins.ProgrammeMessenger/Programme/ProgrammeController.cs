@@ -39,7 +39,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
 
         public void Init()
         {
-            this.programme.LoadFromXml();
+            this.programme.Load();
 
             Grid programmeGrid = (Grid)this.RootControl.FindName("programmeGrid");
             this.programmeGrid = programmeGrid;
