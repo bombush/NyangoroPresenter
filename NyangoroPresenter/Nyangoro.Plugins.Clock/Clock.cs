@@ -70,6 +70,9 @@ namespace Nyangoro.Plugins.Clock
         protected DoubleAnimationUsingKeyFrames CreateColonAnimation()
         {
             DoubleAnimationUsingKeyFrames animation = new DoubleAnimationUsingKeyFrames();
+            animation.RepeatBehavior = RepeatBehavior.Forever;
+            animation.AutoReverse = true;
+
 
             List<LinearDoubleKeyFrame> keyFrames = new List<LinearDoubleKeyFrame>();
 
@@ -82,9 +85,6 @@ namespace Nyangoro.Plugins.Clock
             {
                 animation.KeyFrames.Add(keyFrame);
             }
-
-            animation.RepeatBehavior = RepeatBehavior.Forever;
-            animation.AutoReverse = true;
 
             return animation;
         }
