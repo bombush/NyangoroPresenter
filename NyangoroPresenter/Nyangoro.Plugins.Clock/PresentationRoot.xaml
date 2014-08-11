@@ -6,5 +6,5 @@
              xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <TextBlock FontSize="64">I'm alive</TextBlock>
+    <StackPanel Orientation="Horizontal"></StackPanel>
 </nyangoroPlugin:PluginPresentationRoot>

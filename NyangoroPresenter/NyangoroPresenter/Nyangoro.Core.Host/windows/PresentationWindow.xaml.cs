@@ -30,7 +30,9 @@ namespace Nyangoro.Core.Host
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            //if both buttons are pressed at once, DragMove throws exception
+            if(Mouse.LeftButton == MouseButtonState.Pressed && Mouse.RightButton == MouseButtonState.Released)
+                this.DragMove();
         }
     }
 }
