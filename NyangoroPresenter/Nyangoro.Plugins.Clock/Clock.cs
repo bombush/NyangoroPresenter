@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -65,6 +66,11 @@ namespace Nyangoro.Plugins.Clock
             //create and run clock colon animation
             DoubleAnimationUsingKeyFrames animation = this.CreateColonAnimation();
             colon.BeginAnimation(TextBlock.OpacityProperty, animation);
+
+
+            Timer secondTimer = new Timer(1000);
+            secondTimer.Elapsed += (sender, e) => this.RefreshClock(hour, minute);
+            secondTimer.Start();
         }
 
         protected DoubleAnimationUsingKeyFrames CreateColonAnimation()
@@ -87,6 +93,17 @@ namespace Nyangoro.Plugins.Clock
             }
 
             return animation;
+        }
+
+        protected void RefreshClock(TextBlock hour, TextBlock minute)
+        {
+            if (DateTime.Now.Minute != this.lastUpdate.Minute)
+                minute.Dispatcher.BeginInvoke((Action)delegate() { minute.Text = DateTime.Now.ToString("mm"); }, new object[0]);
+
+            if (DateTime.Now.Hour != this.lastUpdate.Hour)
+                minute.Dispatcher.BeginInvoke((Action)delegate() { hour.Text = DateTime.Now.ToString("HH"); }, new object[0]);
+
+            this.lastUpdate = DateTime.Now;
         }
     }
 }

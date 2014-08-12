@@ -7,6 +7,14 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
 {
     class Programme
     {
+        public struct FilterMode
+        {
+            public const int All = 0;
+            public const int UpcomingToday = 1;
+        }
+
+        int filterMode = Programme.FilterMode.All;
+
         //all events in programme
         List<ProgrammeEvent> allEvents;
 
@@ -49,8 +57,13 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                 //if(evt.start.Hour >= DateTime.Now.Hour)
                     this.activePool.Add(evt);
                 #else
-                if (evt.start.Day == DateTime.Now.Day)
-                    this.activePool.Add(evt);
+                if(this.filterMode == Programme.FilterMode.UpcomingToday){
+                    if (evt.start.Day != DateTime.Now.Day || evt.start.Hour < DateTime.Now.Hour)
+                        continue;
+                }
+                
+                this.activePool.Add(evt);
+
                 #endif
             }
         }
@@ -124,11 +137,13 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                 return false;*/
                 return true;
             #else
-                if (evt.start < DateTime.Now)
-                    return false;
+                if(this.filterMode == Programme.FilterMode.UpcomingToday){
+                    if (evt.start < DateTime.Now)
+                        return false;
 
-                if (evt.start.Day != DateTime.Now.Day)
-                    return false;
+                    if (evt.start.Day != DateTime.Now.Day)
+                        return false;
+                }
 
                 return true;
             #endif

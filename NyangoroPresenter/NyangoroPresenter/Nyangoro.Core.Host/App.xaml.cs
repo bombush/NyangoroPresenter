@@ -116,8 +116,9 @@ namespace Nyangoro.Core.Host
         {
             if (!Screen.AllScreens.Any(sc => !sc.Primary))
             {
-                System.Windows.MessageBox.Show("No secondary monitor selected cannot toggle presentation mode");
+                System.Windows.MessageBox.Show("No secondary monitor connected: cannot toggle presentation mode");
                 e.toggle.IsChecked = false;
+                return;
             }
 
             if ((bool)e.toggle.IsChecked == true)
