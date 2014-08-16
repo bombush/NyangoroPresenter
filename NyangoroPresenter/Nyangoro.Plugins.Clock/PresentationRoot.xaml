@@ -6,5 +6,14 @@
              xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel Orientation="Horizontal"></StackPanel>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+    </StackPanel>
+    <nyangoroPlugin:PluginPresentationRoot.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="48" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+        </Style>
+    </nyangoroPlugin:PluginPresentationRoot.Resources>
 </nyangoroPlugin:PluginPresentationRoot>

@@ -132,7 +132,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public void DisplayMedia(FrameworkElement mediaRoot)
         {
-            Viewbox viewbox  = (Viewbox)this.PresentationRoot.Content;
+            Viewbox viewbox  = (Viewbox)(((Border)this.PresentationRoot.Content).Child);
             viewbox.Child = mediaRoot;
            // viewbox.Content = mediaRoot;
         }

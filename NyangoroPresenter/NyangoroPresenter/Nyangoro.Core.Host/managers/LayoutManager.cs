@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Nyangoro.Core.Host
 {
@@ -89,6 +90,23 @@ namespace Nyangoro.Core.Host
         {
             Viewbox presentationContentRoot = (Viewbox)presentationWindow.Content;
             presentationContentRoot.Child = (FrameworkElement)screen.rootElement;
+
+            Grid screenRoot = (Grid)screen.rootElement;
+
+            try
+            {
+                Image natsuLogo = (Image)screenRoot.FindName("Natsulogo");
+                //string uri = (Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png"));
+                natsuLogo.Source = new BitmapImage(new Uri(Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png")));
+
+                Image butaneko = (Image)screenRoot.FindName("Butaneko");
+                //string uri = (Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png"));
+                butaneko.Source = new BitmapImage(new Uri(Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "butaneko.png")));
+            }
+            catch {
+                MessageBox.Show("Failed to load screen overlay picture");
+            }
+
             this.activeScreen = screen;
         }
 

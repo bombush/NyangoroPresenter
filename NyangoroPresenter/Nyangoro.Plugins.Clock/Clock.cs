@@ -12,7 +12,7 @@ namespace Nyangoro.Plugins.Clock
 {
     public class Clock : Nyangoro.Plugins.Plugin
     {
-        protected const double FontSize = 70;
+       // protected const double FontSize = 70;
 
         DateTime lastUpdate;
 
@@ -47,16 +47,16 @@ namespace Nyangoro.Plugins.Clock
         protected void RunClock()
         {
             TextBlock hour = new TextBlock();
-            hour.FontSize = Clock.FontSize;
+           // hour.FontSize = Clock.FontSize;
             hour.Text = this.lastUpdate.ToString("HH");
 
             TextBlock colon = new TextBlock();
             colon.Text = ":";
-            colon.FontSize = Clock.FontSize;
+         //   colon.FontSize = Clock.FontSize;
 
             TextBlock minute = new TextBlock();
             minute.Text = this.lastUpdate.ToString("mm");
-            minute.FontSize = Clock.FontSize;
+         //   minute.FontSize = Clock.FontSize;
 
             StackPanel textGrid = (StackPanel)this.PresentationRoot.Content;
             textGrid.Children.Add(hour);

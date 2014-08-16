@@ -22,7 +22,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
 
     class ProgrammeController
     {
-        const int EventTitleLength = 10;
+        const int EventTitleLength = 50;
 
         Programme programme;
         List<ProgrammeEvent> eventsShowing;
@@ -60,13 +60,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             //fill rows
             for (int i = 0; i < nrRows; i++)
             {
-                TextBlock txtBlock = new TextBlock();
-                txtBlock.Opacity = 0;
-
-                this.programmeGrid.Children.Add(txtBlock);
-                Grid.SetRow(txtBlock, i);
-
-                this.programmeBlocks.Add(txtBlock);
+                this.programmeBlocks.Add((TextBlock)this.programmeGrid.Children[i]);
             }
         }
 
@@ -121,6 +115,9 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             //author
             Run authorRun = new Run("("+prgEvent.author+")");
             runs.Add(authorRun);
+
+            //add spaces
+            runs.ForEach(r => r.Text += "   ");
 
             return runs;
         }
