@@ -6,7 +6,6 @@
         AllowsTransparency="True"
         WindowStyle="None"
         MouseDown="Window_MouseDown">
-    <Grid>
-        
-    </Grid>
+    <Viewbox>
+    </Viewbox>
 </Window>

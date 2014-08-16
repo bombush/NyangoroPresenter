@@ -84,9 +84,11 @@ namespace Nyangoro.Core.Host
             this.DisplayScreen(this.screens[screenIndex]);
         }
 
+        //plz REFACTOR!!!
         private void DisplayScreen(Nyangoro.Core.Layout.PresentationScreen screen)
         {
-            this.presentationWindow.Content = screen.rootElement;
+            Viewbox presentationContentRoot = (Viewbox)presentationWindow.Content;
+            presentationContentRoot.Child = (FrameworkElement)screen.rootElement;
             this.activeScreen = screen;
         }
 
