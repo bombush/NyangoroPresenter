@@ -62,12 +62,18 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public virtual void Stop()
         {
+            if (this.processor == null)
+                return;
+
             this.UnbindProcessorEvents();
             this.processor.Stop();
         }
 
         public virtual void Pause()
         {
+            if (this.processor == null)
+                return;
+
             this.processor.Pause();
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.Composition;
@@ -35,15 +36,7 @@ namespace Nyangoro.Core.Host
 
         public T GetByType(string type)
         {
-            foreach(T member in this.members)
-            {
-                if (member.GetType().Name == type)
-                {
-                    return member;
-                }
-            }
-
-            return default(T);
+            return this.members.FirstOrDefault<T>(m => m.GetType().Name == type);
         }
 
         /*
@@ -53,7 +46,7 @@ namespace Nyangoro.Core.Host
          */
         protected string GetFullResourcesPath(string relativePath)
         {
-            return String.Concat(Config.Get("working_dir"), relativePath);
+            return Path.Combine(Config.Get("working_dir"), relativePath);
         }
     }
 }
