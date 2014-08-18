@@ -100,7 +100,13 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.textDisplay.Text = Path.GetFileNameWithoutExtension(this.activeItem.path.LocalPath).Truncate(VlcMediaProcessor.LabelTextLength);
             this.FadeInTextDisplay();
 
-            this.mediaElement.Play();
+            if (File.Exists(this.activeItem.path.LocalPath))
+                this.mediaElement.Play();
+            else
+            {
+                this.Stop();
+                this.EndReached(this, EventArgs.Empty);
+            }
         }
 
         public void Stop()
