@@ -40,6 +40,12 @@ namespace Nyangoro.Plugins.MediaPlayer
             set { this.pluginCore = value; } 
         }
 
+        //prasarny
+        /*
+        static public Grid vlcTextGrid;
+        static public TextBox vlcText;
+         * /
+
         /**
          * Question: WHY THIS???? 
          */
@@ -132,7 +138,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         public void DisplayMedia(FrameworkElement mediaRoot)
         {
-            Viewbox viewbox  = (Viewbox)(((Border)this.PresentationRoot.Content).Child);
+            Viewbox viewbox = (Viewbox)((Grid)((Border)this.PresentationRoot.Content).Child).FindName("MediaViewbox");
             viewbox.Child = mediaRoot;
            // viewbox.Content = mediaRoot;
         }

@@ -57,8 +57,10 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         private void LoadProcessors()
         {
-            this.processors.Add(new VlcMediaProcessor());
-            this.processors.Add(new SlideshowMediaProcessor());
+            Grid vlcTextGrid = (Grid)((Grid)((Border)this.controller.PresentationRoot.Content).Child).FindName("VlcTextGrid");
+
+            this.processors.Add(new VlcMediaProcessor(vlcTextGrid));
+            this.processors.Add(new SlideshowMediaProcessor(vlcTextGrid));
         }
 
         protected override void SetName()

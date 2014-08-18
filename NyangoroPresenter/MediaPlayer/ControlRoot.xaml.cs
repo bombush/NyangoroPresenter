@@ -55,6 +55,10 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         private void PlaylistBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+#if DEBUG
+             this.Controller.HandlePlaylistMouseDoubleClick();
+#else
+            
             try
             {
                 this.Controller.HandlePlaylistMouseDoubleClick();
@@ -64,10 +68,14 @@ namespace Nyangoro.Plugins.MediaPlayer
                 MessageBox.Show(excp.Message);
                 return;
             }
+#endif
         }
 
         private void Play_Click(object sender, RoutedEventArgs e)
         {
+#if DEBUG
+this.Controller.HandlePlayClick(sender, e);
+#else
             try
             {
                 this.Controller.HandlePlayClick(sender, e);
@@ -77,6 +85,7 @@ namespace Nyangoro.Plugins.MediaPlayer
                 MessageBox.Show(excp.Message);
                 return;
             }
+#endif
         }
 
         private void Stop_Click(object sender, RoutedEventArgs e)

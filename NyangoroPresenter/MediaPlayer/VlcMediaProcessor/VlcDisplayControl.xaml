@@ -7,6 +7,6 @@
              mc:Ignorable="d" d:DesignHeight="245" d:DesignWidth="438">
     <Grid Background="Green" VerticalAlignment="Stretch">
         <vlc:MediaElement x:Name="MediaElement"/>
-        <TextBlock Name="VlcTextBlock" FontSize="40" Background="Blue" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"></TextBlock>
+        <!--<TextBlock Name="VlcTextBlock" FontSize="40" Background="Blue" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"></TextBlock>-->
     </Grid>
 </UserControl>

@@ -6,20 +6,21 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Animation;
+using Nyangoro.Interfaces;
 
 namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
 {
-    //@TODO: some animation helper to concentrate all animation-related stuff on one place.
-    //       Possibly make an application-wide service?
 
-    static class Ext
+    static class Extensions
     {
-         public static string Truncate(this string value, int maxChars)
+        public static string Truncate(this string value, int maxChars)
         {
             return value.Length <= maxChars ? value : value.Substring(0, maxChars) + " ..";
         }
     }
 
+    //@TODO: some animation helper to concentrate all animation-related stuff on one place.
+    //       Possibly make an application-wide service?
     class ProgrammeController
     {
         const int EventTitleLength = 50;

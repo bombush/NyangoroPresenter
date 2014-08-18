@@ -48,12 +48,16 @@ namespace Nyangoro.Plugins.MediaPlayer
         //timer for timing image events
         System.Timers.Timer imageTimer;
 
+        public Grid VlcTextGrid { get; set; }
+
 
         /// <summary>
         /// CONSTRUCTOR
         /// </summary>
-        public SlideshowMediaProcessor()
+        public SlideshowMediaProcessor(Grid vlcTextGrid)
         {
+            //this.VlcTextGrid = vlcTextGrid;
+
             this.displayRoot = new SlideshowDisplayControl();
             this.imageDisplay = (Image)this.displayRoot.FindName("SlideshowImage");
 
@@ -90,6 +94,9 @@ namespace Nyangoro.Plugins.MediaPlayer
         //Start playback
         public void Play()
         {
+           // this.VlcTextGrid.Opacity = 0;
+          //  this.VlcTextGrid.Visibility = Visibility.Hidden;
+
             this.audioEndReached = false;
             this.imageEndReached = false;
 
