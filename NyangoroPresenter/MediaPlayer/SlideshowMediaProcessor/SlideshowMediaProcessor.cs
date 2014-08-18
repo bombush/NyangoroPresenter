@@ -191,6 +191,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             }
             catch (ObjectDisposedException e)
             {
+                ObjectDisposedException exc = e;
                 return;
             }
 

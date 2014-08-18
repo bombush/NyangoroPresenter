@@ -240,6 +240,7 @@ namespace Nyangoro.Plugins.MediaPlayer
                     }
                     catch (FormatException e)
                     {
+                        FormatException exp = e;
                         lastActiveIndex = -1;
                     }
                 }
