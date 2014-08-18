@@ -113,9 +113,12 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             titleRun.FontWeight = FontWeights.Bold;
             runs.Add(titleRun);
 
-            //author
-            Run authorRun = new Run("("+prgEvent.author+")");
-            runs.Add(authorRun);
+            //author if exists
+            if (!String.IsNullOrWhiteSpace(prgEvent.author))
+            {
+                Run authorRun = new Run("(" + prgEvent.author + ")");
+                runs.Add(authorRun);
+            }
 
             //add spaces
             runs.ForEach(r => r.Text += "   ");

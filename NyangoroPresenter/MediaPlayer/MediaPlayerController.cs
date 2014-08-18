@@ -317,5 +317,15 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.PluginCore.Playlist.RemoveSelected();
             this.SavePlaylist();
         }
+
+        public void HandlePlaylistDownClick()
+        {
+            this.PluginCore.Playlist.SelectedMoveDown();
+        }
+
+        public void HandlePlaylistUpClick()
+        {
+            this.PluginCore.Playlist.SelectedMoveUp();
+        }
     }
 }

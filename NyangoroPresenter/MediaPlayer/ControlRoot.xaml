@@ -22,6 +22,8 @@
             <Label Content="Playlist" Grid.Column="1" Height="38" HorizontalAlignment="Left" Margin="282,0,0,0" Name="label1" VerticalAlignment="Top" Width="78" FontSize="20"/>
             <Button Content="Clear Playlist" Height="29" HorizontalAlignment="Left" Margin="8,342,0,0" Name="ClearPlaylist" VerticalAlignment="Top" Width="123" Click="ClearPlaylist_Click" Grid.ColumnSpan="2" />
             <Button Content="Remove Selected" Height="30" HorizontalAlignment="Left" Margin="8,247,0,0" Name="button1" VerticalAlignment="Top" Width="123" Click="RemoveSelected_Click" Grid.ColumnSpan="2" />
+            <Button Content="Up" Height="38" HorizontalAlignment="Left" Margin="23,122,0,0" Name="PlaylistUp" Click="PlaylistUp_Click"  VerticalAlignment="Top" Width="38" />
+            <Button Content="Down" Height="38" HorizontalAlignment="Left" Margin="74,122,0,0" Name="PlaylistDown" Click="PlaylistDown_Click"  VerticalAlignment="Top" Width="39" />
         </Grid>
     </Grid>
 </nyangoroPlugin:PluginControlRoot>

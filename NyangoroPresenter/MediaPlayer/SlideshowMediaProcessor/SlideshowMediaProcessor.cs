@@ -135,7 +135,12 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.StopImage();
             this.StopAudio();
-            this.imageTimer.Dispose();
+            try
+            {
+                if (this.imageTimer != null)
+                    this.imageTimer.Dispose();
+            }
+            catch { }
         }
 
         //

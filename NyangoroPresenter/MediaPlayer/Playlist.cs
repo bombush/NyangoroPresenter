@@ -219,7 +219,7 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected bool TrySelectNextItem()
         {
-            int nextIndex = box.SelectedIndex+1;
+            int nextIndex = this.activeIndex+1;
             if(nextIndex < this.contents.Count){
                 box.SelectedIndex = nextIndex;
                 return true;
@@ -272,6 +272,58 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void HandleContentsChanged(Object sender,	NotifyCollectionChangedEventArgs e)
         {
+        }
+
+        public void SelectedMoveDown()
+        {
+            int indexSelected = this.box.SelectedIndex;
+
+            if ((indexSelected + 1) < this.contents.Count())
+            {
+                this.ItemsSwapByIndex(indexSelected, (indexSelected + 1));
+            }
+
+        }
+
+        public void SelectedMoveUp()
+        {
+            int indexSelected = this.box.SelectedIndex;
+
+            if ((indexSelected - 1) >= 0)
+            {
+                this.ItemsSwapByIndex(indexSelected, (indexSelected - 1));
+            }
+        }
+
+        /**
+         * Swaps items and updates active and selected if necessary
+         */
+        protected void ItemsSwapByIndex(int indexOne, int indexTwo)
+        {
+            PlaylistItem itemOne = this.contents[indexOne];
+            PlaylistItem itemTwo = this.contents[indexTwo];
+
+            //The selected index needs to be updated *after* all position manipulations
+            //are complete. If the currently selected item is not affected by the swap,
+            //we select the currently selected item again
+            int indexToSelect = this.box.SelectedIndex;
+
+            if (this.box.SelectedIndex == indexTwo)
+                indexToSelect = indexOne;
+
+            if (this.box.SelectedIndex == indexOne)
+                indexToSelect = indexTwo;
+
+            this.contents[indexTwo] = itemOne;
+            this.contents[indexOne] = itemTwo;
+
+            if (this.activeIndex == indexTwo)
+                this.activeIndex = indexOne;
+
+            if (this.activeIndex == indexOne)
+                this.activeIndex = indexTwo;
+
+            this.box.SelectedIndex = indexToSelect;
         }
     }
 }

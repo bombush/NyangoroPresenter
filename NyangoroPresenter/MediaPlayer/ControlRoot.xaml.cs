@@ -117,5 +117,15 @@ this.Controller.HandlePlayClick(sender, e);
         {
             this.Controller.HandleRemoveSelectedClick();
         }
+
+        private void PlaylistDown_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandlePlaylistDownClick();
+        }
+
+        private void PlaylistUp_Click(object sender, RoutedEventArgs e)
+        {
+            this.Controller.HandlePlaylistUpClick();
+        }
     }
 }

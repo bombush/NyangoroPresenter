@@ -23,7 +23,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         string audioDir;
 
         protected const int ImagesInBatch = 4;
-        protected const int SongsInBatch = 1;
+        protected const int SongsInBatch = 100;
         public const int ImageDisplaySec = 4;
 
         public const int TypeImage = 1;

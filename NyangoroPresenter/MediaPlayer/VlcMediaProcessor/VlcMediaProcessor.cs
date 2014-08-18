@@ -28,7 +28,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         public event EventHandler EndReached;
 
         //CONST
-        public const int LabelTextLength = 45;
+        public const int LabelTextLength = 43;
 
         private string[] playableFileTypes = { ".avi", ".mp4", ".mkv"}; 
 
