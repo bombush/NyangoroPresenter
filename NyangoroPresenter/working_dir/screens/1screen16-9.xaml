@@ -14,7 +14,7 @@
     </Grid.Background>
         <Grid.RowDefinitions>
         <RowDefinition Height="3300*"/>
-        <RowDefinition Height="500*"/>
+        <RowDefinition Height="570*"/>
     </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5750*"/>
@@ -22,12 +22,12 @@
     </Grid.ColumnDefinitions>
     
         <Viewbox Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <nyangoroLayout:PluginAnchor PluginType="MediaPlayer" Background="Red"></nyangoroLayout:PluginAnchor>
+            <nyangoroLayout:PluginAnchor PluginType="MediaPlayer"></nyangoroLayout:PluginAnchor>
         </Viewbox>
 
-        <nyangoroLayout:PluginAnchor Grid.Column="0" Grid.Row="1"  PluginType="ProgrammeMessenger" Background="Violet"></nyangoroLayout:PluginAnchor>
+        <nyangoroLayout:PluginAnchor Grid.Column="0" Grid.Row="1"  PluginType="ProgrammeMessenger" VerticalAlignment="Top"></nyangoroLayout:PluginAnchor>
 
-        <nyangoroLayout:PluginAnchor Grid.Column="1" Grid.Row="0"  PluginType="Clock" Background="Red"></nyangoroLayout:PluginAnchor>
+        <nyangoroLayout:PluginAnchor Grid.Column="1" Grid.Row="0"  PluginType="Clock"></nyangoroLayout:PluginAnchor>
     
         <!-- floating stuff JE to moc fujkyfuj, ale ni cas. Source se prida pri loadovani screenu-->
     <Image Name="Natsulogo" Grid.ColumnSpan="3" Width="360" Height="98"  HorizontalAlignment="Left" VerticalAlignment="Top"/>

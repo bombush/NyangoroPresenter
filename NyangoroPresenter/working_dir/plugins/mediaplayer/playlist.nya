@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Playlist>
+  <LastActive>0</LastActive>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/movies/anime/all amvz/action/Otaku Lounge - One-Eyed Fish (high quality).mp4]]></Uri>
+  </Item>
+</Playlist>
