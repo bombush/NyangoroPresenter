@@ -180,6 +180,10 @@ namespace Nyangoro.Plugins.MediaPlayer
         public void RemoveIndex(int index)
         {
             this.contents.RemoveAt(index);
+
+            //update active index
+            if (this.activeIndex > -1 && index < this.activeIndex)
+                this.activeIndex--;
         }
 
         //Removed the selected item from playlist but keeps playing
