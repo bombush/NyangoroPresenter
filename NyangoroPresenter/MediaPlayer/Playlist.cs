@@ -81,6 +81,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.StopActive();
             this.Stopped = true;
+            this.box.SelectedIndex = -1;
         }
 
         public void Pause()
@@ -182,7 +183,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.contents.RemoveAt(index);
 
             //update active index
-            if (this.activeIndex > -1 && index < this.activeIndex)
+            if (this.activeIndex > -1 && index <= this.activeIndex)
                 this.activeIndex--;
         }
 
@@ -198,6 +199,22 @@ namespace Nyangoro.Plugins.MediaPlayer
         //if playlist processing is not stopped, continue with the next item in the playlist
         public void activeItem_EndReached(object sender, EventArgs e)
         {
+            //something went wrong. Safely stop playlist
+            if (this.activeItem == null)
+            {
+                this.Stop();
+
+                //if activeItem is null but still playling, we have lost reference to it for some reason.
+                // This evil hack stops all items
+                foreach (PlaylistItem item in this.contents)
+                    item.Stop();
+
+                this.HandlePlaylistEndReached();
+
+                MessageBox.Show("activeItem reference lost. Playlist stopped. Please start playlist again manually.");
+                return;
+            }
+
             this.activeItem.EndReached -= new EventHandler(activeItem_EndReached);
             if(!this.Stopped)
                 this.PlayNext();
@@ -226,6 +243,16 @@ namespace Nyangoro.Plugins.MediaPlayer
             int nextIndex = this.activeIndex+1;
             if(nextIndex < this.contents.Count){
                 box.SelectedIndex = nextIndex;
+
+                try
+                {
+                    this.contents.ElementAt(nextIndex);
+                }
+                catch
+                {
+                    return false;
+                }
+
                 return true;
             } else {
                 return false;

@@ -286,7 +286,9 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void CleanupStopImage(Action callback)
         {
-            this.imageTimer.Stop();
+            if(this.imageTimer != null)
+                this.imageTimer.Stop();
+
             this.activeImage = null;
 
             callback();
