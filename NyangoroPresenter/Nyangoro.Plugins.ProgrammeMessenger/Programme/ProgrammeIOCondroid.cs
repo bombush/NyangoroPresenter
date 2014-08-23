@@ -44,7 +44,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                     if (reader.NodeType == XmlNodeType.CDATA)
                         temp.title = reader.Value;
                     else
-                        throw new Exception("Invalid Condroid title node content");
+                        throw new Exception("Invalid Condroid title node content: missing CDATA");
                 }
 
                 if (reader.Name == "start-time" && reader.NodeType == XmlNodeType.Element)
@@ -54,7 +54,13 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
 
                 if (reader.Name == "location" && reader.NodeType == XmlNodeType.Element)
                 {
-                    temp.location = reader.ReadInnerXml();
+                    //move to CDATA section
+                    reader.Read();
+                    if (reader.NodeType == XmlNodeType.CDATA)
+                        temp.location = reader.Value;
+                    else
+                        throw new Exception("Invalid Condroid location node content: missing CDATA");
+                 //   temp.location = reader.ReadInnerXml();
                 }
 
                 if (reader.Name == "author" && reader.NodeType == XmlNodeType.Element)
@@ -67,7 +73,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                         throw new Exception("Invalid Condroid author node content");
                 }
             }
-
+            //add the last one
             programmeEvents.Add(temp);
             return programmeEvents;
         }
