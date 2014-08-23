@@ -81,7 +81,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             {
                 bool addToList = true;
 
-                addToList &= (evt.location == "Kinosál");
+                //addToList &= (evt.location == "Kinosál");
 
                 if (addToList)
                     exportEvents.Add(evt);

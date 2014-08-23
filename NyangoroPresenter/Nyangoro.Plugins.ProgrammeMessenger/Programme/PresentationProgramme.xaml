@@ -21,8 +21,8 @@
             </Grid.RowDefinitions>
             <!-- These will be picke up and filled with programme -->
             <TextBlock Grid.Row="0" Grid.Column="1" FontSize="24" VerticalAlignment="Center" Padding="0,5,0,0"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0,5,0,0" Margin="0,0,0,0" Name="textBlock1" Text="TextBlock" Opacity="1"/>
-            <TextBlock Grid.Row="2" Grid.Column="1" FontSize="24" HorizontalAlignment="Left" Margin="0,0,0,0" Padding="0,5,0,0" Name="textBlock2" Text="TextBlock" VerticalAlignment="Center" Opacity="1" />
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0,5,0,0" Margin="0,0,0,0" Name="textBlock1" Text="" Opacity="1"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" FontSize="24" HorizontalAlignment="Left" Margin="0,0,0,0" Padding="0,5,0,0" Name="textBlock2" Text="" VerticalAlignment="Center" Opacity="1" />
 
              <!-- this will be ignored REFACTOR!!-->
             <TextBlock Grid.Column="0" Grid.RowSpan="10" Margin="30,-30,0,0" VerticalAlignment="Center" FontSize="40">Program</TextBlock>

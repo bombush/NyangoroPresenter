@@ -69,6 +69,9 @@ namespace Nyangoro.Plugins.MediaPlayer
             if (this.contents.Count == 0)
                 return;
 
+            //this needs a bit more thinking to make it fool-proof
+            this.Stopped = false;
+
             if (this.activeItem == null)
                 this.AutoActivate();
 

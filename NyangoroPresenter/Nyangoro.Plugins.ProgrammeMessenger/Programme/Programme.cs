@@ -13,7 +13,8 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             public const int UpcomingToday = 1;
         }
 
-        int filterMode = Programme.FilterMode.All;
+        //FILTER MODE ALL/Upcoming today
+        int filterMode = Programme.FilterMode.UpcomingToday;
 
         //all events in programme
         List<ProgrammeEvent> allEvents;
@@ -58,13 +59,13 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                     this.activePool.Add(evt);
                 #else
                 if(this.filterMode == Programme.FilterMode.UpcomingToday){
-                    if (evt.start.Day != DateTime.Now.Day || evt.start.Hour < DateTime.Now.Hour)
+                    if (evt.start.Hour < DateTime.Now.Hour || evt.start.Day != DateTime.Now.Day)
                         continue;
                 }
                 
                 this.activePool.Add(evt);
 
-                #endif
+#endif
             }
         }
 
@@ -107,7 +108,18 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
                 }
                 while (selectedNumbers.Contains(random));
 
+                //add to programme
                 programmeEvents.Add(this.activePool.ElementAt(random));
+
+                //add to last unfilled position in selected numbers
+                for (int x = 0; x < selectedNumbers.Length; x++)
+                {
+                    if (selectedNumbers[x] == -1)
+                    {
+                        selectedNumbers[x] = random;
+                        break;
+                    }
+                }
             }
 
             return programmeEvents;
@@ -133,12 +145,12 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
         protected bool IsEventApplicableForDisplay(ProgrammeEvent evt)
         {
             #if DEBUG
-            /*if (evt.start.Hour < DateTime.Now.Hour)
-                return false;*/
+            if (evt.start.Hour < DateTime.Now.Hour)
+                return false;
                 return true;
             #else
                 if(this.filterMode == Programme.FilterMode.UpcomingToday){
-                    if (evt.start < DateTime.Now)
+                    if (evt.start.Hour < DateTime.Now.Hour)
                         return false;
 
                     if (evt.start.Day != DateTime.Now.Day)
