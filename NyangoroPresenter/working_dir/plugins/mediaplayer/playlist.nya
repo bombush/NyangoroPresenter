@@ -1,8 +1,1736 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Playlist>
-  <LastActive>0</LastActive>
+  <LastActive>48</LastActive>
   <Item>
     <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
-    <Uri><![CDATA[file:///D:/movies/anime/all amvz/action/Otaku Lounge - One-Eyed Fish (high quality).mp4]]></Uri>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Gatchaman Japanese Trailer (2013) - Sci-Fi Action Movie HD - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/THE LAST EPISODE OF NARUTO.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/7月放送アニメ「ソードアート・オンライン2」ロングPV　シノン心の叫びも.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『たまこラブストーリー』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/D.L.P.／てんとう虫のサンバ　Ladybug Samba【PV】.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/7月放送アニメ「戦国BASARA Judge End」PV公開！.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/龍ヶ嬢七々々の埋蔵金 15秒 PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「ノラガミ」 _ Blu-ray＆DVD第1巻TV-Spot.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/かぐや姫の物語　予告 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/（主題歌：浜崎あゆみ）『BUDDHA2 手塚治虫のブッダ－終わりなき旅－』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『映画クレヨンしんちゃん ガチンコ!逆襲のロボとーちゃん』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Ghost in the Shell Arise Another Mission special -Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/OVA版「ロードス島戦記」デジタルリマスターBlu-rayBOX　告知PV - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ『牙狼〈GARO〉ー炎の刻印ー』特報.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/√Bestamvsofalltime ▪ Animegraphy 2013 AMV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「RAIL WARS!」PV第1弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[PV 2] TVアニメ Noragami.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/（主題歌：浜崎あゆみ）『BUDDHA2 手塚治虫のブッダ－終わりなき旅－』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[Bashar] AMV(&humor).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/KAIROS Trailer HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/War of the Worlds Goliath Official Trailer 1 (2014) - Animated Sci-Fi Movie HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『47RONIN』CMスポット「俺は、ひとりぼっちじゃない！」篇.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/名探偵コナン 絶海の探偵（プライベート・アイ）」予告編 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/FINAL FANTASY VII CLOUD GOES GROCERY SHOPPING.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/【PV】アニメ化決定！　となりの関くん　ロボット家族篇②.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/THE LAST EPISODE OF NARUTO.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『LUPIN THE IIIRD 次元大介の墓標』特報映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ『幕末Rock』PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/▶ LITERAL Dead Island Riptide Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[Initial D Movie 1 Trailer] Initial D Legend 1 Kakusei.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/_GET BLOODY_ - Daft Punk Happy Wheels Parody (Animated _Get Lucky_ Spoof) - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[Initial D Movie 1 Trailer] Initial D Legend 1 Kakusei.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/OVA版「ロードス島戦記」デジタルリマスターBlu-rayBOX　告知PV - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「RAIL WARS!」PV第1弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「ノラガミ」 _ Blu-ray＆DVD第1巻TV-Spot.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/サン・オブ・マン　（ターザン）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「TYPE‐MOONエース」Vol.9 発売CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/WAKFU The Animated Series in English It's possible with Kickstarter!.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Anime _ THE SIMPSONS _ ANIMATION on FOX.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アナと雪の女王』神田沙也加が歌う本編クリップ映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ「ALDNOAH ZERO（アルドノア・ゼロ）」PV公開.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/龍ヶ嬢七々々の埋蔵金 15秒 PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/かぐや姫の物語　予告 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『たまこラブストーリー』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Rurouni Kenshin Kyoto Inferno _ The Legend Ends (2014) Trailer - English Subtitled.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/How to win Rock Paper Scissors - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ノイタミナショップＣＭ　for　サムライフラメンコ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『るろうに剣心 京都大火編』TVスポット.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Santa Company Trailer (English subtitled version).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Pokemon The Origins - Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「グラスリップ」PV第1弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/2014年1月放送アニメ「となりの関くん」PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Initial D Movie in Summer 2014! - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The LEGO Movie Official Spot - Ordinary Hero (2014) - Animated Movie HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Matrix 4 Reborn - Official Trailer 1 (2017).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『劇場版 薄桜鬼 第二章 士魂蒼穹』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「Do You Want To Kill Some Titans」SnK Parody by ✿ham.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ピンポンLONGPV」.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/_Ossu! Ora Obaba!!_ _ Ping Pong_DBZ Kai - April Fool's CM [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『THE NEXT GENERATION パトレイバー_第1章』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/2014年1月放送アニメ「となりの関くん」PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『鷹の爪GO～吉田、秘密結社やめるってよ（仮）～』特報 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ『牙狼〈GARO〉ー炎の刻印ー』特報.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「攻殻機動隊ＡＲＩＳＥ border3」劇場予告編 [HD] [PlayStation®Store].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Teenage Mutant Ninja Turtles~Turtles Talking D.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Free Eternal Summer - Trailer _ PV 1-2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ『幕末Rock』PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ATTACK ON CUTEST TITAN.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/東京喰種-トーキョーグール-　スペシャルPV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「TYPE‐MOONエース」Vol.9 発売CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Gatchaman Japanese Trailer (2013) - Sci-Fi Action Movie HD - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ATTACK ON CUTEST TITAN.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『るろうに剣心 京都大火編』TVスポット.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Free Eternal Summer - Trailer _ PV 1-2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『宇宙兄弟0』特報2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Matrix 4 Reborn - Official Trailer 1 (2017).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/7月放送アニメ「戦国BASARA Judge End」PV公開！.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Aldnoah Zero -- Promotional Video 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Anime _ THE SIMPSONS _ ANIMATION on FOX.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[Bashar] AMV(&humor).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ピンポン　THE ANIMATION　30秒 CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/FANTASTIC MR. FOX - Official Trailer 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/東京喰種-トーキョーグール-　スペシャルPV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Avatar The Last Airbender --The Search Comics Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「残響のテロル」第一弾PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ『アオハライド』PV第2弾（双葉ver.）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[PV 2] TVアニメ Noragami.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Avatar The Last Airbender --The Search Comics Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『LUPIN THE IIIRD 次元大介の墓標』特報映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「弱虫ペダル」2期放送決定ＰＶ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/かぐや姫の物語　予告 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The walk of minicar.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Disney's Big Hero 6 Official Teaser Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/2014年1月9日より順次放送開始！TVアニメ「鬼灯の冷徹」CM30秒ver.第2弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『THE NEXT GENERATION パトレイバー_第1章』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/7月放送アニメ「ソードアート・オンライン2」ロングPV　シノン心の叫びも.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/DragonBall Z - Frieza Saga (DBZ Live Action Teaser).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ガンダム Ｇのレコンギスタ」　PV1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/D.L.P.／てんとう虫のサンバ　Ladybug Samba【PV】.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ピンポンLONGPV」.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/龍ヶ嬢七々々の埋蔵金 15秒 PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/東京喰種-トーキョーグール-　スペシャルPV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『プレーンズ』井上芳雄＆有名女優吹替特別映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ピンポンLONGPV」.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/War of the Worlds Goliath Official Trailer 1 (2014) - Animated Sci-Fi Movie HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po's Celebrity Impressions - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/FANTASTIC MR. FOX - Official Trailer 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/2014年1月9日より順次放送開始！TVアニメ「鬼灯の冷徹」CM30秒ver.第2弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『スペース☆ダンディ』ティザーPV／『SPACE☆DANDY』Teaser - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ノブナガン」最新PV (Nobunagun).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po's Wisdom Dumpling 5 - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Gatchaman Japanese Trailer (2013) - Sci-Fi Action Movie HD - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Son of Batman - Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「残響のテロル」第一弾PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ガンダム Ｇのレコンギスタ」　PV1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Générique TIC ET TAC LES RANGERS DU RISQUE [HD].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/【PV】アニメ化決定！　となりの関くん　ロボット家族篇②.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/プレーンズ トミカを操縦だ！フライト・ダスティ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『劇場版 薄桜鬼 第二章 士魂蒼穹』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ピンポン　THE ANIMATION　30秒 CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ 「FAIRY TAIL」 新シリーズ PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ジョジョの奇妙な冒険 第三部スターダストクルセイダース PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Aldnoah Zero -- Promotional Video 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The walk of minicar.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『月刊ニュータイプ 2014年3月号』発売CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Teenage Mutant Ninja Turtles on Nickelodeon Of Rats and Men. New Episode Promo.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Doctor Who BBC One Christmas Ident 2009 with David Tennant - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Durarara! - Season 2 Announcement Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Teenage Mutant Ninja Turtles~Turtles Talking D.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Santa Company Trailer (English subtitled version).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Haikyu PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/サン・オブ・マン　（ターザン）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Barakamon - Promotional Video 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『るろうに剣心 京都大火編』TVスポット.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「グラスリップ」PV第1弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/WAKFU The Animated Series in English It's possible with Kickstarter!.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Ghost in the Shell Arise Another Mission special -Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『猫侍』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「攻殻機動隊ＡＲＩＳＥ border3」劇場予告編 [HD] [PlayStation®Store].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The Legend of Korra Book 3 Official Trailer - Nickelodeon.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Disney's Big Hero 6 Official Teaser Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/シドニアの騎士　Knights of Sidonia　PV Part 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Everything Is AWESOME!!! -- The LEGO® Movie -- Tegan and Sara feat. The Lonely Island.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/KAIROS Trailer HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po's Wisdom Dumpling 5 - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『月刊ニュータイプ ２０１３年 １０月号』発売CM - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/√Bestamvsofalltime ▪ Animegraphy 2013 AMV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ『牙狼〈GARO〉ー炎の刻印ー』特報.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po's Celebrity Impressions - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ノブナガン」最新PV (Nobunagun).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Treehouse of Horror XXIV _ Guillermo del Toro Intro - All References.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[Initial D Movie 1 Trailer] Initial D Legend 1 Kakusei.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『宇宙兄弟0』特報2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Matrix 4 Reborn - Official Trailer 1 (2017).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「Do You Want To Kill Some Titans」SnK Parody by ✿ham.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『ジョバンニの島』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ「新テニスの王子様」OVAシリーズ、2014年始動！！.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/シドニアの騎士　Knights of Sidonia　PV Part 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Penguins of Madagascar Trailer Official.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ATTACK ON CUTEST TITAN.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/テラフォーマーズ -TERRA FORMARS- CM [HD].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Penguins - BBC - YouTube [360p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「残響のテロル」第一弾PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『47RONIN』CMスポット「俺は、ひとりぼっちじゃない！」篇.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『スペース☆ダンディ』ティザーPV／『SPACE☆DANDY』Teaser - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Penguins of Madagascar Trailer Official.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Générique TIC ET TAC LES RANGERS DU RISQUE [HD].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/FINAL FANTASY VII CLOUD GOES GROCERY SHOPPING.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Anime _ THE SIMPSONS _ ANIMATION on FOX.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/dir_kravinky.txt]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『LUPIN THE IIIRD 次元大介の墓標』特報映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/大成建設　「スリランカ高速道路」篇（30秒） - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Embarrassing Dream Comes True - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[Bashar] AMV(&humor).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/テラフォーマーズ -TERRA FORMARS- CM [HD].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『るろうに剣心 京都大火編』TVCM （30秒）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/'How to Train Your Dragon 2' Trailer 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/おれ、ねこ　×　ニャンコ先生（夏目友人帳）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/2014年1月放送アニメ「となりの関くん」PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Akame ga Kill! Trailer (Sub).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/WAKFU The Animated Series in English It's possible with Kickstarter!.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/D.L.P.／てんとう虫のサンバ　Ladybug Samba【PV】.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/[PV 2] TVアニメ Noragami.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「RAIL WARS!」PV第1弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/7月放送アニメ「ソードアート・オンライン2」ロングPV　シノン心の叫びも.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Ghost in the Shell Arise Another Mission special -Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『宇宙兄弟0』特報2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Rurouni Kenshin Kyoto Inferno _ The Legend Ends (2014) Trailer - English Subtitled.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The walk of minicar.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Durarara! - Season 2 Announcement Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Treehouse of Horror XXIV _ Guillermo del Toro Intro - All References.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/DragonBall Z - Frieza Saga (DBZ Live Action Teaser).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『47RONIN』CMスポット「俺は、ひとりぼっちじゃない！」篇.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『ジョバンニの島』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/【PV】TVアニメ「ノーゲーム・ノーライフ」PV Vol.1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アカメが斬る！』本PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/テラフォーマーズ -TERRA FORMARS- CM [HD].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/FANTASTIC MR. FOX - Official Trailer 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『モーレツ宇宙海賊 ABYSS OF HYPERSPACE －亜空の深淵－』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/How to win Rock Paper Scissors - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/サン・オブ・マン　（ターザン）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/▶ LITERAL Dead Island Riptide Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Treehouse of Horror XXIV _ Guillermo del Toro Intro - All References.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ジョジョの奇妙な冒険 第三部スターダストクルセイダース PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Pokemon The Origins - Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『THE NEXT GENERATION パトレイバー_第1章』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/dir_kravinky.txt]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/大成建設　「スリランカ高速道路」篇（30秒） - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『るろうに剣心 京都大火編』TVCM （30秒）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アナと雪の女王』神田沙也加が歌う本編クリップ映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Initial D Movie in Summer 2014! - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『プレーンズ』井上芳雄＆有名女優吹替特別映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ「新テニスの王子様」OVAシリーズ、2014年始動！！.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『るろうに剣心 京都大火編』TVCM （30秒）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/FINAL FANTASY VII CLOUD GOES GROCERY SHOPPING.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Barakamon - Promotional Video 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/新生KADOKAWA「影絵編」90秒.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Santa Company Trailer (English subtitled version).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/DragonBall Z - Frieza Saga (DBZ Live Action Teaser).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TFS DragonBall Z Kai Abridged Parody Episode 1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/【PV】TVアニメ「ノーゲーム・ノーライフ」PV Vol.1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ジョジョの奇妙な冒険 第三部スターダストクルセイダース PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/_Ossu! Ora Obaba!!_ _ Ping Pong_DBZ Kai - April Fool's CM [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Barakamon - Promotional Video 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Son of Batman - Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「Do You Want To Kill Some Titans」SnK Parody by ✿ham.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「攻殻機動隊ＡＲＩＳＥ border3」劇場予告編 [HD] [PlayStation®Store].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Everything Is AWESOME!!! -- The LEGO® Movie -- Tegan and Sara feat. The Lonely Island.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ「新テニスの王子様」OVAシリーズ、2014年始動！！.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po's Wisdom Dumpling 5 - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TFS DragonBall Z Kai Abridged Parody Episode 1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/_GET BLOODY_ - Daft Punk Happy Wheels Parody (Animated _Get Lucky_ Spoof) - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/MINI MINOTAUR SONG (feat. Tobuscus &amp; Tim Tim) - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Gingitsune PV 02 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ガンダム Ｇのレコンギスタ」　PV1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Teenage Mutant Ninja Turtles on Nickelodeon Of Rats and Men. New Episode Promo.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/THE LAST EPISODE OF NARUTO.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/OVA版「ロードス島戦記」デジタルリマスターBlu-rayBOX　告知PV - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Embarrassing Dream Comes True - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/おれ、ねこ　×　ニャンコ先生（夏目友人帳）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『月刊ニュータイプ 2014年3月号』発売CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Gingitsune PV 02 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Générique TIC ET TAC LES RANGERS DU RISQUE [HD].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/プレーンズ トミカを操縦だ！フライト・ダスティ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「弱虫ペダル」2期放送決定ＰＶ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/シドニアの騎士　Knights of Sidonia　PV Part 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Teenage Mutant Ninja Turtles on Nickelodeon Of Rats and Men. New Episode Promo.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アナと雪の女王』松たか子＆神田沙也加が歌うデュエットシーン.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Doctor Who BBC One Christmas Ident 2009 with David Tennant - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Disney's Big Hero 6 Official Teaser Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「グラスリップ」PV第1弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『たまこラブストーリー』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『モーレツ宇宙海賊 ABYSS OF HYPERSPACE －亜空の深淵－』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『モーレツ宇宙海賊 ABYSS OF HYPERSPACE －亜空の深淵－』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ『アオハライド』PV第2弾（双葉ver.）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ「ALDNOAH ZERO（アルドノア・ゼロ）」PV公開.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/大成建設　「スリランカ高速道路」篇（30秒） - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Doctor Who BBC One Christmas Ident 2009 with David Tennant - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Teenage Mutant Ninja Turtles~Turtles Talking D.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Pokemon The Origins - Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『ジョバンニの島』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/【PV】TVアニメ「ノーゲーム・ノーライフ」PV Vol.1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po Does A Funny Trick - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アナと雪の女王』松たか子＆神田沙也加が歌うデュエットシーン.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「ノブナガン」最新PV (Nobunagun).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『スペース☆ダンディ』ティザーPV／『SPACE☆DANDY』Teaser - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Haikyu PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ノイタミナショップＣＭ　for　サムライフラメンコ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/'How to Train Your Dragon 2' Trailer 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/√Bestamvsofalltime ▪ Animegraphy 2013 AMV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po's Celebrity Impressions - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「ノラガミ」 _ Blu-ray＆DVD第1巻TV-Spot.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『劇場版 薄桜鬼 第二章 士魂蒼穹』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/KAIROS Trailer HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ 「FAIRY TAIL」 新シリーズ PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/MINI MINOTAUR SONG (feat. Tobuscus &amp; Tim Tim) - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Everything Is AWESOME!!! -- The LEGO® Movie -- Tegan and Sara feat. The Lonely Island.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Akame ga Kill! Trailer (Sub).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Initial D Movie in Summer 2014! - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Penguins of Madagascar Trailer Official.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『プレーンズ』井上芳雄＆有名女優吹替特別映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/（主題歌：浜崎あゆみ）『BUDDHA2 手塚治虫のブッダ－終わりなき旅－』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Rurouni Kenshin Kyoto Inferno _ The Legend Ends (2014) Trailer - English Subtitled.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『映画クレヨンしんちゃん ガチンコ!逆襲のロボとーちゃん』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『猫侍』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Plague Inc Evolved Official Launch Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/プレーンズ トミカを操縦だ！フライト・ダスティ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アナと雪の女王』松たか子＆神田沙也加が歌うデュエットシーン.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/7月放送アニメ「戦国BASARA Judge End」PV公開！.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ピンポン　THE ANIMATION　30秒 CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/'How to Train Your Dragon 2' Trailer 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『月刊ニュータイプ ２０１３年 １０月号』発売CM - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/ノイタミナショップＣＭ　for　サムライフラメンコ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/MINI MINOTAUR SONG (feat. Tobuscus &amp; Tim Tim) - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The LEGO Movie Official Spot - Ordinary Hero (2014) - Animated Movie HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ『アオハライド』PV第１弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/2014年1月9日より順次放送開始！TVアニメ「鬼灯の冷徹」CM30秒ver.第2弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アカメが斬る！』本PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/名探偵コナン 絶海の探偵（プライベート・アイ）」予告編 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『月刊ニュータイプ 2014年3月号』発売CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アカメが斬る！』本PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/新生KADOKAWA「影絵編」90秒.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The LEGO Movie Official Spot - Ordinary Hero (2014) - Animated Movie HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/▶ LITERAL Dead Island Riptide Trailer - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『鷹の爪GO～吉田、秘密結社やめるってよ（仮）～』特報 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Aldnoah Zero -- Promotional Video 2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/アニメ「ALDNOAH ZERO（アルドノア・ゼロ）」PV公開.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『月刊ニュータイプ ２０１３年 １０月号』発売CM - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Gingitsune PV 02 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/War of the Worlds Goliath Official Trailer 1 (2014) - Animated Sci-Fi Movie HD.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/_Ossu! Ora Obaba!!_ _ Ping Pong_DBZ Kai - April Fool's CM [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Avatar The Last Airbender --The Search Comics Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『映画クレヨンしんちゃん ガチンコ!逆襲のロボとーちゃん』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ『アオハライド』PV第2弾（双葉ver.）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/名探偵コナン 絶海の探偵（プライベート・アイ）」予告編 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Durarara! - Season 2 Announcement Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po Does A Funny Trick - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Son of Batman - Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/映画『鷹の爪GO～吉田、秘密結社やめるってよ（仮）～』特報 - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Po Does A Funny Trick - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TFS DragonBall Z Kai Abridged Parody Episode 1.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Embarrassing Dream Comes True - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Free Eternal Summer - Trailer _ PV 1-2.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/新生KADOKAWA「影絵編」90秒.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/_GET BLOODY_ - Daft Punk Happy Wheels Parody (Animated _Get Lucky_ Spoof) - YouTube [720p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/How to win Rock Paper Scissors - Kung Fu Panda.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Akame ga Kill! Trailer (Sub).mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The Legend of Korra Book 3 Official Trailer - Nickelodeon.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『アナと雪の女王』神田沙也加が歌う本編クリップ映像.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Penguins - BBC - YouTube [360p].mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/おれ、ねこ　×　ニャンコ先生（夏目友人帳）.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Haikyu PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ『アオハライド』PV第１弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Plague Inc Evolved Official Launch Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/「TYPE‐MOONエース」Vol.9 発売CM.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/【PV】アニメ化決定！　となりの関くん　ロボット家族篇②.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/『猫侍』予告編.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemImageBatch</Type>
+    <Uri><![CDATA[]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ「弱虫ペダル」2期放送決定ＰＶ.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/dir_kravinky.txt]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Plague Inc Evolved Official Launch Trailer.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/The Legend of Korra Book 3 Official Trailer - Nickelodeon.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ 「FAIRY TAIL」 新シリーズ PV.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/TVアニメ『アオハライド』PV第１弾.mp4]]></Uri>
+  </Item>
+  <Item>
+    <Type>Nyangoro.Plugins.MediaPlayer.PlaylistItemFile</Type>
+    <Uri><![CDATA[file:///D:/various/natsucon/2014/wotking_dir/Penguins - BBC - YouTube [360p].mp4]]></Uri>
   </Item>
 </Playlist>
