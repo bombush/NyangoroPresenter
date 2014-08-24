@@ -156,6 +156,8 @@ namespace Nyangoro.Core.Host
                 Screen screen = Screen.AllScreens.First(sc => sc.Primary);
                 window.Left = screen.WorkingArea.Left;
                 window.Top = screen.WorkingArea.Top;
+                window.Width = screen.WorkingArea.Width;
+                window.Height = screen.WorkingArea.Height;
             }
         }
 
