@@ -1,5 +1,5 @@
 #About the project:
-NyangoroPresenter is a media and information center built for the main stage of NatsuCon 2014 (http://www.natsucon.cz/).
+NyangoroPresenter is a WPF-based media and information center built for the main stage of NatsuCon 2014 (http://www.natsucon.cz/).
 
 ##Features:
 - Modular architecture (easy addition of display/control panel extensions)
