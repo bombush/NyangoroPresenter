@@ -14,6 +14,6 @@ NyangoroPresenter is a WPF-based media and information center built for the main
 
 
 #Installation:
--Working directory path can be set in the  Config.BuildConfig() located in Config.cs
+- Working directory path can be set in the  Config.BuildConfig() located in Config.cs
 Alternatively copy contents of /NyangoroPresenter/working_dir to your build output folder  
--If compiled in DEBUG mode, programme will be displayed regardless of date
+- If compiled in DEBUG mode, programme will be displayed regardless of date
