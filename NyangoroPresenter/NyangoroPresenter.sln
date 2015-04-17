@@ -7,13 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Interfaces", "Nyan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Services", "Nyangoro.Services\Nyangoro.Services.csproj", "{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.MediaPlayer", "MediaPlayer\Nyangoro.Plugins.MediaPlayer.csproj", "{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.SamplePlugin", "Nyangoro.Plugins.SamplePlugin\Nyangoro.Plugins.SamplePlugin.csproj", "{B22C4BFD-4580-4B64-A2FB-DA5DDCF7BCB2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.ProgrammeMessenger", "Nyangoro.Plugins.ProgrammeMessenger\Nyangoro.Plugins.ProgrammeMessenger.csproj", "{F70479DA-E1B4-4251-90CA-179A8E34E5FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.Clock", "Nyangoro.Plugins.Clock\Nyangoro.Plugins.Clock.csproj", "{98DD1E37-6D21-4894-980F-4D8AF5DFD2B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.MediaPlayer", "Nyangoro.Plugins.MediaPlayer\Nyangoro.Plugins.MediaPlayer.csproj", "{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,17 +57,6 @@ Global
 		{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}.Release|Mixed Platforms.Build.0 = Release|x86
 		{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}.Release|x86.ActiveCfg = Release|x86
 		{86EB41ED-7B25-4FD0-A0D7-AAEC9404E908}.Release|x86.Build.0 = Release|x86
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Mixed Platforms.Build.0 = Release|x86
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|x86.ActiveCfg = Release|x86
-		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|x86.Build.0 = Release|x86
 		{B22C4BFD-4580-4B64-A2FB-DA5DDCF7BCB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B22C4BFD-4580-4B64-A2FB-DA5DDCF7BCB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B22C4BFD-4580-4B64-A2FB-DA5DDCF7BCB2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -100,6 +89,18 @@ Global
 		{98DD1E37-6D21-4894-980F-4D8AF5DFD2B7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{98DD1E37-6D21-4894-980F-4D8AF5DFD2B7}.Release|x86.ActiveCfg = Release|x86
 		{98DD1E37-6D21-4894-980F-4D8AF5DFD2B7}.Release|x86.Build.0 = Release|x86
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|x86.ActiveCfg = Debug|x86
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Debug|x86.Build.0 = Debug|x86
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|x86.ActiveCfg = Release|x86
+		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

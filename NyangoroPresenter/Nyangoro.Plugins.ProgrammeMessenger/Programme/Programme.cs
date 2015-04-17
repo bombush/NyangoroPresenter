@@ -55,7 +55,7 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             {
                 #if DEBUG
                 //tady by to chtelo sjednotit filtry, aby to vsechno prochazelo jednotnym filterm s jednotnymi podminkami
-                //if(evt.start.Hour >= DateTime.Now.Hour)
+                if(evt.start.Hour >= DateTime.Now.Hour)
                     this.activePool.Add(evt);
                 #else
                 if(this.filterMode == Programme.FilterMode.UpcomingToday){
