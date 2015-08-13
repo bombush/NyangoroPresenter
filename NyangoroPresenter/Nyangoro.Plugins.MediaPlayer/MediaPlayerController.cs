@@ -65,6 +65,11 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.PluginCore.Playlist.ItemActivated += new EventHandler(this.Playlist_ItemActivated);
         }
 
+        protected void HandlePlaylistContentsChanged(Object sender,	NotifyCollectionChangedEventArgs e)
+        {
+            this.ColorPlaylistItemsByStatus();
+        }
+
         public ListBox GetPlaylistBox()
         {
             Grid controlContent = (Grid)this.ControlRoot.Content;
@@ -306,7 +311,32 @@ namespace Nyangoro.Plugins.MediaPlayer
             //save playlist in a new thread
             Thread thr = new Thread(new ThreadStart(this.SavePlaylist));
             thr.Start();
+
+            this.ColorPlaylistItemsByStatus();
         }
+
+        public void ColorPlaylistItemsByStatus()
+        {
+            ListBox box = this.GetPlaylistBox();
+            PlaylistItem activeItem = this.PluginCore.Playlist.activeItem;
+
+            for (int i = 0; i < box.Items.Count; i++)
+            {
+                PlaylistItem item = (PlaylistItem)box.Items[i];
+                ListBoxItem boxItem = this.ControlRoot.GetListBoxItem(box, i);
+                
+                if (item == activeItem)
+                {                    
+                    boxItem.Background = Brushes.Green;
+                }
+                else
+                {
+                    boxItem.Background = Brushes.Transparent;
+                }
+            }
+        }
+
+
 
         public void HandleClearPlaylistClick()
         {

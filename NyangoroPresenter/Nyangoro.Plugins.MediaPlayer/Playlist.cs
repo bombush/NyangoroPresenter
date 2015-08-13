@@ -19,7 +19,7 @@ namespace Nyangoro.Plugins.MediaPlayer
      */
     public class Playlist
     {
-        public event EventHandler ItemActivated;
+        public event EventHandler ItemActivated;        
 
         #region fields and properties
 
@@ -306,6 +306,14 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void HandleContentsChanged(Object sender,	NotifyCollectionChangedEventArgs e)
         {
+            // make sure the corrent item index is set as active
+            for (int i = 0; i < this.contents.Count; i++)
+            {
+                if (this.contents[i] == this.activeItem)
+                {
+                    this.activeIndex = i;
+                }
+            }
         }
 
         public void SelectedMoveDown()
@@ -364,3 +372,4 @@ namespace Nyangoro.Plugins.MediaPlayer
 //@TODO Randomization
 //@TODO Removing already played items
 //@TODO Playlist Save/Load
+//@TODO Remove all the activeIndex stuff, get active index from active item

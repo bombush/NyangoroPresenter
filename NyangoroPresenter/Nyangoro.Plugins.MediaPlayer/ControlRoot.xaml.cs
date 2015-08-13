@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -19,6 +21,10 @@ namespace Nyangoro.Plugins.MediaPlayer
     /// </summary>
     public partial class ControlRoot : PluginControlRoot
     {
+        Point lastMouseClick = new Point();
+        
+        //keeps track of items removed form selection during a mosue press
+        System.Collections.IList itemsWaitingForUnselect = null;
 
         new public MediaPlayerController Controller { 
             get { return (MediaPlayerController)this.controller; } 
@@ -50,7 +56,17 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         private void PlaylistBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // if item removed from selection, postpone until MouseLeftButtonUp
+            if (Mouse.LeftButton == MouseButtonState.Pressed && e.AddedItems.Count == 0)
+            {
+                ListBox playlistBox = (ListBox)sender;
+                this.itemsWaitingForUnselect = e.RemovedItems;
 
+                foreach (PlaylistItem item in e.RemovedItems)
+                {
+                    playlistBox.SelectedItems.Add(item);
+                }                
+            }
         }
 
         private void PlaylistBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -126,6 +142,140 @@ this.Controller.HandlePlayClick(sender, e);
         private void PlaylistUp_Click(object sender, RoutedEventArgs e)
         {
             this.Controller.HandlePlaylistUpClick();
+        }
+
+        private void PlaylistBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {         
+            Point originalPosition = e.GetPosition(null);
+            lastMouseClick = originalPosition;            
+        }
+
+        private void PlaylistBox_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton != MouseButtonState.Pressed)
+                return;
+
+            Point currentPosition = e.GetPosition(null);
+            if (Math.Abs(lastMouseClick.X - currentPosition.X) < SystemParameters.MinimumHorizontalDragDistance
+                && Math.Abs(lastMouseClick.Y - currentPosition.Y) < SystemParameters.MinimumVerticalDragDistance)
+            {
+                return;
+
+            }
+            else
+            {
+                ListBox playlistBox = (ListBox)sender;                
+                
+                //sort
+                //List<PlaylistItem> items =
+                IEnumerable < PlaylistItem > itemsSortedEnumerable = playlistBox.SelectedItems.Cast<PlaylistItem>()                  
+                                                                        .OrderBy(itm => playlistBox.Items.IndexOf(itm));                
+                List<PlaylistItem> itemsSorted = itemsSortedEnumerable.ToList<PlaylistItem>();
+
+                //start drag&drop
+                DataObject dragItems = new DataObject(DataFormats.Serializable, itemsSorted);
+                DragDrop.DoDragDrop((DependencyObject)sender, dragItems, DragDropEffects.Move);
+            }
+            
+        }
+
+        private void PlaylistBox_Drop(object sender, DragEventArgs e)
+        {
+            ListBox playlistBox = (ListBox)sender;
+            ObservableCollection<PlaylistItem> playlistContents = (ObservableCollection<PlaylistItem>) playlistBox.ItemsSource;  
+            IDataObject data = e.Data;           
+            System.Collections.IList draggedItems = (System.Collections.IList)data.GetData(DataFormats.Serializable);
+            List<PlaylistItem> itemsToInsert = new List<PlaylistItem>();
+
+
+            // inset dragged items to toInsert collection before removing
+            for (int i = 0; i < draggedItems.Count; i++)
+            {
+                PlaylistItem item = (PlaylistItem)draggedItems[i];
+                itemsToInsert.Add(item);
+            }
+
+            // remove dragged items
+            for (int i = 0; i < itemsToInsert.Count; i++)
+            {
+                PlaylistItem item = (PlaylistItem)itemsToInsert[i];
+                playlistContents.Remove(item);                
+            }
+
+            int dropIndex = this.GetMouseoverItemIndex(playlistBox, e.GetPosition);                    
+
+            //insert dragged items
+            for (int i = 0; i < itemsToInsert.Count; i++)
+            {                                                 
+                PlaylistItem item = itemsToInsert[i];
+                int insertIndex = i + dropIndex;
+                playlistContents.Insert(insertIndex, item);                
+            }            
+
+            //reset items waiting for unselect
+            this.itemsWaitingForUnselect = null;           
+        }
+
+
+        private int GetMouseoverItemIndex(ListBox playlistBox, GetPositionDelegate getPosition)
+        {
+            int returnIndex = playlistBox.Items.Count;
+            for (int i = 0; i < playlistBox.Items.Count; i++ )
+            {
+                Visual target = (Visual)this.GetListBoxItem(playlistBox, i);
+                if(this.IsMouseOverTarget(target, getPosition)) 
+                {
+                    returnIndex = i;
+                }
+            }
+
+            return returnIndex;
+        }
+
+        private bool IsMouseOverTarget(Visual target, GetPositionDelegate getPosition)
+        {
+            Rect targetBounds = this.GetListBoxItemBoundsRect((ListBoxItem)target);            
+            Point mousePos = getPosition((IInputElement)target);
+
+            return targetBounds.Contains(mousePos);
+        }
+
+        private Rect GetListBoxItemBoundsRect(ListBoxItem item)
+        {
+            Vector offset = VisualTreeHelper.GetOffset(item);
+
+            return new Rect(0, 0, item.ActualWidth, item.ActualHeight);
+        }
+
+        public ListBoxItem GetListBoxItem(ListBox lv, int index)
+        {
+            if (lv.ItemContainerGenerator.Status != GeneratorStatus.ContainersGenerated)
+                return null;
+            return lv.ItemContainerGenerator.ContainerFromIndex(index) as ListBoxItem;
+        } 
+
+        delegate Point GetPositionDelegate(IInputElement element);
+
+        private void PlaylistBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (this.itemsWaitingForUnselect != null)
+            {
+                ListBox playListBox = (ListBox)sender;
+                // reset cache of items removed from selection during this mouse press
+                foreach (PlaylistItem item in this.itemsWaitingForUnselect)
+                {
+                    playListBox.SelectedItems.Remove(item);
+                }
+
+                this.itemsWaitingForUnselect = null;
+            }
+        }
+
+        protected override void OnVisualChildrenChanged(DependencyObject visualAdded, DependencyObject visualRemoved)
+        {
+            base.OnVisualChildrenChanged(visualAdded, visualRemoved);
+
+            this.Controller.ColorPlaylistItemsByStatus();
         }
     }
 }
