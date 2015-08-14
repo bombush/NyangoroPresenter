@@ -202,6 +202,7 @@ this.Controller.HandlePlayClick(sender, e);
                     return;
                 }
 
+
             // return if dropped over one of the dragged items
                 if (playlistBox.SelectedItems.Contains(playlistBox.Items.GetItemAt(this.GetMouseoverItemIndex(playlistBox, e.GetPosition))))
                 {
@@ -355,6 +356,61 @@ this.Controller.HandlePlayClick(sender, e);
             base.OnVisualChildrenChanged(visualAdded, visualRemoved);
 
             this.Controller.ColorPlaylistItemsByStatus();
+        }
+
+        private void PlaylistBox_DragOver(object sender, DragEventArgs e)
+        {
+            FrameworkElement container = sender as FrameworkElement;
+
+            if (container == null)
+            {
+                return;
+            }
+
+            ScrollViewer scrollViewer = GetFirstVisualChild<ScrollViewer>(container);
+
+            if (scrollViewer == null)
+            {
+                return;
+            }
+
+            double tolerance = 60;
+            double verticalPos = e.GetPosition(container).Y;
+            double offset = 0.05;
+
+            if (verticalPos < tolerance) // Top of visible list? 
+            {
+                //Scroll up
+                scrollViewer.ScrollToVerticalOffset(scrollViewer.VerticalOffset - ((tolerance - verticalPos) * offset));
+            }
+            else if (verticalPos > container.ActualHeight - tolerance) //Bottom of visible list? 
+            {
+                //Scroll down
+                scrollViewer.ScrollToVerticalOffset(scrollViewer.VerticalOffset + ((verticalPos - container.ActualHeight + tolerance) * offset));
+            }
+        }
+
+        public static T GetFirstVisualChild<T>(DependencyObject depObj) where T : DependencyObject
+        {
+            if (depObj != null)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+                {
+                    DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
+                    if (child != null && child is T)
+                    {
+                        return (T)child;
+                    }
+
+                    T childItem = GetFirstVisualChild<T>(child);
+                    if (childItem != null)
+                    {
+                        return childItem;
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }

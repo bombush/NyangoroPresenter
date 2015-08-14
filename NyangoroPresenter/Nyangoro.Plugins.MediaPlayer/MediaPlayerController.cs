@@ -121,6 +121,10 @@ namespace Nyangoro.Plugins.MediaPlayer
         public void HandleShufflePlaylistClick()
         {
             Playlist.ShuffleList<PlaylistItem>(this.PluginCore.Playlist.contents);
+
+            this.ColorPlaylistItemsByStatus();
+            this.PluginCore.Playlist.SyncActiveIndexToItem();
+
             this.SavePlaylist();
         }
 
@@ -164,7 +168,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.PlaylistExportXml();
         }
 
-        protected void LoadPlaylist()
+        public void LoadPlaylist()
         {
             try
             {

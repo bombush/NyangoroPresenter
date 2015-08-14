@@ -271,7 +271,7 @@ namespace Nyangoro.Plugins.MediaPlayer
                 T randomItem = list[index];
                 list[index] = item;
                 list[n] = randomItem;
-            }
+            };            
         }
 
 
@@ -343,7 +343,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.SyncActiveIndexToItem();           
         }
 
-        protected void SyncActiveIndexToItem()
+        public void SyncActiveIndexToItem()
         {
             // make sure the corrent item index is set as active
             for (int i = 0; i < this.contents.Count; i++)
