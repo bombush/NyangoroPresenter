@@ -26,6 +26,8 @@ namespace Nyangoro.Plugins.MediaPlayer
         //keeps track of items removed form selection during a mosue press
         System.Collections.IList itemsWaitingForUnselect = null;
 
+        bool draggingScrollbar = false;
+
         new public MediaPlayerController Controller { 
             get { return (MediaPlayerController)this.controller; } 
             private set { this.controller = value; } 
@@ -147,13 +149,23 @@ this.Controller.HandlePlayClick(sender, e);
         private void PlaylistBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Point originalPosition = e.GetPosition(null);
-            lastMouseClick = originalPosition;            
+            lastMouseClick = originalPosition;
+
+            ListBox playlistBox = (ListBox)sender;
+            int dropIndex = this.GetMouseoverItemIndex(playlistBox, e.GetPosition);
+            if (dropIndex == -1)
+            {
+                this.draggingScrollbar = true;
+            }
         }
 
         private void PlaylistBox_PreviewMouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton != MouseButtonState.Pressed)
                 return;
+
+            if (this.draggingScrollbar)           
+                return;            
 
             // prevent selection change on drag
             UIElement box = (UIElement)sender;
@@ -169,8 +181,7 @@ this.Controller.HandlePlayClick(sender, e);
             }
             else
             {
-                ListBox playlistBox = (ListBox)sender;                
-                
+                ListBox playlistBox = (ListBox)sender;
                 //sort
                 IEnumerable < PlaylistItem > itemsSortedEnumerable = playlistBox.SelectedItems.Cast<PlaylistItem>()                  
                                                                         .OrderBy(itm => playlistBox.Items.IndexOf(itm));                
@@ -201,13 +212,16 @@ this.Controller.HandlePlayClick(sender, e);
                     MessageBox.Show("Containers generation not finished yet.");
                     return;
                 }
-
-
-            // return if dropped over one of the dragged items
-                if (playlistBox.SelectedItems.Contains(playlistBox.Items.GetItemAt(this.GetMouseoverItemIndex(playlistBox, e.GetPosition))))
+                
+             // return if dropped over one of the dragged items
+                int moverIndex = this.GetMouseoverItemIndex(playlistBox, e.GetPosition);
+                if (moverIndex > -1 && playlistBox.SelectedItems.Contains(playlistBox.Items.GetItemAt(moverIndex)))
                 {
                     return;
                 }
+            //return if out of bounds
+                if (moverIndex == -1)
+                    return;
                 
 
                 // get active item            
@@ -237,6 +251,10 @@ this.Controller.HandlePlayClick(sender, e);
                 }
 
                 int dropIndex = this.GetMouseoverItemIndex(playlistBox, e.GetPosition);
+                if (dropIndex == -1)
+                {
+                    dropIndex = playlistBox.Items.Count - 1;
+                }
                 PlaylistItem dropItem = (PlaylistItem)playlistBox.Items[dropIndex];
 
                 //insert dragged items
@@ -299,7 +317,7 @@ this.Controller.HandlePlayClick(sender, e);
 
         private int GetMouseoverItemIndex(ListBox playlistBox, GetPositionDelegate getPosition)
         {
-            int returnIndex = playlistBox.Items.Count;
+            int returnIndex = -1;
             for (int i = 0; i < playlistBox.Items.Count; i++ )
             {
                 Visual target = (Visual)this.GetListBoxItem(playlistBox, i);
@@ -311,6 +329,7 @@ this.Controller.HandlePlayClick(sender, e);
 
             return returnIndex;
         }
+
 
         private bool IsMouseOverTarget(Visual target, GetPositionDelegate getPosition)
         {
@@ -349,6 +368,8 @@ this.Controller.HandlePlayClick(sender, e);
 
                 this.itemsWaitingForUnselect = null;
             }
+
+            this.draggingScrollbar = false;
         }
 
         protected override void OnVisualChildrenChanged(DependencyObject visualAdded, DependencyObject visualRemoved)
