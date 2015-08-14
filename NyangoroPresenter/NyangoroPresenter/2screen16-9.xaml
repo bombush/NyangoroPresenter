@@ -1,0 +1,16 @@
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:nyangoroLayout="clr-namespace:Nyangoro.Core.Layout;assembly=NyangoroPresenter">
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3000*"/>
+            <ColumnDefinition Width="1000*"/>
+        </Grid.ColumnDefinitions>
+
+        <nyangoroLayout:PluginAnchor Grid.Column="0" PluginType="MediaPlayer" Background="Red"></nyangoroLayout:PluginAnchor>
+
+        <nyangoroLayout:PluginAnchor Grid.Column="1" PluginType="ProgrammeMessenger"></nyangoroLayout:PluginAnchor>
+
+        <nyangoroLayout:PluginAnchor Grid.Column="1" PluginType="Clock"></nyangoroLayout:PluginAnchor>
+</Grid>

@@ -75,6 +75,7 @@
     <Compile Include="PresentationRoot.xaml.cs">
       <DependentUpon>PresentationRoot.xaml</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="SelfRefreshingList.cs" />
     <Compile Include="SlideshowMediaProcessor\AnimationFactory.cs" />
     <Compile Include="SlideshowMediaProcessor\SlideshowDisplayControl.xaml.cs">

@@ -95,13 +95,28 @@ namespace Nyangoro.Core.Host
 
             try
             {
-                Image natsuLogo = (Image)screenRoot.FindName("Natsulogo");
+                //works with 2015 layout
+                //Image natsuLogo = (Image)screenRoot.FindName("Natsulogo");
                 //string uri = (Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png"));
-                natsuLogo.Source = new BitmapImage(new Uri(Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png")));
+                //natsuLogo.Source = new BitmapImage(new Uri(Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png")));
 
-                Image butaneko = (Image)screenRoot.FindName("Butaneko");
+                //Image butaneko = (Image)screenRoot.FindName("Butaneko");
                 //string uri = (Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png"));
-                butaneko.Source = new BitmapImage(new Uri(Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "butaneko.png")));
+                //butaneko.Source = new BitmapImage(new Uri(Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "butaneko.png")));
+
+
+                //works with 2015 layout. 2015 hackish background!!! yay!!!
+                ImageBrush myBrush = new ImageBrush();
+                Image image = new Image();
+                image.Source = new BitmapImage(
+                    new Uri(Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "2015_background.png")));
+                myBrush.ImageSource = image.Source;
+                screenRoot.Background = myBrush; 
+   
+                //2015 image hack. yay!!!
+                Image gundamneko = (Image)screenRoot.FindName("Gundamneko");
+                //string uri = (Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png"));
+                gundamneko.Source = new BitmapImage(new Uri(Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "gundamneko2.png")));
             }
             catch {
                 MessageBox.Show("Failed to load screen overlay picture");
