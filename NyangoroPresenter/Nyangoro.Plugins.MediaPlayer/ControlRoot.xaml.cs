@@ -145,7 +145,7 @@ this.Controller.HandlePlayClick(sender, e);
         }
 
         private void PlaylistBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {         
+        {
             Point originalPosition = e.GetPosition(null);
             lastMouseClick = originalPosition;            
         }
@@ -154,6 +154,11 @@ this.Controller.HandlePlayClick(sender, e);
         {
             if (e.LeftButton != MouseButtonState.Pressed)
                 return;
+
+            // prevent selection change on drag
+            UIElement box = (UIElement)sender;
+            box.ReleaseMouseCapture();
+
 
             Point currentPosition = e.GetPosition(null);
             if (Math.Abs(lastMouseClick.X - currentPosition.X) < SystemParameters.MinimumHorizontalDragDistance
@@ -167,7 +172,6 @@ this.Controller.HandlePlayClick(sender, e);
                 ListBox playlistBox = (ListBox)sender;                
                 
                 //sort
-                //List<PlaylistItem> items =
                 IEnumerable < PlaylistItem > itemsSortedEnumerable = playlistBox.SelectedItems.Cast<PlaylistItem>()                  
                                                                         .OrderBy(itm => playlistBox.Items.IndexOf(itm));                
                 List<PlaylistItem> itemsSorted = itemsSortedEnumerable.ToList<PlaylistItem>();
@@ -176,44 +180,119 @@ this.Controller.HandlePlayClick(sender, e);
                 DataObject dragItems = new DataObject(DataFormats.Serializable, itemsSorted);
                 DragDrop.DoDragDrop((DependencyObject)sender, dragItems, DragDropEffects.Move);
             }
+
+            e.Handled = true;
             
         }
 
         private void PlaylistBox_Drop(object sender, DragEventArgs e)
         {
-            ListBox playlistBox = (ListBox)sender;
-            ObservableCollection<PlaylistItem> playlistContents = (ObservableCollection<PlaylistItem>) playlistBox.ItemsSource;  
-            IDataObject data = e.Data;           
-            System.Collections.IList draggedItems = (System.Collections.IList)data.GetData(DataFormats.Serializable);
-            List<PlaylistItem> itemsToInsert = new List<PlaylistItem>();
 
+                ListBox playlistBox = (ListBox)sender;
+                ObservableCollection<PlaylistItem> playlistContents = (ObservableCollection<PlaylistItem>)playlistBox.ItemsSource;
+                IDataObject data = e.Data;
+                System.Collections.IList draggedItems = (System.Collections.IList)data.GetData(DataFormats.Serializable);
+                List<PlaylistItem> itemsToInsert = new List<PlaylistItem>();
+                PlaylistItem activeItem = null;
 
-            // inset dragged items to toInsert collection before removing
-            for (int i = 0; i < draggedItems.Count; i++)
+                //not ready
+                if (playlistBox.ItemContainerGenerator.Status != GeneratorStatus.ContainersGenerated)
+                {
+                    MessageBox.Show("Containers generation not finished yet.");
+                    return;
+                }
+
+            // return if dropped over one of the dragged items
+                if (playlistBox.SelectedItems.Contains(playlistBox.Items.GetItemAt(this.GetMouseoverItemIndex(playlistBox, e.GetPosition))))
+                {
+                    return;
+                }
+                
+
+                // get active item            
+                for (int i = 0; i < draggedItems.Count; i++)
+                {
+                    PlaylistItem currItem = (PlaylistItem)draggedItems[i];
+                    if (currItem == this.Controller.GetPlaylist().activeItem)
+                    {
+                        activeItem = currItem;
+                    }
+                }
+
+                // inset dragged items to toInsert collection before removing
+                for (int i = 0; i < draggedItems.Count; i++)
+                {
+                    PlaylistItem item = (PlaylistItem)draggedItems[i];
+                    itemsToInsert.Add(item);
+                }
+
+                // remove dragged items from listBox
+                for (int i = 0; i < itemsToInsert.Count; i++)
+                {
+                    PlaylistItem item = (PlaylistItem)itemsToInsert[i];
+
+                    if (item != activeItem)
+                        playlistContents.Remove(item);
+                }
+
+                int dropIndex = this.GetMouseoverItemIndex(playlistBox, e.GetPosition);
+                PlaylistItem dropItem = (PlaylistItem)playlistBox.Items[dropIndex];
+
+                //insert dragged items
+                for (int i = 0; i < itemsToInsert.Count; i++)
+                {
+                    PlaylistItem item = itemsToInsert[i];
+                    int insertIndex = this.Controller.GetPlaylist().FindItemIndex(dropItem);
+
+                    if (item == activeItem)
+                    {
+                        int activeIndex = this.Controller.GetPlaylist().FindItemIndex(activeItem);
+                        this.SafeShiftItemBefore(activeItem, insertIndex);
+                    }
+                    else
+                    {
+                        playlistContents.Insert(insertIndex, item);
+                        //select again
+                        playlistBox.SelectedItems.Add(item);
+                    }
+                    
+                }
+
+                //reset items waiting for unselect
+                this.itemsWaitingForUnselect = null;
+        }
+
+        /**
+         *  Shifts an item without destroying its visual modifications.
+         */
+        protected void SafeShiftItemBefore(PlaylistItem item, int targetIndex)
+        {
+            if (targetIndex == -1)
+                targetIndex = 0;
+
+            int currentIndex = this.Controller.GetPlaylist().FindItemIndex(item);
+            ObservableCollection<PlaylistItem> playlistContents = (ObservableCollection<PlaylistItem>) this.GetPlaylistBox().ItemsSource;  
+
+            int distance = Math.Abs(targetIndex - currentIndex);
+            if (targetIndex > currentIndex)
             {
-                PlaylistItem item = (PlaylistItem)draggedItems[i];
-                itemsToInsert.Add(item);
+                // step forward
+                int deltaItemPosition = 0;
+                while(deltaItemPosition < distance-1) {
+                    deltaItemPosition++;
+                    playlistContents.Move(currentIndex + deltaItemPosition, currentIndex + deltaItemPosition - 1);
+                }
             }
-
-            // remove dragged items
-            for (int i = 0; i < itemsToInsert.Count; i++)
+            else if (targetIndex < currentIndex)
             {
-                PlaylistItem item = (PlaylistItem)itemsToInsert[i];
-                playlistContents.Remove(item);                
+                //step back
+                int deltaItemPosition = 0;
+                while (deltaItemPosition < distance)
+                {
+                    deltaItemPosition++;
+                    playlistContents.Move(currentIndex - deltaItemPosition, currentIndex - deltaItemPosition + 1);
+                }
             }
-
-            int dropIndex = this.GetMouseoverItemIndex(playlistBox, e.GetPosition);                    
-
-            //insert dragged items
-            for (int i = 0; i < itemsToInsert.Count; i++)
-            {                                                 
-                PlaylistItem item = itemsToInsert[i];
-                int insertIndex = i + dropIndex;
-                playlistContents.Insert(insertIndex, item);                
-            }            
-
-            //reset items waiting for unselect
-            this.itemsWaitingForUnselect = null;           
         }
 
 

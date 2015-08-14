@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
@@ -85,6 +86,8 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.StopActive();
             this.Stopped = true;
             this.box.SelectedIndex = -1;
+
+            this.ItemActivated(this, EventArgs.Empty);
         }
 
         public void Pause()
@@ -181,22 +184,53 @@ namespace Nyangoro.Plugins.MediaPlayer
             this.PlaySelected();
         }
 
-        public void RemoveIndex(int index)
+        /*public void RemoveIndex(int index)
         {
             this.contents.RemoveAt(index);
 
             //update active index
             if (this.activeIndex > -1 && index <= this.activeIndex)
                 this.activeIndex--;
-        }
+        }*/
 
         //Removed the selected item from playlist but keeps playing
         public void RemoveSelected()
-        {
-            int index = this.box.SelectedIndex;
-            if(index != -1)
-                this.RemoveIndex(index);
+        {                       
+            List<PlaylistItem> items = this.box.SelectedItems.Cast<PlaylistItem>().ToList();
+            
+            foreach (PlaylistItem item in items)
+            {
+                foreach(PlaylistItem contentItem in this.contents) 
+                {
+                    if (item == contentItem)
+                    {
+                        this.contents.Remove(contentItem);
+                        break;
+                    }
+                }
+                if(item == this.activeItem) {
+                    this.activeItem = null;
+                }
+                this.contents.Remove(item);
+            }
+
+            this.SyncActiveIndexToItem();
         }
+
+        public void AddItem(PlaylistItem item)
+        {
+            // insert after active item or at the end
+            if (this.activeItem != null)
+            {
+                int index = 1 + this.FindItemIndex(this.activeItem);
+                this.contents.Insert(index, item);
+            }
+            else
+            {
+                this.contents.Add(item);
+            }
+        }
+
         #endregion
 
         //if playlist processing is not stopped, continue with the next item in the playlist
@@ -306,6 +340,11 @@ namespace Nyangoro.Plugins.MediaPlayer
 
         protected void HandleContentsChanged(Object sender,	NotifyCollectionChangedEventArgs e)
         {
+            this.SyncActiveIndexToItem();           
+        }
+
+        protected void SyncActiveIndexToItem()
+        {
             // make sure the corrent item index is set as active
             for (int i = 0; i < this.contents.Count; i++)
             {
@@ -366,6 +405,20 @@ namespace Nyangoro.Plugins.MediaPlayer
                 this.activeIndex = indexTwo;
 
             this.box.SelectedIndex = indexToSelect;
+        }
+
+        public int FindItemIndex(PlaylistItem item)
+        {
+            int index = -1;
+            for (int i = 0; i < this.contents.Count; i++)
+            {
+                if (this.contents[i] == item)
+                {
+                    index = i;
+                }
+            }
+
+            return index;
         }
     }
 }

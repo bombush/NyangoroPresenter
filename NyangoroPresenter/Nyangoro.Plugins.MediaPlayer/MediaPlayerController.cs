@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -38,6 +39,12 @@ namespace Nyangoro.Plugins.MediaPlayer
         new protected Nyangoro.Plugins.MediaPlayer.MediaPlayer PluginCore {
             get { return (Nyangoro.Plugins.MediaPlayer.MediaPlayer)this.pluginCore; }
             set { this.pluginCore = value; } 
+        }
+
+
+        public Playlist GetPlaylist()
+        {
+            return this.PluginCore.Playlist;
         }
 
         //prasarny
@@ -122,7 +129,7 @@ namespace Nyangoro.Plugins.MediaPlayer
             foreach(string s in filenames)
             {
                 PlaylistItemFile item = new PlaylistItemFile(this.PluginCore.processors, s);
-                this.PluginCore.Playlist.contents.Add(item);
+                this.PluginCore.Playlist.AddItem((PlaylistItem)item);
             }
 
             this.SavePlaylist();
@@ -137,7 +144,7 @@ namespace Nyangoro.Plugins.MediaPlayer
         public void AddImageBatchClick()
         {
             PlaylistItemImageBatch item = new PlaylistItemImageBatch(this.PluginCore.processors, this.PluginCore);
-            this.PluginCore.Playlist.contents.Add(item);
+            this.PluginCore.Playlist.AddItem((PlaylistItem)item);
             this.SavePlaylist();
         }
 
@@ -358,5 +365,6 @@ namespace Nyangoro.Plugins.MediaPlayer
         {
             this.PluginCore.Playlist.SelectedMoveUp();
         }
+
     }
 }
