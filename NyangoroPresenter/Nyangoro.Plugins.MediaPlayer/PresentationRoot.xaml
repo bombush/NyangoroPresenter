@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:nyangoroPlugin="clr-namespace:Nyangoro.Plugins;assembly=Nyangoro.Interfaces"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Height="720" Width="1280" Padding="40,30,0,0">
-    <Border CornerRadius="5,5,5,5" BorderBrush="White" BorderThickness="10,10,10,10" Background="Black" ClipToBounds="True">
+             d:DesignHeight="300" d:DesignWidth="300" Height="720" Width="1280" Padding="43,35,27,5">
+    <Border CornerRadius="5,5,5,5" BorderBrush="White" BorderThickness="0,0,0,0" Background="Black" ClipToBounds="True">
         <Grid Name="MainDisplayGrid">
         <Viewbox Name="MediaViewbox">
 

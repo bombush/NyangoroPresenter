@@ -10,23 +10,23 @@
         <ImageBrush ImageSource="/images/2015_background.png"/>
     </Grid.Background> -->
         <Grid.RowDefinitions>
-        <RowDefinition Height="3300*"/>
-        <RowDefinition Height="570*"/>
+        <RowDefinition Height="3050*"/>
+        <RowDefinition Height="560*"/>
     </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5750*"/>
             <ColumnDefinition Width="1000*"/>
+            <ColumnDefinition Width="5750*"/>            
     </Grid.ColumnDefinitions>
     
-        <Viewbox Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Viewbox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <nyangoroLayout:PluginAnchor PluginType="MediaPlayer"></nyangoroLayout:PluginAnchor>
         </Viewbox>
 
-        <nyangoroLayout:PluginAnchor Grid.Column="0" Grid.Row="1"  PluginType="ProgrammeMessenger" VerticalAlignment="Top"></nyangoroLayout:PluginAnchor>
+        <nyangoroLayout:PluginAnchor Grid.Column="1" Grid.Row="1"  PluginType="ProgrammeMessenger" VerticalAlignment="Top" Margin="100,5,0,0"></nyangoroLayout:PluginAnchor>
 
-        <nyangoroLayout:PluginAnchor Grid.Column="1" Grid.Row="0"  PluginType="Clock"></nyangoroLayout:PluginAnchor>
+        <nyangoroLayout:PluginAnchor Grid.Column="0" Grid.Row="0" Margin="25,210,0,0" PluginType="Clock"></nyangoroLayout:PluginAnchor>
     
         <!-- floating stuff JE to moc fujkyfuj, ale ni cas. Source se prida pri loadovani screenu-->
     <Image Name="Natsulogo" Grid.ColumnSpan="3" Width="360" Height="98"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-    <Image Name="Gundamneko" Height="410" Grid.ColumnSpan="5" Grid.RowSpan="5" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+    <Image Name="Gundamneko" Height="412" Grid.ColumnSpan="5" Grid.RowSpan="5" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 </Grid>
