@@ -4125,6 +4125,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_EAFAD0E020974ADAA2FCDAE912C3E0C1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_EB23D8950EEC4A2D8C9A650C9FE5EAE6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -18289,6 +18295,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EAFAD0E020974ADAA2FCDAE912C3E0C1"
+            {
+            "SourcePath" = "8:..\\working_dir\\gundamneko2_ico.ico"
+            "TargetName" = "8:gundamneko2_ico.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_7A53D7ED1B2649AC9204727BA70F831E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EB23D8950EEC4A2D8C9A650C9FE5EAE6"
             {
             "SourcePath" = "8:..\\working_dir\\plugins\\VLC\\plugins\\access\\liblibbluray_plugin.dll"
@@ -20505,7 +20531,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Nyangoro"
         "ProductCode" = "8:{DD876FD3-0FB2-4585-A589-6C3D8FA6F182}"
-        "PackageCode" = "8:{BA3F77C4-27A4-4E4F-BB2B-3D0E91BF8863}"
+        "PackageCode" = "8:{4532D86D-0094-4B32-BB88-6E4BD7493F2E}"
         "UpgradeCode" = "8:{6CC3A9AA-D0A4-4FBD-A23B-AC430FA07081}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -20625,7 +20651,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_52BF1FAF5E7647B0BD5A8A61A0C4EC9C"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D834BD2FEC424C6AA0E5943039F4E64B"
             {
             "Name" = "8:Nyangoro"
             "Arguments" = "8:"
@@ -20633,24 +20659,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_52534BF82A1746C8B0425FA1AE39602A"
+            "Target" = "8:_E5FF382C6B44490090C3769AB0BCAB1E"
             "Folder" = "8:_52534BF82A1746C8B0425FA1AE39602A"
-            "WorkingFolder" = "8:_52534BF82A1746C8B0425FA1AE39602A"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8F0689B41AAC45F3B4AC846F225EBC24"
-            {
-            "Name" = "8:Nyangoro"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_865C5BA9CE624B3D8C58F3D57B440916"
-            "Folder" = "8:_865C5BA9CE624B3D8C58F3D57B440916"
-            "WorkingFolder" = "8:_865C5BA9CE624B3D8C58F3D57B440916"
-            "Icon" = "8:"
+            "WorkingFolder" = "8:_7A53D7ED1B2649AC9204727BA70F831E"
+            "Icon" = "8:_EAFAD0E020974ADAA2FCDAE912C3E0C1"
             "Feature" = "8:"
             }
         }
