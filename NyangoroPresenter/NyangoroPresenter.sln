@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.Clock", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyangoro.Plugins.MediaPlayer", "Nyangoro.Plugins.MediaPlayer\Nyangoro.Plugins.MediaPlayer.csproj", "{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{814C91E1-F576-4A60-8130-36FF02019262}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,12 @@ Global
 		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|x86.ActiveCfg = Release|x86
 		{B3C9689A-FCD9-4CC4-A8BF-6187E4209391}.Release|x86.Build.0 = Release|x86
+		{814C91E1-F576-4A60-8130-36FF02019262}.Debug|Any CPU.ActiveCfg = Debug
+		{814C91E1-F576-4A60-8130-36FF02019262}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{814C91E1-F576-4A60-8130-36FF02019262}.Debug|x86.ActiveCfg = Debug
+		{814C91E1-F576-4A60-8130-36FF02019262}.Release|Any CPU.ActiveCfg = Release
+		{814C91E1-F576-4A60-8130-36FF02019262}.Release|Mixed Platforms.ActiveCfg = Release
+		{814C91E1-F576-4A60-8130-36FF02019262}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

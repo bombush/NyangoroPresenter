@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Nyangoro.Core.Host.App" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAFAAAAAAMAABAAAAAAAAAAIWAAAAAAARAAAAIAAQAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.Config" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAADAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.MEFHolder&lt;T&gt;" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAEAQAAQAAAAAIAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\holders\MEFHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.PluginHolder" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAEAAAAAIAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\holders\PluginHolder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Nyangoro.Core.Host.ServiceHolder" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\holders\ServiceHolder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Nyangoro.Core.Host.LayoutManager" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAUAIAAAAAAEGQAAIgAoAgAAAEAAABIAAQAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\managers\LayoutManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.PluginManager" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAMAAIAAAAAAAAQAIAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\managers\PluginManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.ServiceManager" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\managers\ServiceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.ControlWindow" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAACAAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\windows\ControlWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.PresentationWindow" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Host\windows\PresentationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Layout.ControlScreen" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Layout\ControlScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Layout.PluginAnchor" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQCAAAEAAAAAQAAAAAAAAAAACAA=</HashCode>
+      <FileName>Nyangoro.Core.Layout\PluginAnchor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Layout.PresentationScreen" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIIBAAAAAAAAAEAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nyangoro.Core.Layout\PresentationScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.Properties.Resources" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nyangoro.Core.Host.Properties.Settings" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Meiryo" Size="9" />
+</ClassDiagram>
