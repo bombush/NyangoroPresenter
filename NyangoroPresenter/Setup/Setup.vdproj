@@ -436,13 +436,7 @@
         "Entry"
         {
         "MsmKey" = "8:_137C095145445AA929C62256504C73E2"
-        "OwnerKey" = "8:_B8B0F6317D7347FE9306655284B766AF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_137C095145445AA929C62256504C73E2"
-        "OwnerKey" = "8:_FAF8C08C22244666AC56BFBA4ACAD356"
+        "OwnerKey" = "8:_97EBAB0B983E4D36816968754D5DBCE6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -454,7 +448,13 @@
         "Entry"
         {
         "MsmKey" = "8:_137C095145445AA929C62256504C73E2"
-        "OwnerKey" = "8:_97EBAB0B983E4D36816968754D5DBCE6"
+        "OwnerKey" = "8:_FAF8C08C22244666AC56BFBA4ACAD356"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_137C095145445AA929C62256504C73E2"
+        "OwnerKey" = "8:_B8B0F6317D7347FE9306655284B766AF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -832,6 +832,12 @@
         "Entry"
         {
         "MsmKey" = "8:_2D57B2D7E5374CFD88F45738009FB7C9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2D882BEC736548649E3DE43D55F4F604"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -4558,31 +4564,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E5FF382C6B44490090C3769AB0BCAB1E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_137C095145445AA929C62256504C73E2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FAF8C08C22244666AC56BFBA4ACAD356"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_97EBAB0B983E4D36816968754D5DBCE6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E8881FF7AE8B44CC99BBB7C245D6A0BB"
+        "OwnerKey" = "8:_DBB87D0A6A873C90691BF1D5D75C8E3A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4594,7 +4576,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DBB87D0A6A873C90691BF1D5D75C8E3A"
+        "OwnerKey" = "8:_E8881FF7AE8B44CC99BBB7C245D6A0BB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_97EBAB0B983E4D36816968754D5DBCE6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_FAF8C08C22244666AC56BFBA4ACAD356"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_137C095145445AA929C62256504C73E2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E5FF382C6B44490090C3769AB0BCAB1E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -4615,6 +4621,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -4631,6 +4645,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -6047,11 +6069,6 @@
             "AssemblyAsmDisplayName" = "8:Nyangoro.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_137C095145445AA929C62256504C73E2"
-                    {
-                    "Name" = "8:Nyangoro.Interfaces.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nyangoro.Interfaces.dll"
             "TargetName" = "8:"
@@ -7317,6 +7334,26 @@
             "TargetName" = "8:libhqdn3d_plugin.dll"
             "Tag" = "8:"
             "Folder" = "8:_ABD4B5C7429F4790B72EFCE30690BF55"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2D882BEC736548649E3DE43D55F4F604"
+            {
+            "SourcePath" = "8:..\\working_dir\\xml\\2014-programme_condroid.xml"
+            "TargetName" = "8:2014-programme_condroid.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_4E740F3A9E4D49699D1CEB4E0E036BF4"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -17289,11 +17326,6 @@
             "AssemblyAsmDisplayName" = "8:LibVLC.NET, Version=0.13.0.1, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_DBB87D0A6A873C90691BF1D5D75C8E3A"
-                    {
-                    "Name" = "8:LibVLC.NET.DLL"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:LibVLC.NET.DLL"
             "TargetName" = "8:"
@@ -17660,11 +17692,6 @@
             "AssemblyAsmDisplayName" = "8:LibVLC.NET.Presentation, Version=0.4.0.2, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E2B2AD8110105EFCF3B320A755A3C34F"
-                    {
-                    "Name" = "8:LibVLC.NET.Presentation.DLL"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:LibVLC.NET.Presentation.DLL"
             "TargetName" = "8:"
