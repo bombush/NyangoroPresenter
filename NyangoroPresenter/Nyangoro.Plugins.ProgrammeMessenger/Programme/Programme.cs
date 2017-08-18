@@ -69,6 +69,9 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             }
         }
 
+        /**
+         * This should at least return false if Exception thrown. Come on.
+         */
         protected bool TryLoadFromCondroidXml()
         {
             ProgrammeIOCondroid condroidIO = new ProgrammeIOCondroid();
@@ -76,9 +79,10 @@ namespace Nyangoro.Plugins.ProgrammeMessenger.Programme
             {
                 this.allEvents = condroidIO.GetMainStageUpcomingEvents();
             }
-            catch
+            catch (Exception e)
             {
-                return true;
+                throw e;
+                //return true;
             }
             return true;
         }

@@ -88,9 +88,14 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Fonts\MicrogrammaDOT-MediumExtend.otf">
+    <Content Include="Fonts\MicrogrammaDOT-MediumExtend.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\natsu16.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

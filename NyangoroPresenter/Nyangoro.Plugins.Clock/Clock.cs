@@ -47,6 +47,7 @@ namespace Nyangoro.Plugins.Clock
         protected void RunClock()
         {
             TextBlock hour = new TextBlock();
+           // hour.FontFamily = new System.Windows.Media.FontFamily("Wingdings");
            // hour.FontSize = Clock.FontSize;
             hour.Text = this.lastUpdate.ToString("HH");
 

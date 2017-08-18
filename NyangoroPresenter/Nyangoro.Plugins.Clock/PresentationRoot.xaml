@@ -11,8 +11,8 @@
     <nyangoroPlugin:PluginPresentationRoot.Resources>
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontFamily" Value="MicrogrammaDMedExt" />
-            <Setter Property="FontSize" Value="48" />
+            <Setter Property="FontFamily" Value="Final Fantasy, Fixedsys" />
+            <Setter Property="FontSize" Value="36" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0,20,0,0" />
         </Style>

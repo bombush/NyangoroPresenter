@@ -61,7 +61,7 @@ namespace Nyangoro.Plugins.MediaPlayer
                 //PRASAAAARNA!!!! REFACTORR!!!!!!
                 Image label = (Image)VlcTextGrid.FindName("Label");
                 //string uri = (Path.Combine(Config.Get("working_dir"), this.screenPath, "images", "natsulogo.png"));
-                label.Source = new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "plugins", "mediaplayer", "images", "label2015.png")));
+                label.Source = new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "plugins", "mediaplayer", "images", "label2016.png")));
             }
             catch { MessageBox.Show("Could not find Vlc label png"); }
 
